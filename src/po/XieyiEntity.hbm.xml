@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="po.XieyiEntity" table="xieyi" schema="sdauweixin">
+        <id name="xieyiid" column="xieyiid"/>
+        <property name="studentid" column="studentid"/>
+        <property name="comname" column="comname"/>
+        <property name="comnumber" column="comnumber"/>
+        <property name="comadress" column="comadress"/>
+        <property name="comzipcode" column="comzipcode"/>
+        <property name="comcontact" column="comcontact"/>
+        <property name="comtel" column="comtel"/>
+        <property name="comemail" column="comemail"/>
+        <property name="comnature" column="comnature"/>
+        <property name="danganaddress" column="danganaddress"/>
+        <property name="state" column="state"/>
+        <property name="others" column="others"/>
+        <property name="xieyinum" column="xieyinum"/>
+        <property name="collegename" column="collegename"/>
+        <property name="industry" column="industry"/>
+        <property name="category" column="category"/>
+        <property name="downloadstate" column="downloadstate"/>
+    </class>
+</hibernate-mapping>

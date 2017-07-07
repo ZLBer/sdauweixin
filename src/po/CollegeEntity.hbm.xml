@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="po.CollegeEntity" table="college" schema="sdauweixin">
+        <id name="collegeid" column="collegeid"/>
+        <property name="collegename" column="collegename"/>
+    </class>
+</hibernate-mapping>

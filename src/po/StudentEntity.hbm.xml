@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="po.StudentEntity" table="student" schema="sdauweixin">
+        <id name="studentid" column="studentid"/>
+        <property name="examid" column="examid"/>
+        <property name="studentname" column="studentname"/>
+        <property name="studentsex" column="studentsex"/>
+        <property name="studentnation" column="studentnation"/>
+        <property name="studentnumber" column="studentnumber"/>
+        <property name="political" column="political"/>
+        <property name="education" column="education"/>
+        <property name="studentmajor" column="studentmajor"/>
+        <property name="trainingmode" column="trainingmode"/>
+        <property name="location" column="location"/>
+        <property name="length" column="length"/>
+        <property name="minor" column="minor"/>
+        <property name="studentbirthday" column="studentbirthday"/>
+        <property name="degree" column="degree"/>
+        <property name="majorforeign" column="majorforeign"/>
+        <property name="foreignlevel" column="foreignlevel"/>
+        <property name="comlevel" column="comlevel"/>
+        <property name="enteryear" column="enteryear"/>
+        <property name="graduationtime" column="graduationtime"/>
+        <property name="weipeiunit" column="weipeiunit"/>
+        <property name="weipeilocation" column="weipeilocation"/>
+        <property name="universityname" column="universityname"/>
+        <property name="studentcollege" column="studentcollege"/>
+        <property name="resident" column="resident"/>
+        <property name="register" column="register"/>
+        <property name="residentdetailed" column="residentdetailed"/>
+        <property name="registerdetailed" column="registerdetailed"/>
+        <property name="studentclass" column="studentclass"/>
+        <property name="residentoffice" column="residentoffice"/>
+        <property name="residentaddress" column="residentaddress"/>
+        <property name="registeroffice" column="registeroffice"/>
+        <property name="registeraddress" column="registeraddress"/>
+        <property name="tpye" column="tpye"/>
+        <property name="vocational" column="vocational"/>
+        <property name="hometel" column="hometel"/>
+        <property name="registertime" column="registertime"/>
+        <property name="studentstate" column="studentstate"/>
+        <property name="studenttel" column="studenttel"/>
+        <property name="studentemail" column="studentemail"/>
+    </class>
+</hibernate-mapping>

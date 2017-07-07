@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+   <package name="itcast" extends="struts-default">
+  	 <action name="login_*"  class="action.LoginAction" method="{1}">
+      <result name="adminsuccess">/admin/index.jsp</result>
+         <result name="studentsuccess">/student/index.jsp</result>
+         <result name="collegesuccess">/college/index.jsp</result>
+         <result name="navigationsuccess">/navigation/index.jsp</result>
+	  <result name="null">/login.jsp</result>
+     </action>
+     </package>
+</struts>

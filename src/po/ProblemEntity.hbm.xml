@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="po.ProblemEntity" table="problem" schema="sdauweixin">
+        <id name="problemid" column="problemid"/>
+        <property name="studentid" column="studentid"/>
+        <property name="problemtext" column="problemtext"/>
+        <property name="collegeid" column="collegeid"/>
+        <property name="problemstate" column="problemstate"/>
+        <property name="problemtime" column="problemtime"/>
+        <property name="replytext" column="replytext"/>
+        <property name="replytime" column="replytime"/>
+        <property name="teachername" column="teachername"/>
+    </class>
+</hibernate-mapping>

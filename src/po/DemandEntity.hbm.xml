@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="po.DemandEntity" table="demand" schema="sdauweixin">
+        <composite-id mapped="true" class="po.DemandEntityPK">
+            <key-property name="articleid" column="articleid"/>
+            <key-property name="majorid" column="majorid"/>
+        </composite-id>
+        <property name="demandnum" column="demandnum"/>
+    </class>
+</hibernate-mapping>

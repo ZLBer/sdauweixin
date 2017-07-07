@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="po.StampEntity" table="stamp" schema="sdauweixin">
+        <id name="stampid" column="stampid"/>
+        <property name="studentid" column="studentid"/>
+        <property name="studentname" column="studentname"/>
+        <property name="studentmajor" column="studentmajor"/>
+        <property name="collegestate" column="collegestate"/>
+        <property name="nstate" column="nstate"/>
+        <property name="stampuserid" column="stampuserid"/>
+        <property name="stamptime" column="stamptime"/>
+        <property name="functron" column="functron"/>
+        <property name="collegeid" column="collegeid"/>
+    </class>
+</hibernate-mapping>

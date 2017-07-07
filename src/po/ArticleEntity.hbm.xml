@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="po.ArticleEntity" table="article" schema="sdauweixin">
+        <id name="articleid" column="articleid"/>
+        <property name="enterprisename" column="enterprisename"/>
+        <property name="articletext" column="articletext"/>
+        <property name="articletime" column="articletime"/>
+        <property name="columnid" column="columnid"/>
+        <property name="author" column="author"/>
+        <property name="authortel" column="authortel"/>
+        <property name="mediaid" column="mediaid"/>
+        <property name="state" column="state"/>
+        <property name="other" column="other"/>
+    </class>
+</hibernate-mapping>

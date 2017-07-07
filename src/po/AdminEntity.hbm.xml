@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="po.AdminEntity" table="admin" schema="sdauweixin">
+        <id name="gid" column="gid"/>
+        <property name="gname" column="gname"/>
+        <property name="gpassword" column="gpassword"/>
+    </class>
+</hibernate-mapping>

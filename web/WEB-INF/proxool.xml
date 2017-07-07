@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <proxool>
+        <alias>guestbook</alias>
+        <driver-url>jdbc:mysql://127.0.0.1:3306/sdauweixin?useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull</driver-url>
+        <driver-class>org.gjt.mm.mysql.Driver</driver-class>
+        <driver-properties>
+            <property name="user" value="root" />
+            <property name="password" value="root" />
+            <property name="autoReconnect" value="true" />
+
+        </driver-properties>
+        <minimum-connection-count>5</minimum-connection-count>
+        <maximum-connection-count>150</maximum-connection-count>
+        <house-keeping-test-sql>select 1</house-keeping-test-sql>
+        <!-- 最少保持的空闲连接数-->
+        <prototype-count>1</prototype-count>
+
+        <test-before-use>true</test-before-use>
+
+        <!-- proxool自动侦察各个连接状态的时间间隔(毫秒),侦察到空闲的连接就马上回收,超时的销毁-->
+        <house-keeping-sleep-time>60000</house-keeping-sleep-time>
+        <house-keeping-test-sql>select CURRENT_DATE from dual</house-keeping-test-sql>
+
+    </proxool>
