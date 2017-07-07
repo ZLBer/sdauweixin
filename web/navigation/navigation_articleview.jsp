@@ -67,7 +67,7 @@
     </table>
     <br><a href="${pageContext.request.contextPath}${article.mediaid}">下载营业执照</a>
     <div id="left">
-        <a href="/navigation/navigation_view.jsp">返回上一页</a>
+        <a href="${pageContext.request.contextPath}/navigation/navigation_view?pageNo=1">返回上一页</a>
     </div>
 </div>
 </c:forEach>

@@ -37,7 +37,7 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">生源信息<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="/enterprise/major.html" target="_blank">专业介绍</a>
+									<a href="${pageContext.request.contextPath}/enterprise/major.html" target="_blank">专业介绍</a>
 								</li>
 								<li>
 									<a href="http://jyzx.sdau.edu.cn/s/254/t/2009/p/1/c/7744/d/7762/list.htm" target="_blank">辅导员联系方式</a>

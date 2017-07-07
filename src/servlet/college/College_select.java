@@ -105,7 +105,7 @@ public class College_select extends HttpServlet {
         }
         else{
             System.out.print("转发到电脑端jsp");
-            request.getRequestDispatcher("/college/ProblemQuery.jsp").forward(request, response);
+            request.getRequestDispatcher("/college/problemquery.jsp").forward(request, response);
         }
     }
 
