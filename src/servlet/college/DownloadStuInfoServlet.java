@@ -56,7 +56,7 @@ public class DownloadStuInfoServlet extends HttpServlet {
                 StudentEntity stu = null;
                 for (int i=0;i<students.size();i++){
                     stu = students.get(i);
-                    stu.setStudentmajor((conversDataWithMap(stu.getStudentsex(),"BachelorEntity")));//专业
+                    stu.setStudentmajor((conversDataWithMap(stu.getStudentmajor(),"BachelorEntity")));//专业
                     stu.setStudentsex((conversDataWithMap(stu.getStudentsex(),"SexEntity")));//性别
                     stu.setStudentnation(conversDataWithMap(stu.getStudentnation(),"NationEntity"));//民族
                     stu.setPolitical(conversDataWithMap(stu.getPolitical(),"PoliticalEntity"));//政治面貌
@@ -96,6 +96,7 @@ public class DownloadStuInfoServlet extends HttpServlet {
                 String name = String.valueOf(code.get(0));
                 return name;
             }catch (IndexOutOfBoundsException e){
+                e.printStackTrace();
                 return "未知数据";
             }
         }

@@ -4,6 +4,11 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		.right{
+
+		}
+	</style>
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -62,28 +67,28 @@
 					</li>
 				</ol>
 				<div class="carousel-inner">
-					<div class="item next left">
-						<img alt="" src="images/1.jpg" />
+					<div class="item next left" style="background: url('images/2.jpg');background-repeat: repeat">
+						<img style="z-index: 10;" alt="" src="images/1.jpg" />
 						<div class="carousel-caption">
-							<h4>
-								First Thumbnail label
-							</h4>
+							<%--<h4>--%>
+								<%--First Thumbnail label--%>
+							<%--</h4>--%>
 						</div>
 					</div>
-					<div class="item">
+					<div class="item" style="background: url('images/3.jpg');background-repeat: repeat">
 						<img alt="" src="images/2.jpg" />
 						<div class="carousel-caption">
-							<h4>
-								Second Thumbnail label
-							</h4>
+							<%--<h4>--%>
+								<%--Second Thumbnail label--%>
+							<%--</h4>--%>
 						</div>
 					</div>
-					<div class="item active left">
+					<div class="item active left" style="background: url('images/1.jpg');background-repeat: repeat">
 						<img alt="" src="images/3.jpg" />
 						<div class="carousel-caption">
-							<h4>
-								Third Thumbnail label
-							</h4>
+							<%--<h4>--%>
+								<%--Third Thumbnail label--%>
+							<%--</h4>--%>
 						</div>
 					</div>
 				</div> <a class="left carousel-control" href="#carousel-134526" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-134526" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>

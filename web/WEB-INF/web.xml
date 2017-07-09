@@ -810,7 +810,15 @@
         <servlet-name>GetTeacherNamesServlet</servlet-name>
         <servlet-class>servlet.student.GetTeacherNamesServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ModifyStudentInfo</servlet-name>
+        <servlet-class>servlet.college.ModifyStudentInfo</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>ModifyStudentInfo</servlet-name>
+        <url-pattern>/college/modifyStudentInfo</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CheckStamp</servlet-name>
         <url-pattern>/college/checkStamp</url-pattern>

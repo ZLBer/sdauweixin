@@ -11,9 +11,13 @@
 <% response.setHeader("Content-disposition","attachment; filename=student.xls"); %>
 <html>
 <head>
+    <style>
+        td{mso-number-format:"\@";}????
+    </style>
     <title>学生信息</title>
 </head>
 <body>
+
     <table border="1">
         <tr>
             <td>学号</td>

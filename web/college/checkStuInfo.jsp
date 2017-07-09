@@ -150,7 +150,17 @@
                 <th data-options="field:'7'">计算机水平</th>
                 <th data-options="field:'8'">政治面貌</th>
                 <th data-options="field:'9'">状态</th>
-                <th data-options="field:'10'">操作</th>
+                <th data-options="field:'10'">民族</th>
+                <th data-options="field:'11'">电话</th>
+                <th data-options="field:'12'">生源所在地</th>
+                <th data-options="field:'13'">常住地址市区县</th>
+
+
+
+                <th data-options="field:'14'">操作</th>
+
+
+
 
             </tr>
             </thead>
@@ -167,7 +177,12 @@
                     <td>${stu.comlevel}</td>
                     <td>${stu.political}</td>
                     <td>${stu.studentstate}</td>
+                    <td>${stu.studentnation}</td>
+                     <td>${stu.studenttel}</td>
+                      <td>${stu.location}</td>
+                      <td>${stu.resident}</td>
                     <td>
+                        <a href="${pageContext.request.contextPath}/college/modifyStudentInfo.jsp?studentid=${stu.studentid}">修改</a>
                         <a href="javascript:areYouSure(${stu.studentid})">重置</a>&nbsp;
                         <a href="passStuInfoServlet?batch=false&stuId=${stu.studentid}">通过</a>
                     </td>
