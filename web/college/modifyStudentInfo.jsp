@@ -25,7 +25,66 @@
 <tr><td>考生号</td><td><input type="text" name="examid" value="${stu.examid}"/></td></tr>
 <tr><td>姓名</td><td><input type="text"  name="studentname" value="${stu.studentname}"/></td></tr>
 <tr><td>性别  </td><td> <input type="radio" value="男" name="studentsex" <c:if  test="${stu.studentsex=='男'}">checked</c:if>/>男 &nbsp;  <input type="radio" value="女" name="studentsex" <c:if  test="${stu.studentsex=='女'}">checked</c:if>/>女</td></tr>
-<tr><td>民族</td><td><input type="text" name="studentnation" value="${stu.studentnation}"/></td></tr>
+<tr><td>民族</td>
+    <td><select name="studentnation">
+        <option <c:if test="${stu.studentnation}=='汉族'">selected</c:if>>汉族</option>
+        <option <c:if test="${stu.studentnation}=='蒙古族'">selected</c:if>>蒙古族</option>
+        <option <c:if test="${stu.studentnation}=='回族'">selected</c:if>>回族</option>
+        <option <c:if test="${stu.studentnation}=='藏族'">selected</c:if>>藏族</option>
+        <option <c:if test="${stu.studentnation}=='维吾尔族'">selected</c:if>>维吾尔族</option>
+        <option <c:if test="${stu.studentnation}=='苗族'">selected</c:if>>苗族</option>
+        <option <c:if test="${stu.studentnation}=='彝族'">selected</c:if>>彝族</option>
+        <option <c:if test="${stu.studentnation}=='壮族'">selected</c:if>>壮族</option>
+        <option <c:if test="${stu.studentnation}=='布依族'">selected</c:if>>布依族</option>
+        <option <c:if test="${stu.studentnation}=='朝鲜族'">selected</c:if>>朝鲜族</option>
+        <option <c:if test="${stu.studentnation}=='满族'">selected</c:if>>满族</option>
+        <option <c:if test="${stu.studentnation}=='侗族'">selected</c:if>>侗族</option>
+        <option <c:if test="${stu.studentnation}=='瑶族'">selected</c:if>>瑶族</option>
+        <option <c:if test="${stu.studentnation}=='白族'">selected</c:if>>白族</option>
+        <option <c:if test="${stu.studentnation}=='土家族'">selected</c:if>>土家族</option>
+        <option <c:if test="${stu.studentnation}=='哈尼族'">selected</c:if>>哈尼族</option>
+        <option <c:if test="${stu.studentnation}=='哈萨克族'">selected</c:if>>哈萨克族</option>
+        <option <c:if test="${stu.studentnation}=='傣族'">selected</c:if>>傣族</option>
+        <option <c:if test="${stu.studentnation}=='黎族'">selected</c:if>>黎族</option>
+        <option <c:if test="${stu.studentnation}=='傈僳族'">selected</c:if>>傈僳族</option>
+        <option <c:if test="${stu.studentnation}=='佤族'">selected</c:if>>佤族</option>
+        <option <c:if test="${stu.studentnation}=='畲族'">selected</c:if>>畲族</option>
+        <option <c:if test="${stu.studentnation}=='高山族'">selected</c:if>>高山族</option>
+        <option <c:if test="${stu.studentnation}=='拉祜族'">selected</c:if>>拉祜族</option>
+        <option <c:if test="${stu.studentnation}=='水族'">selected</c:if>>水族</option>
+        <option <c:if test="${stu.studentnation}=='东乡族'">selected</c:if>>东乡族</option>
+        <option <c:if test="${stu.studentnation}=='纳西族'">selected</c:if>>纳西族</option>
+        <option <c:if test="${stu.studentnation}=='景颇族'">selected</c:if>>景颇族</option>
+        <option <c:if test="${stu.studentnation}=='柯尔克孜族'">selected</c:if>>柯尔克孜族</option>
+        <option <c:if test="${stu.studentnation}=='土族'">selected</c:if>>土族</option>
+        <option <c:if test="${stu.studentnation}=='达斡尔族'">selected</c:if>>达斡尔族</option>
+        <option <c:if test="${stu.studentnation}=='仫佬族'">selected</c:if>>仫佬族</option>
+        <option <c:if test="${stu.studentnation}=='羌族'">selected</c:if>>羌族</option>
+        <option <c:if test="${stu.studentnation}=='布朗族'">selected</c:if>>布朗族</option>
+        <option <c:if test="${stu.studentnation}=='撒拉族'">selected</c:if>>撒拉族</option>
+        <option <c:if test="${stu.studentnation}=='毛南族'">selected</c:if>>毛南族</option>
+        <option <c:if test="${stu.studentnation}=='仡佬族'">selected</c:if>>仡佬族</option>
+        <option <c:if test="${stu.studentnation}=='锡伯族'">selected</c:if>>锡伯族</option>
+        <option <c:if test="${stu.studentnation}=='阿昌族'">selected</c:if>>阿昌族</option>
+        <option <c:if test="${stu.studentnation}=='普米族'">selected</c:if>>普米族</option>
+        <option <c:if test="${stu.studentnation}=='塔吉克族'">selected</c:if>>塔吉克族</option>
+        <option <c:if test="${stu.studentnation}=='怒族'">selected</c:if>>怒族</option>
+        <option <c:if test="${stu.studentnation}=='乌孜别克族'">selected</c:if>>乌孜别克族</option>
+        <option <c:if test="${stu.studentnation}=='俄罗斯族'">selected</c:if>>俄罗斯族</option>
+        <option <c:if test="${stu.studentnation}=='鄂温克族'">selected</c:if>>鄂温克族</option>
+        <option <c:if test="${stu.studentnation}=='德昂族'">selected</c:if>>德昂族</option>
+        <option <c:if test="${stu.studentnation}=='保安族'">selected</c:if>>保安族</option>
+        <option <c:if test="${stu.studentnation}=='裕固族'">selected</c:if>>裕固族</option>
+        <option <c:if test="${stu.studentnation}=='京族'">selected</c:if>>京族</option>
+        <option <c:if test="${stu.studentnation}=='塔塔尔族'">selected</c:if>>塔塔尔族</option>
+        <option <c:if test="${stu.studentnation}=='独龙族'">selected</c:if>>独龙族</option>
+        <option <c:if test="${stu.studentnation}=='塔塔尔族'">selected</c:if>>塔塔尔族</option>
+        <option <c:if test="${stu.studentnation}=='鄂伦春族'">selected</c:if>>鄂伦春族</option>
+        <option <c:if test="${stu.studentnation}=='赫哲族'">selected</c:if>>赫哲族</option>
+        <option <c:if test="${stu.studentnation}=='门巴族'">selected</c:if>>门巴族</option>
+        <option <c:if test="${stu.studentnation}=='珞巴族'">selected</c:if>>珞巴族</option>
+        <option <c:if test="${stu.studentnation}=='基诺族'">selected</c:if>>基诺族</option>
+    </select></td></tr>
 <tr><td>身份证号</td><td><input type="text" name="studentnumber" value="${stu.studentnumber}"/></td></tr>
 <tr><td>政治面貌</td><td>
     <select name="political">
@@ -67,8 +126,22 @@
 <tr><td>出生日期</td><td><input type="text"name="studentbirthday" value="${stu.studentbirthday}"/></td></tr>
 <tr><td>学位</td><td><input type="text" name="degree"value="${stu.degree}"/></td></tr>
 <tr><td>主修外语语种</td><td><input type="text"name="majorforeign" value="${stu.majorforeign}"/></td></tr>
-<tr><td>外语水平</td><td><input type="text"name="foreignlevel" value="${stu.foreignlevel}"/></td></tr>
-<tr><td>计算机水平</td><td><input type="text" name="comlevel"value="${stu.comlevel}"/></td></tr>
+<tr><td>外语水平</td>
+    <td>
+    <select name="foreignlevel">
+        <option <c:if test="${stu.foreignlevel}=='四级'">selected</c:if>>四级</option>
+        <option <c:if test="${stu.foreignlevel}=='六级'">selected</c:if>>六级</option>
+    </select>
+    </td>
+</tr>
+<tr><td>计算机水平</td><td>
+    <select name="comlevel">
+        <option <c:if test="${stu.comlevel}==' '">selected</c:if>>无</option>
+        <option <c:if test="${stu.comlevel}=='二级'">selected</c:if>>二级</option>
+        <option <c:if test="${stu.comlevel}=='三级'">selected</c:if>>三级</option>
+        <option <c:if test="${stu.comlevel}=='四级'">selected</c:if>>四级</option>
+    </select>
+</td></tr>
 <tr><td>入学年份</td><td><input type="text"name="enteryear" value="${stu.enteryear}"/></td></tr>
 <tr><td>毕业时间</td><td><input type="text"name="" value="${stu.graduationtime}"/></td></tr>
 <tr><td>是否定向培养</td><td><input type="text"name="universityname" value="${stu.universityname}"/></td></tr>-
@@ -84,7 +157,12 @@
 <tr><td>常住地乡镇街道办事处描述</td><td><input type="text"name="residentaddress" value="${stu.residentaddress}"/></td></tr>
 <tr><td>现户籍所在地乡镇记街道办事处</td><td><input type="text" name="registeroffice"value="${stu.registeroffice}"/></td></tr>
 <tr><td>现户籍所在地乡镇记街道办事处描述</td><td><input type="text"name="registeraddress" value="${stu.registeraddress}"/></td></tr>
-<tr><td>户籍性质</td><td><input type="text"name="tpye" value="${stu.tpye}"/></td></tr>
+<tr><td>户籍性质</td><td>
+    <select name="tpye">
+        <option <c:if test="${stu.tpye}=='农业户口'">selected</c:if>>农业户口</option>
+        <option <c:if test="${stu.tpye}=='非农业户口'">selected</c:if>>非农业户口</option>
+    </select>
+</td></tr>
 <tr><td>职业资格</td><td><input type="text"name="vocational" value="${stu.vocational}"/></td></tr>
 <tr><td>家庭常用联系电话</td><td><input type="text"name="hometel" value="${stu.hometel}"/></td></tr>
 <tr><td>户籍登记日期</td><td><input type="text" name="registertime"value="${stu.registertime}"/></td></tr>

@@ -46,7 +46,7 @@
                     <select name="function">
                         <option>三支一扶</option>
                         <option>就业协议书</option>
-                        <option>就业推荐表</option>
+                        <%--<option>就业推荐表</option>--%>
                         <option>选调生/基层就业</option>
                         <option>银行推荐表</option>
                         <option>其他</option>

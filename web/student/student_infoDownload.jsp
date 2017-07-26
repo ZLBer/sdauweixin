@@ -20,7 +20,7 @@
 <body>
 <div style="padding:0 200px;">
 <h2><font face="楷体" color="#000066" size="+3">填写相关信息下载就业推荐表</font></h2>
-<form action="student_infoDownload" method="post">
+<form action="${pageContext.request.contextPath}/student/student_infoDownload" method="post">
     <input type="hidden" name="studentid" value="${user.studentid}">
     <table>
         <tr>
