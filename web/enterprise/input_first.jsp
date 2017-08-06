@@ -42,6 +42,7 @@
                         <span class="input-group-addon">联系人电话：</span>
                         <input type="text" name="authortel" class="form-control" placeholder="在此输入联系人电话" required>
                     </div>
+                    <p style="color:red;">温馨提示：请填写您的手机号，以便接收所关注微信平台的验证码。关注后我们会将审核结果发送到您的微信上。</p>
                     <p>招聘信息简章：</p>
                     <textarea class="ckeditor"   name="articletext" rows="20" cols="216" >（这里填写招聘信息）
             </textarea>

@@ -24,10 +24,12 @@
                 </h1>
             </div>
             <div style="align:center">
-                <img src="erweima.jpg" height="300px" width="300px">
-                欢迎关注山农大就业指导中心企业号，您的招聘信息通过审核后可拥有企业号使用权限。
+                <div align="center"><img  src="erweima.jpg" height="300px" width="300px">   </div>
                 <br>
-                <a href="${pageContext.request.contextPath }/index.jsp">返回主页</a>
+                <h1>欢迎关注山农大就业指导中心企业号，您的招聘信息通过审核后可拥有企业号使用权限。</h1>
+                <br>
+                <div align="center"><h3> <a  href="${pageContext.request.contextPath }/index.jsp">返回主页</a></h3> </div>
+
             </div>
         </div>
     </div>

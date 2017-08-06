@@ -27,16 +27,16 @@
             <td>邮编：
             </td>
             <td>
-                <input type="text" class="easyui-textbox" name="youbian" style="width:400px; height:100px"/>
+                <input type="text" class="easyui-textbox" name="youbian" style="width:200px; height:25px"/>
             </td>
         </tr>
     <tr>
          <td>特长爱好:</td>
-         <td><textarea name="aihao" class="easyui-textbox" style="width:400px; height:100px" data-options="multiline:true"></textarea></br></td>
+         <td><textarea name="aihao" class="easyui-textbox" style="width:400px; height:50px" data-options="multiline:true"></textarea></br></td>
     </tr>
    <tr>
        <td>在校担任职务:</td>
-       <td><textarea name="zhiwu" class="easyui-textbox" style="width:400px; height:100px" data-options="multiline:true"></textarea></br></td>
+       <td><textarea name="zhiwu" class="easyui-textbox" style="width:400px; height:50px" data-options="multiline:true"></textarea></br></td>
    </tr>
    <tr>
         <td>社会实践情况:</td>

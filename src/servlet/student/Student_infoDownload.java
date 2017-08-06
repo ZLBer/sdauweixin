@@ -26,7 +26,7 @@ import java.util.Map;
 //就业推荐表下载
 public class Student_infoDownload extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String [] xinxi=new String[7];
+        String [] xinxi=new String[8];
         xinxi[0]=new String(request.getParameter("aihao").getBytes("ISO-8859-1"),"utf-8");
         xinxi[1]=new String(request.getParameter("zhiwu").getBytes("ISO-8859-1"),"utf-8");
         xinxi[2]=new String(request.getParameter("shijian").getBytes("ISO-8859-1"),"utf-8");
@@ -34,7 +34,8 @@ public class Student_infoDownload extends HttpServlet {
         xinxi[4]=new String(request.getParameter("zhengshu").getBytes("ISO-8859-1"),"utf-8");
         xinxi[5]=new String(request.getParameter("zhiyuan").getBytes("ISO-8859-1"),"utf-8");
         xinxi[6]=new String(request.getParameter("pingjia").getBytes("ISO-8859-1"),"utf-8");
-        System.out.println(xinxi[6]);
+        xinxi[7]=new String(request.getParameter("youbian").getBytes("ISO-8859-1"),"utf-8");
+
         int studentid = Integer.parseInt(request.getParameter("studentid"));
         //获取要下载的文件名
         String filename =studentid+".doc";
