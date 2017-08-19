@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: C
-  Date: 2017/5/12
-  Time: 20:19
+  Date: 2017/5/11
+  Time: 21:45
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page  pageEncoding="UTF-8"%>
@@ -24,7 +24,7 @@
                 major.options.add(new Option("--请选择专业--"));
             }
             else{
-                var url="list";
+                var url="college_list";
                 var params="coll="+c;
                 sendRequest(url,params,'POST',show);
             }
@@ -60,7 +60,7 @@
     </style>
 </head>
 
-<body onload="refresh()" background="${pageContext.request.contextPath}/images/beijing.png">
+<body onload="refresh()">
 <table>
     <tr><th>专业</th><th>需求人数</th><th>删除</th></tr>
     <tr><td>
@@ -86,7 +86,7 @@
             <table>
                 <c:forEach items="${demandList}" var="demand">
                     <tr>
-                        <td><a href='demand_delete2?majorid=${demand.majorid}' onclick="return confirm('确实要删除该 记录吗？')">删除</a></td>
+                        <td><a href='college_delete?majorid=${demand.majorid}' onclick="return confirm('确实要删除该 记录吗？')">删除</a></td>
                     </tr>
                 </c:forEach>
             </table>
@@ -97,10 +97,7 @@
 <br>
 <br>
 ${msg}
-<div align="center">
-    <a href="major.html" target="_blank">查看专业介绍</a>
-</div>
-<form action="enterprise_insecond2">
+<form action="college_insecond">
     <table align="center">
         <tr>
             <select name="college" id="college" onchange="refresh()">
@@ -126,7 +123,7 @@ ${msg}
         </tr>
         <tr>
             <select name="major" id="major">
-                <option>--请选择专业--</option>
+                <option>--请选择专业－－</option>
             </select>
         </tr>
         <br>
@@ -135,11 +132,9 @@ ${msg}
         </tr>
         <tr>
             <td> <input type="submit" value="添加">
-                <a href="input_third2.jsp">下一步</a></td>
+                <a href="college_message.jsp">下一步</a></td>
         </tr>
     </table>
-    <img src="${pageContext.request.contextPath}/images/xyzy.jpg" style="width:100%;height:1500px">
-    <%--<div style="bottom:0; left:0; position:fixed; width:100%"><img src="${pageContext.request.contextPath}/images/dibu.png" style="width:100%;height:50px"></div>--%>
 </form>
 
 </body>

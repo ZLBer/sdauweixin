@@ -63,7 +63,8 @@
 					<p><a class="easyui-linkbutton" onclick="addTab('查看学生问题','${pageContext.request.contextPath}/college/college_problemAll?pageNo=1')" target="right">查看学生问题</a></p>
 
 				</div>
-				<div title="发布企业专场" style="padding:10px">
+				<div title="发布就业信息和企业专场" style="padding:10px">
+					<p><a  class="easyui-linkbutton" onclick="addTab('发布就业信息','${pageContext.request.contextPath}/college/input_first2.jsp')"  target="right">发布就业信息</a></p>
 					<p><a  class="easyui-linkbutton" onclick="addTab('发布企业专场','${pageContext.request.contextPath}/college/input_first.jsp')"  target="right">发布企业专场</a></p>
 				</div>
                 <div title="修改密码" style="padding:10px">

@@ -38,14 +38,26 @@
        <td>在校担任职务:</td>
        <td><textarea name="zhiwu" class="easyui-textbox" style="width:400px; height:50px" data-options="multiline:true"></textarea></br></td>
    </tr>
+        <tr>
+            <td></td>
+            <td ><p style="color: red">提示：为了不影响版面或格式美观，请将社会实践情况描述控制在8行以内。</p></td>
+        </tr>
    <tr>
         <td>社会实践情况:</td>
         <td><textarea name="shijian" class="easyui-textbox" style="width:400px; height:100px" data-options="multiline:true"></textarea></br></td>
     </tr>
+        <tr>
+            <td></td>
+            <td ><p style="color: red">提示：为了不影响版面或格式美观，请将奖惩情况描述控制在7行以内。</p></td>
+        </tr>
     <tr>
         <td>奖惩情况:</td>
         <td><textarea name="jiangcheng" class="easyui-textbox" style="width:400px; height:100px" data-options="multiline:true"></textarea></br></td>
     </tr>
+        <tr>
+            <td></td>
+            <td ><p style="color: red">提示：为了不影响版面或格式美观，请将所获专业类证书描述控制在3行以内。</p></td>
+        </tr>
     <tr>
         <td>所获专业类证书:</td>
         <td><textarea name="zhengshu" class="easyui-textbox" style="width:400px; height:100px" data-options="multiline:true"></textarea></br></td>
@@ -60,7 +72,7 @@
     </tr>
     </table>
     <input type="submit" class="easyui-linkbutton" style="width:100px;height:25px;" value="提交并下载">
-    
+    <p style="color: red">提示：若遇到格式不正确可自行修改。</p>
 </form>
 </div>
 </body>

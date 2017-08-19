@@ -142,7 +142,8 @@ ${msg}
                 <a href="input_third.jsp">下一步</a></td>
         </tr>
     </table>
-    <div style="bottom:0; left:0; position:fixed; width:100%"><img src="${pageContext.request.contextPath}/images/dibu.png" style="width:100%;height:150px"></div>
+    <img src="${pageContext.request.contextPath}/images/xyzy.jpg" style="width:100%;height:1500px">
+    <%--<div style="bottom:0; left:0; position:fixed; width:100%"><img src="${pageContext.request.contextPath}/images/dibu.png" style="width:100%;height:50px"></div>--%>
 </form>
 
 </body>

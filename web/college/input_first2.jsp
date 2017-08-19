@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
     <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
@@ -15,7 +16,7 @@
 <body>
 <center>
     <form method="post" action="college_infirst" >
-        <input type="hidden" name="columnid" value="2">
+        <input type="hidden" name="columnid" value="1">
         <table>
             <tr>
             <tr><td>企业名称</td><td><input type="text" name="enterprisename"/></td></tr>

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -28,6 +29,7 @@ public class College_infirst extends HttpServlet {
         String   author=request.getParameter("author");
         String   authortel=request.getParameter("authortel");
         String   other=request.getParameter("other");
+        String  columnid=request.getParameter("columnid");
 
 
         ArticleEntity articleEntity=new  ArticleEntity();
@@ -43,10 +45,24 @@ public class College_infirst extends HttpServlet {
         Date date = new Date();// new Date()为获取当前系统时间，也可使用当前时间戳
         Timestamp nousedate = new Timestamp(date.getTime());
         articleEntity.setArticletime(nousedate);
-        articleEntity.setColumnid(2);
-        HibernateUtil.add(articleEntity);
-        session.setAttribute("article",articleEntity);
-        request.getServletContext().getRequestDispatcher("/college/input_second.jsp").forward(request, response);
+        if(columnid.equals("2")) {
+            articleEntity.setColumnid(2);
+            HibernateUtil.add(articleEntity);
+            String condition="where article.enterprisename='"+enterprisename+"' order by articleid desc";
+            java.util.List<ArticleEntity> userList=new ArrayList<ArticleEntity>();
+            userList= HibernateUtil.query("ArticleEntity article", condition);
+            session.setAttribute("article",userList.get(0));
+            request.getServletContext().getRequestDispatcher("/college/input_second.jsp").forward(request, response);
+        }
+        else {
+            articleEntity.setColumnid(1);
+            HibernateUtil.add(articleEntity);
+            String condition="where article.enterprisename='"+enterprisename+"' order by articleid desc";
+            java.util.List<ArticleEntity> userList=new ArrayList<ArticleEntity>();
+            userList= HibernateUtil.query("ArticleEntity article", condition);
+            session.setAttribute("article",userList.get(0));
+            request.getServletContext().getRequestDispatcher("/college/input_second2.jsp").forward(request, response);
+        }
 
     }
 
