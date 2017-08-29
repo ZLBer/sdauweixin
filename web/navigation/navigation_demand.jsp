@@ -46,7 +46,8 @@
         </table>
             <div style="float:left;">
                 <%--<a href="article_queryByNavi?aid=${article.articleid}">返回上一页</a>--%>
-                    <td><a href="${pageContext.request.contextPath}/navigation/article_queryByNavi?aid=${aid}">返回上一页</a></td>
+                <a href="${pageContext.request.contextPath}/enterprise/enterprise_insecond2?modify=true&major=&college=0">修改</a>
+                <a href="${pageContext.request.contextPath}/navigation/article_queryByNavi?aid=${aid}">返回上一页</a>
             </div>
             <%--<%=((List)request.getAttribute("articleList")).size()%>--%>
 

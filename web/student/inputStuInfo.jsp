@@ -200,11 +200,7 @@
             <tr>
                 <td >外语水平</td>
                 <td>
-                    <select name="foreignLevel">
-                        <option value=" ">无</option>
-                        <option>四级</option>
-                        <option>六级</option>
-                    </select>
+                    <input type="text" name="foreignLevel"/>
                 </td>
             </tr>
             <tr>
