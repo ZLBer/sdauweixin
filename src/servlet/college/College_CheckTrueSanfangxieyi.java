@@ -55,7 +55,7 @@ public class College_CheckTrueSanfangxieyi extends HttpServlet {
             String[] a = {"xieyi.studentid", "xieyi.xieyiid"
                     , "student.studentname","xieyi.downloadstate"};
             String[] tableAlias = {"StudentEntity as " + STUDENT, "XieyiEntity as " + XIEYI};
-            final String CONDITION = "WHERE " + STUDENT + "." + PRIMARYKEY + "=" + XIEYI + "." + PRIMARYKEY + condition;
+            final String CONDITION = "WHERE " + STUDENT + "." + PRIMARYKEY + "=" + XIEYI + "." + PRIMARYKEY + condition+" order by xieyiid desc";
 
             List<Object[]> studentlist = multiTableSelect(tableAlias, a, CONDITION, pageNo, pageSize);
             int t1=recordCount%pageSize;;

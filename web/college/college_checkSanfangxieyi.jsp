@@ -60,15 +60,17 @@
             <th data-options="field:'1'"></th>
             <th data-options="field:'2'">学号</th>
             <th data-options="field:'3'">三方协议编号</th>
-            <th data-options="field:'4'">操作</th>
+            <th data-options="field:'4'">申请理由</th>
+            <th data-options="field:'5'">操作</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach  var="student" begin="${(page_current-1)*page_size}" end="${page_current*page_size-1}" items="${students}">
             <tr>
-                <td><input type="checkbox" name="studentids" value="${student.studentid}">
+                <td><input type="checkbox" name="studentids" value="${student.studentid}"></td>
                 <td>${student.studentid}</td>
-                <td>${student.xieyiid}</td>
+                <td>${student.xieyinum}</td>
+                <td>${student.others}</td>
                 <td>
                     <a href="college_passSanfangxieyi?xieyiid=${student.xieyiid}&collegeid=${user.collegeid}">通过</a> &nbsp;
                     <a href="college_nopassSanfangxieyi?xieyiid=${student.xieyiid}&collegeid=${user.collegeid}">未通过</a> &nbsp;
@@ -77,6 +79,8 @@
             </tr>
         </c:forEach>
         </tbody>
+    </table>
+    <table>
     <tr>
         共有记录${length}条， 第${page_current}页/共${page_count}页
     <c:if test="${page_current>1}">
@@ -96,9 +100,8 @@
         </c:if>
         <br/><br/>
         </c:if>
-
     </tr>
-</table>
+    </table>
 </form>
 </center>
 </body>

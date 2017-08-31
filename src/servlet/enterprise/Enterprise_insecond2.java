@@ -25,7 +25,7 @@ public class Enterprise_insecond2 extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         ArticleEntity article=new ArticleEntity();
         MajorEntity user=new MajorEntity();
-
+        String modify = request.getParameter("modify");
         String majorname = new String(request.getParameter("major").getBytes("iso-8859-1"),"UTF-8");
         int collegeid=Integer.parseInt(request.getParameter("college"));
         if(collegeid>0) {
@@ -77,6 +77,10 @@ public class Enterprise_insecond2 extends HttpServlet {
                 request.setAttribute("msg", msg);
                 request.setAttribute("demandList", demandList);
                 request.setAttribute("majorList", majorList);
+                if (modify!=null&&modify.equals("true")) {
+                    request.getRequestDispatcher("/enterprise/input_second3.jsp").forward(request, response);
+                    return;
+                }
                 request.getRequestDispatcher("/enterprise/input_second2.jsp").forward(request, response);
             }
         }
@@ -101,6 +105,11 @@ public class Enterprise_insecond2 extends HttpServlet {
 
             String msg="专业不能为空！";
             request.setAttribute("msg", msg);
+
+            if (modify!=null&&modify.equals("true")) {
+                request.getRequestDispatcher("/enterprise/input_second3.jsp").forward(request, response);
+                return;
+            }
             request.getRequestDispatcher("/enterprise/input_second2.jsp").forward(request, response);
         }
     }

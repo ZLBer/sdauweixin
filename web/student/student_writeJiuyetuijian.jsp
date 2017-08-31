@@ -18,7 +18,7 @@
 </head>
 <body>
 <div style="padding:0 200px;">
-    <form actio="Student_infoDownload" method="post">
+    <form action="Student_infoDownload" method="post">
         <input type="hidden" name="studentid" value="${user.studentid}">
         <table>
             <tr>

@@ -24,6 +24,7 @@ public class Demand_delete2 extends HttpServlet {
         ArticleEntity arti=(ArticleEntity)request.getSession().getAttribute("article");
         int art=arti.getArticleid();
         int majorid=Integer.parseInt(request.getParameter("majorid"));
+        String modify = request.getParameter("modify");
 
         String condition = "where demand.articleid=" + art + " and demand.majorid=" + majorid;
         java.util.List<DemandEntity> demandList = new ArrayList<DemandEntity>();
@@ -47,6 +48,9 @@ public class Demand_delete2 extends HttpServlet {
         }
         request.setAttribute("demandList", demandList);
         request.setAttribute("majorList", majorList);
+        if (modify!=null&&modify.equals("true")){
+            request.getRequestDispatcher("/enterprise/input_second3.jsp").forward(request, response);
+        }
         request.getRequestDispatcher("/enterprise/input_second2.jsp").forward(request, response);
     }
 }

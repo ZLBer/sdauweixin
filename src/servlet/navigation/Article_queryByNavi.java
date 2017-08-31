@@ -25,6 +25,7 @@ public class Article_queryByNavi extends HttpServlet {
         String condition="where article.articleid="+aid;
         java.util.List<ArticleEntity> userList=new ArrayList<ArticleEntity>();
         userList= HibernateUtil.query("ArticleEntity article", condition);
+        request.getSession().setAttribute("article",userList.get(0));
         request.setAttribute("articleList",userList);
         request.getRequestDispatcher("/navigation/navigation_modify.jsp").forward(request,response);
 
