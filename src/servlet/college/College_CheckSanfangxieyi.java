@@ -33,7 +33,7 @@ public class College_CheckSanfangxieyi extends HttpServlet {
        int collegeid=Integer.parseInt(request.getParameter("collegeid"));
         CollegeEntity college=(CollegeEntity) HibernateUtil.get(CollegeEntity.class,collegeid);
        int  page_current=Integer.parseInt(request.getParameter("page_current"));
-   int page_size=15;
+   int page_size=20;
       String collegename=college.getCollegename();
         String  hql="where state=0 and collegename="+"'"+collegename+"' order by xieyiid desc";
       List<XieyiEntity> students=HibernateUtil.query("XieyiEntity",hql);
@@ -46,7 +46,7 @@ public class College_CheckSanfangxieyi extends HttpServlet {
             request.setAttribute("page_current",1);
         else
         request.setAttribute("page_current",page_current);//页码
-        request.setAttribute("page_size",10);//页码
+        request.setAttribute("page_size",page_size);//页码
         request.setAttribute("length",students.size());//总长度
         request.setAttribute("page_count",students.size()%page_size==0?students.size()/page_size:students.size()/page_size+1);//总页码
         request.setAttribute("students",students); //遍历集合

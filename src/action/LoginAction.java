@@ -1,12 +1,13 @@
 package action;
 
 import com.opensymphony.xwork2.ActionContext;
-import po.AdminEntity;
-import po.CollegeloginEntity;
-import po.NavigationloginEntity;
-import po.StudentloginEntity;
+import net.sf.json.JSONObject;
+import po.*;
 import servlet.Encrypt;
 import util.HibernateUtil;
+import weixin.ParamesAPI.util.ParamesAPI;
+import weixin.ParamesAPI.util.WeixinUtil;
+import weixin.contacts.util.MPerson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,9 +89,18 @@ public class LoginAction {
 						msg = "id不存在";
 					} else {
 						if (Encrypt.MD5(userpwd).equals(user.getStudentpassword())) {
+							StudentEntity student=(StudentEntity) HibernateUtil.get(StudentEntity.class,Integer.parseInt(this.userid));
 							ActionContext.getContext().getSession().put("user", user);
+							ActionContext.getContext().getSession().put("stu", student);
+							if(checkStatus(this.userid)==4) {
+								return "studentfail";
+							}
+
+
+							System.out.println(student);
 							return "studentsuccess";
-						} else {
+						}
+							else {
 							msg = "密码不正确";
 						}
 					}
@@ -142,5 +152,41 @@ public class LoginAction {
 		}
 		else {msg="验证码不正确";}
 		return "null";
+	}
+	/**
+	 * 检查用户关注状态
+	 * status=1：已关注
+	 * status=2：已被禁用
+	 * status=3：未关注
+	 * @param userid
+	 * @return
+	 */
+	public static int checkStatus(String userid){
+
+		int status=4; 			//默认未激活
+		//获取凭证
+		String access_token= WeixinUtil.getAccessToken(ParamesAPI.corpId, ParamesAPI.secret).getToken();
+		MPerson mperson = new MPerson();
+		String getPersonUrl = mperson.GPerson(userid).replace("ACCESS_TOKEN",access_token);
+
+		JSONObject jsonobject = WeixinUtil.HttpRequest(getPersonUrl, "GET", null);
+
+		if(null!=jsonobject){
+
+			String s=jsonobject.getString("status");
+			if(!s.equals("")){
+
+				status=Integer.parseInt(jsonobject.getString("status"));
+			}else{
+
+				int errorCode = jsonobject.getInt("errcode");
+				String errMsg = jsonobject.getString("errmsg");
+				System.out.println("错误码："+errorCode+"————"+"错误信息："+errMsg);
+			}
+		}
+		else{
+			System.out.println("获取授权失败了，●﹏●，自己找原因。。。");
+		}
+		return status;
 	}
 }

@@ -7,6 +7,7 @@
   	 <action name="login_*"  class="action.LoginAction" method="{1}">
       <result name="adminsuccess">/admin/index.jsp</result>
          <result name="studentsuccess">/student/index.jsp</result>
+         <result name="studentfail">/student/fail.jsp</result>
          <result name="collegesuccess">/college/index.jsp</result>
          <result name="navigationsuccess">/navigation/index.jsp</result>
 	  <result name="null">/login.jsp</result>

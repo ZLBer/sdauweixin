@@ -27,12 +27,12 @@ public class Navigation_Stamp extends HttpServlet {
         String fieldValue=request.getParameter("fieldValue");
         String condition="";
         if(fieldName!=null && !"".equals(fieldName)){
-            condition= hql+" and "+fieldName +" like '%"+fieldValue+"%'";
+            condition= hql+" and "+fieldName +" like '%"+fieldValue+"%' order by stampid";
         }
         else {
-            condition= hql;
+            condition= hql+" order by stampid";
         }
-        int pageSize= 5;
+        int pageSize= 20;
         int pageNo=Integer.parseInt(request.getParameter("pageNo"));
 
         List<StampEntity> stamps = HibernateUtil.query("StampEntity",condition,"",pageNo,pageSize);

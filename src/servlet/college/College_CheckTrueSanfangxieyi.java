@@ -40,7 +40,7 @@ public class College_CheckTrueSanfangxieyi extends HttpServlet {
             hql="where state=1 and collegename="+"'"+collegename+"'";
             condition= " and state=1 and collegename="+"'"+collegename+"'";
         }
-        int pageSize=15;
+        int pageSize=20;
         int pageNo=Integer.parseInt(request.getParameter("pageNo"));
         if(fieldName!=null &&fieldName.equals("studentname"))
         {

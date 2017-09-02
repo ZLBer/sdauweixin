@@ -26,9 +26,9 @@ public class Navigation_view extends HttpServlet {
         String fieldValue = request.getParameter("fieldValue");
         String condition = "";
         if (fieldName != null && !"".equals(fieldName)) {
-            condition = " where " + fieldName + " like '%" + fieldValue + "%'";
+            condition = " where " + fieldName + " like '%" + fieldValue + "%' order by article id";
         }
-        int pageSize = 5;
+        int pageSize = 20;
         int pageNo=Integer.parseInt(request.getParameter("pageNo")==null?"1":request.getParameter("pageNo"));
         try {
             int recordCount = HibernateUtil.recordCount("ArticleEntity", condition);

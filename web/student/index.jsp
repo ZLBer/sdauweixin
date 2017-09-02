@@ -39,7 +39,7 @@
 		<div data-options="region:'north'" style="height:50px; background:#9FC">
 			<font size="+2" color="#000066" face="楷体">山东农业大学就业导航中心
 			</font>
-			<div align="right"> 当前用户：${user.studentid}
+			<div align="right"> 当前用户：${user.studentid},${stu.studentname}。
 				<a href="${pageContext.request.contextPath }/logout" target="_top" >退出登录</a>
 			</div>
 		</div>
