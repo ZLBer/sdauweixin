@@ -32,6 +32,12 @@ public class College_CheckTrueSanfangxieyi extends HttpServlet {
         String  hql="";
         String condition="";
         int recordCount=0;
+        int allCount=0;
+        int yesCount=0;
+        allCount=HibernateUtil.recordCount("XieyiEntity","where collegename="+"'"+collegename+"'");
+        yesCount=HibernateUtil.recordCount("XieyiEntity","where state=1 and collegename="+"'"+collegename+"'");
+        request.setAttribute("allCount", allCount);
+        request.setAttribute("yesCount", yesCount);
         if(fieldName!=null && !"".equals(fieldName)){
             hql="where state=1 and collegename="+"'"+collegename+"' and "+fieldName +" like '%"+fieldValue+"%'";
             condition= " and state=1 and collegename="+"'"+collegename+"' and student."+fieldName +" like '%"+fieldValue+"%'";

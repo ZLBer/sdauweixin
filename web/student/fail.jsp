@@ -1,45 +1,63 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: dell
-  Date: 2017/5/14
-  Time: 18:01
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>欢迎关注企业号</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>微信公众号关注指引</title>
+    <style>
+        .main
+        {
+            width: 2000px;
+            height: auto;
+        }
+        .left
+        {
+            float: left;
+            width: 900px;
+            padding-left: 100px;
+        }
+        .right
+        {
+            float: right;
+            width: 900px;
+            padding-right: 100px;
+        }
+
+    </style>
 </head>
 <body>
-<div class="container" style="height:90%;">
-    <div class="row clearfix">
-        <div class="col-xs-12 col-md-12 col-lg-12 column">
-            <div class="page-header">
-                <h1>您的招聘信息已交由学校审核，请耐心等待。
-                </h1>
-            </div>
-            <div style="align:center">
-                <div align="center"><img  src="${pageContext.request.contextPath }/enterprise/erweima.jpg" height="300px" width="300px">   </div>
-                <br>
-                <h1>欢迎关注山农大就业指导中心企业号，您的招聘信息通过审核后可拥有企业号使用权限。</h1>
-                <br>
-                <div align="center"><h3> <a  href="${pageContext.request.contextPath }/index.jsp">返回主页</a></h3> </div>
+<center><font size="+3" color="black" ><strong>您还未关注山农大就业导航的企业微信，请参照以下指引关注后再进行登录。</strong></font></center><br />
 
-            </div>
-        </div>
+<center><font color="red">以下是微信公众号关注操作指引</font></center><br>
+</center>
+<hr color="white" width="1000px" /><br />
+
+<hr color="black" width="1500px" style="font-weight: bold;" /><br />
+<div class="main">
+    <div class="left">
+        <font style="font-weight: bold;" size="+2">第一步：关注微信平台</font><br />
+        <font size="+2">1.打开微信，选择右上角的</font><font color="red" size="+2">扫一扫</font><font size="+2">，扫描下方</font><font color="red" size="+2">二维码</font><font size="+2">后关注企业号。</font><br />
+        <img src="${pageContext.request.contextPath}/images/zhiyin1.png" style="width: 300px;height: 300px;" /><br />
+        <font size="+2"> 2.点击关注</font><br>
+        <img src="${pageContext.request.contextPath}/images/zhiyin2.jpg" style="width: 400px;height: 700px;"/><br />
+        <p></p>
+        <font size="+2">关注之后，您将会看到如下图片所示的界面：</font><br />
+        <img src="${pageContext.request.contextPath}/images/zhiyin3.jpg" style="width: 400px;height: 700px;"/><br />
     </div>
-</div>
-<div class="row clearfix" style="top:0px;width:100%">
-    <div class="col-xs-12 col-md-12 col-lg-12 ">
-        <div style="bottom:0px;background:#1f20ff;text-align:center;color:#ffffff;" >
-            <p>Copyright  2011 All Rights Reserved </p>
-            <p>鲁ICP备05002369号 | 版权所有山东农业大学 | 地址:山东省泰安市岱宗大街61号 | 邮编:271018</p>
-        </div>
+    <div class="right">
+        <font style="font-weight: bold;" size="+2">第二步：完成身份验证</font><br />
+        <font size="+2"> 1.点击企业小助手</font><br />
+        <img src="${pageContext.request.contextPath}/images/zhiyin4.jpg" style="width: 400px;height: 700px;" /><br />
+        <P></P>
+        <font size="+2">进入企业小助手之后，点击</font><font color="red" size="+2">关注身份验证</font><font size="+2">。如下图：</font><br />
+        <img src="${pageContext.request.contextPath}/images/zhiyin5.jpg" style="width: 400px;height: 700px;"/><br />
+        <font size="+2"> 2.输入我们邮寄给您的</font><font color="red" size="+2">中国移动手机卡</font><font size="+2">的卡号（</font><font color="red" size="+2">需激活</font><font size="+2">才能接收验证码），</font><br/>
+        <font size="+2"> 点击</font><font color="red" size="+2">获取验证码</font></font>。<br/>
+        <font size="+2"> 收到验证码短信通知后，输入6位的数字验证码，点击</font><font color="red" size="+2">提交</font>。<br />
+        <p></p>
+        <font color="red" size="+2">注：如果微信号所绑定的手机号和所需验证的手机号一致，<br/>
+            则不需要验证。</font><br />
     </div>
 </div>
 </body>

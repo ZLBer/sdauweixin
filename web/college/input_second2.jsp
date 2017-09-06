@@ -132,7 +132,7 @@ ${msg}
         </tr>
         <tr>
             <td> <input type="submit" value="添加">
-                <a href="college_message.jsp">下一步</a></td>
+                <a href="college_SendMessage?articleid=${article.articleid}">下一步</a></td>
         </tr>
     </table>
 </form>

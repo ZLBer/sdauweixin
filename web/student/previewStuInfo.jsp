@@ -184,8 +184,8 @@
                     <td>${stu.studentstate}</td>
                 </tr>
             </table>
-            <input type="submit" value="提交">
-            <span style="color: red;">注意：一经提交将无法再次修改</span>
+            <input type="submit" value="上报">
+            <span style="color: red;">注意：一经上报将无法再次修改</span>
         </form>
         <br>
         <br>

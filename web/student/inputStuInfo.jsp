@@ -34,50 +34,7 @@
     <script typet="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="dateChooser/BeatPicker.js"></script>
     <script type="text/javascript" src="dateChooser/ajax.js"></script>
-    <script type="text/javascript">
-        $(function(){
-            var collegeArray = ["体艺学院","国交学院","化学院","信息学院","水土学院","文法学院",
-                "外语学院","生科学院","食科学院","经管学院","机电学院","动科学院","园艺学院","林学院","资环学院","植保学院","农学院"];
-            var collegeSelectBox = $("#college");
-            for (var i = 0;i<collegeArray.length;i++){
-                if(i==(${stu.studentcollege}-1)){
-                    collegeSelectBox.append("<option selected>"+collegeArray[i]+"</option>");
-                }else{
-                    collegeSelectBox.append("<option>"+collegeArray[i]+"</option>");
-                }
-            }
-        });
-        function refresh()
-        {
-
-            var c=document.getElementById("college").value;
-            var major=document.getElementById("major");
-            if(c=="")
-            {
-                major.length=0;
-                major.options.add(new Option("--请选择专业--"));
-            }
-            else{
-                var url="/admin/college_major";
-                var params="coll="+c;
-                sendRequest(url,params,'POST',show);
-            }
-        }
-        function show()
-        {
-            var major=document.getElementById("major");
-            if(httpRequest.readyState==4){
-                if(httpRequest.status==200)
-                {
-                    var majorlist=httpRequest.responseText.split(",");
-                    var majornum=majorlist.length;
-                    major.length=0;
-                    for(i=0;i<majornum;i++)
-                        $("#major").append("<option>"+majorlist[i]+"</option>");
-                }
-            }
-        }
-    </script>
+    <jsp:include page="loadListJsFunction.jsp"></jsp:include>
 </head>
 <body>
     <center>
@@ -160,7 +117,31 @@
             <%--</tr>--%>
             <tr>
                 <td >辅修专业</td>
-                <td><input name="minor"></td>
+                <td>
+                    <select name="college" id="college" onchange="refresh()">
+                        <option value="0">－－请选择学院－－</option>
+                        <option value="27">体育与艺术学院</option>
+                        <option value="26">国际交流学院</option>
+                        <option value="25">化学与材料科学学院</option>
+                        <option value="24">信息科学与工程学院</option>
+                        <option value="23">水利土木工程学院</option>
+                        <option value="22">文法学院</option>
+                        <option value="21">外国语学院</option>
+                        <option value="20">生命科学学院</option>
+                        <option value="19">食品科学与工程学院</option>
+                        <option value="18">经济管理学院</option>
+                        <option value="17">机械与电子工程学院</option>
+                        <option value="16">动物科技学院</option>
+                        <option value="15">园艺科学与工程学院</option>
+                        <option value="14">林学院</option>
+                        <option value="13">资源与环境学院</option>
+                        <option value="12">植物保护学院</option>
+                        <option value="11">农学院</option>
+                    </select>
+                    <select name="minor" id="major">
+                        <option  value="">--请选择专业--</option>
+                    </select>
+                </td>
             </tr>
             <%--<tr>--%>
                 <%--<td >学制</td>--%>
@@ -185,26 +166,22 @@
                     <%--</select>--%>
                 <%--</td>--%>
             <%--</tr>--%>
-            <%--<tr>--%>
-                <%--<td >主修外语语种</td>--%>
-                <%--<td>--%>
-                    <%--<select name="mForeign">--%>
-                        <%--<option>英语</option>--%>
-                        <%--<option>俄语</option>--%>
-                        <%--<option>日语</option>--%>
-                        <%--<option>法语</option>--%>
-                        <%--<option>德语</option>--%>
-                    <%--</select>--%>
-                <%--</td>--%>
-            <%--</tr>--%>
+            <tr>
+                <td >主修外语语种</td>
+                <td>
+                    <select name="mForeign">
+                        <option>英语</option>
+                        <option>俄语</option>
+                        <option>日语</option>
+                        <option>法语</option>
+                        <option>德语</option>
+                    </select>
+                </td>
+            </tr>
             <tr>
                 <td >外语水平</td>
                 <td>
-                    <select name="foreignLevel">
-                        <option value=" ">无</option>
-                        <option>四级</option>
-                        <option>六级</option>
-                    </select>
+                    <input type="text" name="foreignLevel"/>
                 </td>
             </tr>
             <tr>
@@ -221,6 +198,20 @@
             <tr>
                 <td >职业资格</td>
                 <td><input name="vocational" type="text" value=""></td>
+            </tr>
+            <tr>
+                <td >生源地(区县)</td>
+                <td>
+                    <div class="gover_search">
+                        <div class="gover_search_form clearfix">
+                            <input type="text" class="input_search_key" id="gover_search_key2" placeholder="请输入关键词直接选取" value="${stu.residentoffice}" name="loca"/>
+                            <div class="search_suggest" id="gov_search_suggest2">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </td>
             </tr>
             <%--<tr>--%>
                 <%--<td >入学年份</td>--%>
@@ -325,5 +316,4 @@
     </center>
 </body>
 <script type="text/javascript" src="dateChooser/searchJs.js"></script>
-<script type="text/javascript" src="dateChooser/searchJs1.js"></script>
 </html>

@@ -53,7 +53,8 @@
 </c:if>
 <c:if test="${recordCount>0}">
 <div> * 请学院关闭申请三方协议学生的省内就业通道</div>
-<div>已发放三方协议数量：${recordCount}</div>
+    <div>学院已审核三方协议数量：${yesCount},学院申请三方协议总数量：${allCount}</div>
+<div>搜索到的三方协议数量：${recordCount}</div>
 <a href="college_zipDownloadSanfangxieyi?collegeid=${user.collegeid}&state=1">下载全部</a>&nbsp;&nbsp;&nbsp;&nbsp;
 <table border="1" id="info_table" frame="void" class="easyui-datagrid"
        rownumbers="true"  width="100%">
