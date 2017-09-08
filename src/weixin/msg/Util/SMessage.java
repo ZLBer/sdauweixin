@@ -4,17 +4,11 @@ package weixin.msg.Util;
  * @author Engineer.Jsp
  * @date 2014.10.11
  */
-import net.sf.json.JSONArray;
-import weixin.ParamesAPI.util.ParamesAPI;
-import weixin.ParamesAPI.util.WeixinUtil;
-import weixin.msg.Resp.Article;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class SMessage {
 	//发送接口
 	public static String POST_URL = "https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=ACCESS_TOKEN";
+
 	/**
 	 * text消息
 	 * param touser UserID列表（消息接收者，多个接收者用‘|’分隔）。特殊情况：指定为@all，则向关注该企业应用的全部成员发送————"touser": "UserID1|UserID2|UserID3"
@@ -26,13 +20,31 @@ public class SMessage {
 	 * param safe 表示是否是保密消息，0表示否，1表示是，默认0
 	 * */
 	public static String STextMsg(String touser,String toparty,String totag, int agentid, String content) {
-		String PostData = "{\"touser\": %s,\"toparty\": %s,\"totag\": %s,\"msgtype\": \"text\",\"agentid\": %s,\"text\": {\"content\": %s},\"safe\":\"0\"}";
+
+		String PostData = "{\"touser\": %s,\"toparty\": %s,\"totag\": %s,\"msgtype\": \"text\"," +
+						"\"agentid\": %s,\"text\": {\"content\": %s},\"safe\":\"0\"}";
 		String con="\""+content+"\"";
+		String toUser="\""+touser+"\"";
+		String toParty="\""+toparty+"\"";
+		String toTag="\""+totag+"\"";
+		return String.format(PostData,toUser,toParty,toTag,agentid,con);
+	}
+	/**
+	 * textcard消息
+	 */
+	public static String STextCardMsg(String touser,String toparty,String totag,int agentid , String title,String description,String url,String btntxt){
+		String postData = "{\"touser\": %s,\"toparty\": %s,\"totag\": %s,\"agentid\": %s,\"msgtype\": \"textcard\",\"textcard\": {\"title\": %s,\"description\": %s,\"url\": %s,\"btntxt\": %s}";
 		String touser1="\""+touser+"\"";
 		String toparty1="\""+toparty+"\"";
 		String totag1="\""+totag+"\"";
-		return String.format(PostData,touser1,toparty1,totag1,agentid,con);
+		String totitle="\""+title+"\"";
+		String todescription="\""+description+"\"";
+		String tourl="\""+url+"\"";
+		String tobtntxt="\""+btntxt+"\"";
+		//String articlesList1="\""+articlesList+"\"";
+		return String.format(postData, touser1,toparty1,totag1,agentid,totitle,todescription,tourl,tobtntxt);
 	}
+
 
 
 	/**
@@ -106,13 +118,15 @@ public class SMessage {
 	 * param agentid 企业应用的id，整型。可在应用的设置页面查看
 	 * param articlesList 图文集合
 	 */
-	public static String SNewsMsg(String touser,String toparty,String totag,int agentid , String articlesList){
-		String postData = "{\"touser\": %s,\"toparty\": %s,\"totag\": %s,\"msgtype\": \"news\",\"agentid\": %s,\"news\": {\"articles\":%s}}";
-		String touser1="\""+touser+"\"";
-		String toparty1="\""+toparty+"\"";
-		String totag1="\""+totag+"\"";
-		//String articlesList1="\""+articlesList+"\"";
-		return String.format(postData, touser1,toparty1,totag1,agentid,articlesList);
+	public static String SNewsMsg(String touser,String toparty,String totag,int agentid,String articlesList){
+
+		String postData = "{\"touser\": %s,\"toparty\": %s,\"totag\": %s,\"msgtype\": \"news\"," +
+				"\"agentid\": %s,\"news\": {\"articles\":%s}}";
+		String toUser="\""+touser+"\"";
+		String toParty="\""+toparty+"\"";
+		String toTag="\""+totag+"\"";
+
+		return String.format(postData, toUser,toParty,toTag,agentid,articlesList);
 	}
 
 	/**
@@ -126,8 +140,8 @@ public class SMessage {
 	 */
 	public static String SMpNewsMsg(String toparty, int agentid, String articlesList) {
 		String postData = "{\"toparty\": %s,\"msgtype\": \"mpnews\",\"agentid\": %s,\"mpnews\": {\"articles\":%s}\"safe\":\"1\"}";
-		String toparty1="\""+toparty+"\"";
-		return String.format(postData, toparty1, agentid,articlesList);
+		String toParty="\""+toparty+"\"";
+		return String.format(postData, toParty, agentid,articlesList);
 	}
 
 	//示例

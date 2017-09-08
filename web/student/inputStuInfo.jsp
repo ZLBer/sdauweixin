@@ -16,7 +16,7 @@
         }
 		th,td{
             border:2px solid gray;
-            text-align:center;
+            text-align:left;
             padding:3px 10px;
 			font-family:楷体;
         }
@@ -24,8 +24,15 @@
             border-collapse:collapse;
             margin:0 auto;
 			border-radius:15px;
-			overflow:hidden;
 			background:#E0ECFF;
+        }
+        .input_search_key
+        {
+        	width: 270px;
+        }
+        .op
+        {
+        	width: 270px;
         }
     </style>
     <link rel="stylesheet" href="dateChooser/BeatPicker.css"/>
@@ -39,10 +46,12 @@
 <body>
     <center>
     <h1>完善个人信息</h1>
-    <%--<form action="inputStuInfoServlet" method="post">--%>
+        <center><font color="red" size="+1" >完善的个人信息即为向山东省人社厅上报的毕业生生源信息，涉及到毕业生切身利益，<br>
+            一旦点击“上报”学校将无权修改，请毕业生谨慎填写，确保无误后再点击“上报”。<br></font></center>
+    <!--<%--<form action="inputStuInfoServlet" method="post">--%>-->
     <form action="${pageContext.request.contextPath}/student/gotoPreviewServlet" method="post">
         <table frame="void">
-            <%--<tr>--%>
+          <!--  <%--<tr>--%>
                 <%--<td >考生号</td>--%>
                 <%--<td><input name="examid" type="text" value="${stu.examid}"></td>--%>
             <%--</tr>--%>
@@ -114,7 +123,7 @@
                         <%--<option <c:if test="${stu.universityname}=='非定向'">selected</c:if>>非定向</option>--%>
                     <%--</select>--%>
                 <%--</td>--%>
-            <%--</tr>--%>
+            <%--</tr>--%>-->
             <tr>
                 <td >辅修专业</td>
                 <td>
@@ -143,7 +152,7 @@
                     </select>
                 </td>
             </tr>
-            <%--<tr>--%>
+           <!-- <%--<tr>--%>
                 <%--<td >学制</td>--%>
                 <%--<td>--%>
                     <%--<select name="length">--%>
@@ -165,11 +174,11 @@
                         <%--<option>博士</option>--%>
                     <%--</select>--%>
                 <%--</td>--%>
-            <%--</tr>--%>
+            <%--</tr>--%>-->
             <tr>
                 <td >主修外语语种</td>
                 <td>
-                    <select name="mForeign">
+                    <select name="mForeign" class="op">
                         <option>英语</option>
                         <option>俄语</option>
                         <option>日语</option>
@@ -181,14 +190,14 @@
             <tr>
                 <td >外语水平</td>
                 <td>
-                    <input type="text" name="foreignLevel"/>
+                    <input type="text" class="input_search_key" name="foreignLevel"/>
                 </td>
             </tr>
             <tr>
                 <td >计算机水平</td>
                 <td>
-                    <select name="comLevel">
-                        <option value=" ">无</option>
+                    <select name="comLevel" class="op">
+                        <option value=" " >无</option>
                         <option>二级</option>
                         <option>三级</option>
                         <option>四级</option>
@@ -197,7 +206,7 @@
             </tr>
             <tr>
                 <td >职业资格</td>
-                <td><input name="vocational" type="text" value=""></td>
+                <td><input name="vocational" type="text" class="input_search_key" value=""></td>
             </tr>
             <tr>
                 <td >生源地(区县)</td>
@@ -213,7 +222,7 @@
                     </div>
                 </td>
             </tr>
-            <%--<tr>--%>
+            <!--<%--<tr>--%>
                 <%--<td >入学年份</td>--%>
                 <%--<td><input type="text" data-beatpicker="true" name="enterYear"></td>--%>
             <%--</tr>--%>
@@ -237,10 +246,10 @@
             <%--<tr>--%>
                 <%--<td >委培单位所在地</td>--%>
                 <%--<td><input name="weipeiLoca" type="text" value="${stu.weipeilocation}"></td>--%>
-            <%--</tr>--%>
+            <%--</tr>--%>-->
             <tr>
                 <td >常住地址详细（街道门牌号）</td>
-                <td><input name="residentDetail" type="text" value="${stu.residentdetailed}"></td>
+                <td><input name="residentDetail" type="text" class="input_search_key" value="${stu.residentdetailed}"></td>
             </tr>
              <tr>
                 <td >常住地址乡镇街道办事处</td>
@@ -258,11 +267,11 @@
             </tr>
             <tr>
                 <td >常住地址乡镇街道办事处描述</td>
-                <td><input name="residentAddress" type="text" value="${stu.residentaddress}"></td>
+                <td><input name="residentAddress" type="text" class="input_search_key" value="${stu.residentaddress}"></td>
             </tr>
             <tr>
                 <td >现户籍所在地详细（街道门牌号）</td>
-                <td><input name="registerDetail" type="text" value="${stu.registerdetailed}"></td>
+                <td><input name="registerDetail" type="text" class="input_search_key" value="${stu.registerdetailed}"></td>
             </tr>
             <tr>
                 <td >现户籍地址乡镇街道办事处</td>
@@ -280,32 +289,32 @@
             </tr>
             <tr>
                 <td >现户籍地址乡镇街道办事处描述</td>
-                <td><input name="registerAddress" type="text" value="${stu.registeraddress}"></td>
+                <td><input name="registerAddress" type="text" class="input_search_key" value="${stu.registeraddress}"></td>
             </tr>
             <tr>
                 <td >户籍性质</td>
                 <td>
-                    <select name="type">
-                        <option>农业户口</option>
+                    <select name="type" class="op">
+                        <option >农业户口</option>
                         <option>非农业户口</option>
                     </select>
                 </td>
             </tr>
             <tr>
                 <td >户籍登记日期</td>
-                <td><input type="text" data-beatpicker="true" name="stuBirth"></td>
+                <td><input type="text" class="input_search_key" data-beatpicker="true" name="stuBirth"></td>
             </tr>
             <tr>
                 <td >个人联系电话</td>
-                <td><input name="tel" type="text" value="${stu.studenttel}"></td>
+                <td><input name="tel" type="text" class="input_search_key" value="${stu.studenttel}"></td>
             </tr>
             <tr>
                 <td >家庭常用联系电话</td>
-                <td><input name="homeTel" type="text" value="${stu.hometel}"></td>
+                <td><input name="homeTel" type="text" class="input_search_key" value="${stu.hometel}"></td>
             </tr>
             <tr>
                 <td >E-mail</td>
-                <td><input name="email" type="text" value="${stu.studentemail}"></td>
+                <td><input name="email" type="text" class="input_search_key" value="${stu.studentemail}"></td>
             </tr>
             <tr style="text-align: center">
                 <td><input type="submit" value="预览"></td>

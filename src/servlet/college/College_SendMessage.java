@@ -8,6 +8,7 @@ import po.DemandEntity;
 import util.HibernateUtil;
 import weixin.ParamesAPI.util.ParamesAPI;
 import weixin.ParamesAPI.util.WeixinUtil;
+import weixin.msg.Resp.TextCard;
 import weixin.msg.Util.Articles;
 import weixin.msg.Util.SMessage;
 
@@ -83,36 +84,30 @@ public class College_SendMessage extends HttpServlet {
         //拼接url
         String RequestUrl=smsg.POST_URL.replace("ACCESS_TOKEN",access_token);
         // 新建图文
-        String title="新的招聘信息";//
-        String article_author=author;
+        String title="新的招聘信息";
+        String description="您有新的招聘信息，点击详情查看";
         String serverName=request.getServerName();
-        String Content_source_url=serverName+"/sdauweixin/article_query?aid="+articleid;   //阅读原文的链接
-        System.out.println("阅读原文链接："+Content_source_url);
-        String Content="点击阅读原文查看详细信息";//招聘信息的内容
-        String digest="";
+        String url=serverName+"/sdauweixin/article_query?aid="+articleid;   //阅读原文的链接
+        System.out.println("阅读原文链接："+url);
+        String btntxt="详情";//招聘信息的内容
+        //String digest="";
 
-        Articles articles=new Articles();
-        articles.setTitle(title);
-        articles.setThumb_media_id("2X4-jISenTghV2Y87F-YOTHfdx2o5uQ4qo-JIVbRT0i8zZcZj2SMQDRyC909VofZMURde4Bmh0rzkMoNzFznjlw");
-        articles.setAuthor(article_author);
-        articles.setContent_source_url(Content_source_url);     //阅读原文的链接
-        articles.setContent(Content);       //图文消息内容
-        articles.setDigest(digest);         //图文消息描述
-        articles.setShow_cover_pic("1");    //是否显示封面
-        //整合图文
-        List<Articles> list = new ArrayList<Articles>();
-        list.add(articles);
-        // 图文转json
-        String articlesList = JSONArray.fromObject(list).toString();
+        TextCard textCard = new TextCard();
+        textCard.setTitle(title);
+        textCard.setDescription("您有新的招聘信息，点击详情查看");
+        textCard.setUrl(url);
+        textCard.setBtntxt(btntxt);
+
         //Post数据
         int agentid=ParamesAPI.AgentId_xinxi;
 
-        String PostData1=smsg.SMpNewsMsg(toparty, agentid, articlesList);
+        String PostData1=smsg.STextCardMsg(null,toparty, null,agentid, title,description,url,btntxt);
         System.out.println(PostData1);
         int result1 = WeixinUtil.PostMessage(access_token, "POST", RequestUrl,PostData1);
         // 打印结果
         if (0 == result1) {
             System.out.println("发送招聘信息成功");
+            request.getServletContext().getRequestDispatcher("/college/college_message.jsp").forward(request, response);
         } else {
             System.out.println("发送招聘信息操作失败");
         }

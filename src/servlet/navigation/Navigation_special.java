@@ -54,7 +54,7 @@ public class Navigation_special extends HttpServlet {
         String fieldValue=request.getParameter("fieldValue");
         String condition="";
 
-        condition="where state='未审核' and columnid = 2 order by article id";
+        condition="where state='未审核' and columnid = 2 order by articleid desc";
 
 
         int pageSize=20;

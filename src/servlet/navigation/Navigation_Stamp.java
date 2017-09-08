@@ -27,7 +27,7 @@ public class Navigation_Stamp extends HttpServlet {
         String fieldValue=request.getParameter("fieldValue");
         String condition="";
         if(fieldName!=null && !"".equals(fieldName)){
-            condition= hql+" and "+fieldName +" like '%"+fieldValue+"%' order by stampid";
+            condition= hql+" and "+fieldName +" like '%"+fieldValue+"%' order by stampid desc";
         }
         else {
             condition= hql+" order by stampid";

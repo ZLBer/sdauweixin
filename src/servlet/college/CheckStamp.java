@@ -48,7 +48,7 @@ doGet(request,response);
             collegeid=Integer.parseInt(request.getParameter("collegeid"));
         }
         session.setAttribute("collegeid",collegeid);
-        String condition="where collegestate='未审核' and collegeid="+collegeid+" order by stampid";
+        String condition="where collegestate='未审核' and collegeid="+collegeid+" order by stampid desc";
         int pageSize=20;
         List<StampEntity> stamplist=HibernateUtil.query("StampEntity", condition, "", pageNo, pageSize);
         int recordCount= HibernateUtil.recordCount("StampEntity", condition);

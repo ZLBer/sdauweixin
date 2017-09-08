@@ -54,7 +54,7 @@ public class Navigation_edit extends HttpServlet {
         String fieldValue=request.getParameter("fieldValue");
         String condition="";
 
-        condition="where state='未审核' order by articleid";
+        condition="where state='未审核' ";
 
 
         int pageSize=20;
@@ -62,7 +62,7 @@ public class Navigation_edit extends HttpServlet {
         try {
             int recordCount=HibernateUtil.recordCount("ArticleEntity", condition);
             if(recordCount>0){
-                List<Article> articlelist=HibernateUtil.query("ArticleEntity", condition, "", pageNo, pageSize);
+                List<Article> articlelist=HibernateUtil.query("ArticleEntity", condition, "order by articleid desc", pageNo, pageSize);
                 int t1=recordCount%pageSize;
                 int t2=recordCount/pageSize;
                 int pageCount=(t1==0?t2:t2+1);
