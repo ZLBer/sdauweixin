@@ -1,9 +1,9 @@
 /**
  * Created by Minister on 2017/5/13.
  */
-function oSearchSuggest(searchFuc) {
-    var input = $('#gover_search_key');
-    var suggestWrap = $('#gov_search_suggest');
+function oSearchSuggest(id) {
+    var input = $('#'+id);
+    var suggestWrap = input.next();
     var key = "";
     var init = function () {
         input.bind('keyup', sendKeyWord);
@@ -55,13 +55,36 @@ function oSearchSuggest(searchFuc) {
             if (valText == '' || valText == key) {
                 return;
             }
-            searchFuc(valText);
+            abs(valText);
             key = valText;
         }
-
+    }
+    var abs = function(keyword) {
+        var obj = {
+            "keyword": keyword
+        };
+        $.ajax({
+            type: "POST",
+            url: "test",
+            data: obj,
+            dataType: "text",
+            success: function (result, state) {
+                //var json = eval("("+data+")");
+                var key = result.split(",");
+                var aData = [];
+                for (var i = 0; i < key.length; i++) {
+                    //以下为根据输入返回搜索结果的模拟效果代码,实际数据由后台返回
+                    if (key[i] != "") {
+                        aData.push(key[i]);
+                    }
+                }
+                //将返回的数据传递给实现搜索输入框的输入提示js类
+                dataDisplay(aData);
+            }
+        });
     }
     //请求返回后，执行数据展示
-    this.dataDisplay = function (data) {
+    var dataDisplay = function (data) {
         if (data.length <= 0) {
             suggestWrap.hide();
             return;
@@ -94,30 +117,6 @@ function oSearchSuggest(searchFuc) {
     init();
 }
 //实例化输入提示的JS,参数为进行查询操作时要调用的函数名
-var searchSuggest = new oSearchSuggest(sendKeyWordToBack);
-//这是一个模似函数，实现向后台发送ajax查询请求，并返回一个查询结果数据，传递给前台的JS,再由前台JS来展示数据。本函数由程序员进行修改实现查询的请求
-//参数为一个字符串，是搜索输入框中当前的内容
-function sendKeyWordToBack(keyword) {
-    var obj = {
-        "keyword": keyword
-    };
-    $.ajax({
-        type: "POST",
-        url: "test",
-        data: obj,
-        dataType: "text",
-        success: function (result, state) {
-            //var json = eval("("+data+")");
-            var key = result.split(",");
-            var aData = [];
-            for (var i = 0; i < key.length; i++) {
-                //以下为根据输入返回搜索结果的模拟效果代码,实际数据由后台返回
-                if (key[i] != "") {
-                    aData.push(key[i]);
-                }
-            }
-            //将返回的数据传递给实现搜索输入框的输入提示js类
-            searchSuggest.dataDisplay(aData);
-        }
-    });
-}
+var searchSuggest = new oSearchSuggest('gover_search_key');
+var searchSuggest1 = new oSearchSuggest('gover_search_key1');
+var searchSuggest2 = new oSearchSuggest('gover_search_key2');

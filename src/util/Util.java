@@ -46,11 +46,9 @@ public class Util {
         String registerTime = request.getParameter("registerTime");
         String tel = request.getParameter("tel");
         String email = request.getParameter("email");
-        System.out.println(residentOffic);
-        System.out.println(registerOffice);
+        String loca = getCity(request.getParameter("loca"));
         String resident = getCity(residentOffic);
         String register = getCity(registerOffice);
-        String loca = register;
         //填充实体类
 //        stu.setExamid(examId);
 //        stu.setStudentnation(stuNation);
@@ -59,12 +57,12 @@ public class Util {
 //        stu.setEducation(education);
 //        stu.setStudentmajor(stuMajor);
 //        stu.setTrainingmode(trainMod);
-//        stu.setLocation(loca);
+        stu.setLocation(loca);
 //        stu.setLength(length);
         stu.setMinor(minor);
 //        stu.setStudentbirthday(stuBirth);
 //        stu.setDegree(degree);
-//        stu.setMajorforeign(mForeign);
+        stu.setMajorforeign(mForeign);
         stu.setForeignlevel(foreignLevel);
         stu.setComlevel(comLevel);
 //        stu.setEnteryear(enterYear);
@@ -97,6 +95,9 @@ public class Util {
         return result.toString();
     }
     public static String getCity(String s){
+        if (s==null){
+            return "";
+        }
         int index = 0;
         if(s.indexOf("省")>0){
             String city = s.substring(0,s.indexOf("市")+1);
