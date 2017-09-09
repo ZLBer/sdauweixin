@@ -70,8 +70,9 @@
 				<div title="修改密码" style="padding:10px">
 					<p><a  class="easyui-linkbutton" onclick="addTab('修改密码','${pageContext.request.contextPath}/student/motifypwd.jsp')"  target="right">修改密码</a></p>
 				</div>
-				<div title="用章预约" style="padding:10px">
+				<div title="预约" style="padding:10px">
 					<p><a  class="easyui-linkbutton" onclick="addTab('用章预约','${pageContext.request.contextPath}/student/stamp.jsp')"  target="right">用章预约</a></p>
+					<p><a  class="easyui-linkbutton" onclick="addTab('简历预约','${pageContext.request.contextPath}/student/reservationResume.jsp')"  target="right">简历预约</a></p>
 				</div>
 
 			</div>

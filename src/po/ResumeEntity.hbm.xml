@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-mapping PUBLIC
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
     <class name="po.ResumeEntity" table="resume" schema="sdauweixin">
@@ -14,5 +14,7 @@
         <property name="other1" column="other1"/>
         <property name="other2" column="other2"/>
         <property name="other3" column="other3"/>
+        <property name="studentCollege" column="student_college"/>
+        <property name="studentName" column="student_name"/>
     </class>
 </hibernate-mapping>

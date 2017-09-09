@@ -15,6 +15,8 @@ public class ResumeEntity {
     private String other1;
     private String other2;
     private String other3;
+    private String studentCollege;
+    private String studentName;
 
     public int getId() {
         return id;
@@ -120,5 +122,21 @@ public class ResumeEntity {
         result = 31 * result + (other2 != null ? other2.hashCode() : 0);
         result = 31 * result + (other3 != null ? other3.hashCode() : 0);
         return result;
+    }
+
+    public String getStudentCollege() {
+        return studentCollege;
+    }
+
+    public void setStudentCollege(String studentCollege) {
+        this.studentCollege = studentCollege;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 }

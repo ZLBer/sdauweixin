@@ -9,7 +9,7 @@ public class TeacherEntity {
     private String teacherLocation;
     private String teacherAddress;
     private String teacherTel;
-    private String other1;
+    private String teacherName;
     private String other2;
     private String other3;
 
@@ -53,12 +53,12 @@ public class TeacherEntity {
         this.teacherTel = teacherTel;
     }
 
-    public String getOther1() {
-        return other1;
+    public String getTeacherName() {
+        return teacherName;
     }
 
-    public void setOther1(String other1) {
-        this.other1 = other1;
+    public void setTeacherName(String other1) {
+        this.teacherName = other1;
     }
 
     public String getOther2() {
@@ -92,7 +92,7 @@ public class TeacherEntity {
         if (teacherAddress != null ? !teacherAddress.equals(that.teacherAddress) : that.teacherAddress != null)
             return false;
         if (teacherTel != null ? !teacherTel.equals(that.teacherTel) : that.teacherTel != null) return false;
-        if (other1 != null ? !other1.equals(that.other1) : that.other1 != null) return false;
+        if (teacherName != null ? !teacherName.equals(that.teacherName) : that.teacherName != null) return false;
         if (other2 != null ? !other2.equals(that.other2) : that.other2 != null) return false;
         if (other3 != null ? !other3.equals(that.other3) : that.other3 != null) return false;
 
@@ -106,7 +106,7 @@ public class TeacherEntity {
         result = 31 * result + (teacherLocation != null ? teacherLocation.hashCode() : 0);
         result = 31 * result + (teacherAddress != null ? teacherAddress.hashCode() : 0);
         result = 31 * result + (teacherTel != null ? teacherTel.hashCode() : 0);
-        result = 31 * result + (other1 != null ? other1.hashCode() : 0);
+        result = 31 * result + (teacherName != null ? teacherName.hashCode() : 0);
         result = 31 * result + (other2 != null ? other2.hashCode() : 0);
         result = 31 * result + (other3 != null ? other3.hashCode() : 0);
         return result;

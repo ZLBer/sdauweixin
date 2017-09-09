@@ -819,6 +819,7 @@
         <servlet-name>GetTeacherNamesServlet</servlet-name>
         <servlet-class>servlet.student.GetTeacherNamesServlet</servlet-class>
     </servlet>
+    
     <servlet>
         <servlet-name>ModifyStudentInfo</servlet-name>
         <servlet-class>servlet.college.ModifyStudentInfo</servlet-class>
@@ -863,7 +864,14 @@
         <servlet-name>GetTeacherNamesServlet</servlet-name>
         <url-pattern>/student/getTeacherNamesServlet</url-pattern>
     </servlet-mapping>
-
+    <servlet>
+        <servlet-name>GetTeacherListServlet</servlet-name>
+        <servlet-class>servlet.student.GetTeacheListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetTeacherListServlet</servlet-name>
+        <url-pattern>/student/getTeacherListServlet</url-pattern>
+    </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>

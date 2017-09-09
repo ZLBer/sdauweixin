@@ -92,11 +92,9 @@ public class LoginAction {
 							StudentEntity student=(StudentEntity) HibernateUtil.get(StudentEntity.class,Integer.parseInt(this.userid));
 							ActionContext.getContext().getSession().put("user", user);
 							ActionContext.getContext().getSession().put("stu", student);
-							if(checkStatus(this.userid)==4) {
-								return "studentfail";
-							}
-
-
+//							if(checkStatus(this.userid)==4) {
+//								return "studentfail";
+//							}
 							System.out.println(student);
 							return "studentsuccess";
 						}

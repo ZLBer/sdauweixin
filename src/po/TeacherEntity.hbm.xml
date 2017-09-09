@@ -10,7 +10,7 @@
         <property name="teacherLocation" column="teacher_location"/>
         <property name="teacherAddress" column="teacher_address"/>
         <property name="teacherTel" column="teacher_tel"/>
-        <property name="other1" column="other1"/>
+        <property name="teacherName" column="teacher_name"/>
         <property name="other2" column="other2"/>
         <property name="other3" column="other3"/>
     </class>
