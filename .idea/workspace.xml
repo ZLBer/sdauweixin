@@ -7,14 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5810933b-1511-493b-a37b-0afbecc340a4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/searchJs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/searchJs1.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/c5610967-712d-40ca-ab9b-30e0fe5917a5.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/c5610967-712d-40ca-ab9b-30e0fe5917a5.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/Util.java" afterPath="$PROJECT_DIR$/src/util/Util.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/student/dateChooser/search.css" afterPath="$PROJECT_DIR$/web/student/dateChooser/search.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/student/dateChooser/searchJs.js" afterPath="$PROJECT_DIR$/web/student/dateChooser/searchJs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/student/inputStuInfo.jsp" afterPath="$PROJECT_DIR$/web/student/inputStuInfo.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,8 +66,8 @@
       <file leaf-file-name="loadListJsFunction.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/student/loadListJsFunction.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="63" lean-forward="true" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
+            <state relative-caret-position="270">
+              <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -1047,7 +1040,7 @@
       <workItem from="1504425969732" duration="2025000" />
       <workItem from="1504445023038" duration="4000" />
       <workItem from="1504695653477" duration="1683000" />
-      <workItem from="1504920746000" duration="139000" />
+      <workItem from="1504920746000" duration="230000" />
     </task>
     <task id="LOCAL-00001" summary="增加修改就业信息对应专业的功能">
       <created>1504014490048</created>
@@ -1056,11 +1049,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504014490048</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="a">
+      <created>1504920967557</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1504920967557</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="521492000" />
+    <option name="totallyTimeSpent" value="521583000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1184,7 +1184,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="增加修改就业信息对应专业的功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加修改就业信息对应专业的功能" />
+    <MESSAGE value="a" />
+    <option name="LAST_COMMIT_MESSAGE" value="a" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1454,6 +1455,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3267">
           <caret line="121" column="18" lean-forward="false" selection-start-line="121" selection-start-column="18" selection-end-line="121" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1540,8 +1542,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/student/loadListJsFunction.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="63" lean-forward="true" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
+        <state relative-caret-position="270">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
           <folding />
         </state>
       </provider>
