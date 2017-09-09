@@ -54,7 +54,8 @@ public class PoiHwpf {
             studentnation = student.getStudentnation();
             studenttel=student.getStudenttel();
             studentemail=student.getStudentemail();
-            studentbirthday = student.getStudentbirthday();
+
+            studentbirthday = student.getStudentbirthday().substring(0,4)+"年"+student.getStudentbirthday().substring(4,6)+"月";
             studentclass=student.getStudentclass();
             political=student.getPolitical();
             education=student.getEducation();

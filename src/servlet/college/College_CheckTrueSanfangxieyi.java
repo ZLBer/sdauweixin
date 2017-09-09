@@ -32,6 +32,12 @@ public class College_CheckTrueSanfangxieyi extends HttpServlet {
         String  hql="";
         String condition="";
         int recordCount=0;
+        int allCount=0;
+        int yesCount=0;
+        allCount=HibernateUtil.recordCount("XieyiEntity","where collegename="+"'"+collegename+"'");
+        yesCount=HibernateUtil.recordCount("XieyiEntity","where state=1 and collegename="+"'"+collegename+"'");
+        request.setAttribute("allCount", allCount);
+        request.setAttribute("yesCount", yesCount);
         if(fieldName!=null && !"".equals(fieldName)){
             hql="where state=1 and collegename="+"'"+collegename+"' and "+fieldName +" like '%"+fieldValue+"%'";
             condition= " and state=1 and collegename="+"'"+collegename+"' and student."+fieldName +" like '%"+fieldValue+"%'";
@@ -40,7 +46,7 @@ public class College_CheckTrueSanfangxieyi extends HttpServlet {
             hql="where state=1 and collegename="+"'"+collegename+"'";
             condition= " and state=1 and collegename="+"'"+collegename+"'";
         }
-        int pageSize=15;
+        int pageSize=20;
         int pageNo=Integer.parseInt(request.getParameter("pageNo"));
         if(fieldName!=null &&fieldName.equals("studentname"))
         {
@@ -55,7 +61,7 @@ public class College_CheckTrueSanfangxieyi extends HttpServlet {
             String[] a = {"xieyi.studentid", "xieyi.xieyiid"
                     , "student.studentname","xieyi.downloadstate"};
             String[] tableAlias = {"StudentEntity as " + STUDENT, "XieyiEntity as " + XIEYI};
-            final String CONDITION = "WHERE " + STUDENT + "." + PRIMARYKEY + "=" + XIEYI + "." + PRIMARYKEY + condition;
+            final String CONDITION = "WHERE " + STUDENT + "." + PRIMARYKEY + "=" + XIEYI + "." + PRIMARYKEY + condition+" order by xieyiid desc";
 
             List<Object[]> studentlist = multiTableSelect(tableAlias, a, CONDITION, pageNo, pageSize);
             int t1=recordCount%pageSize;;

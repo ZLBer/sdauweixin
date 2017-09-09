@@ -63,7 +63,7 @@
         <td><textarea name="zhengshu" class="easyui-textbox" style="width:400px; height:100px" data-options="multiline:true"></textarea></br></td>
     </tr>
     <tr>
-        <td>毕业生选择志愿：</td>
+        <td>毕业生择业志愿：</td>
         <td><textarea name="zhiyuan" class="easyui-textbox" style="width:400px; height:100px" data-options="multiline:true"></textarea></br></td>
     </tr>
     <tr>

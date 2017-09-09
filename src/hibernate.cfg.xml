@@ -33,5 +33,7 @@
         <mapping resource="po/TrainingmodeEntity.hbm.xml"/>
         <mapping resource="po/XingzhengquhuaEntity.hbm.xml"/>
         <mapping resource="po/StampEntity.hbm.xml"/>
+        <mapping resource="po/ResumeEntity.hbm.xml"/>
+        <mapping resource="po/TeacherEntity.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

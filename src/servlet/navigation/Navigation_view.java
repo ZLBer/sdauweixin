@@ -26,14 +26,14 @@ public class Navigation_view extends HttpServlet {
         String fieldValue = request.getParameter("fieldValue");
         String condition = "";
         if (fieldName != null && !"".equals(fieldName)) {
-            condition = " where " + fieldName + " like '%" + fieldValue + "%'";
+            condition = " where " + fieldName + " like '%" + fieldValue + "%' ";
         }
-        int pageSize = 5;
+        int pageSize = 20;
         int pageNo=Integer.parseInt(request.getParameter("pageNo")==null?"1":request.getParameter("pageNo"));
         try {
             int recordCount = HibernateUtil.recordCount("ArticleEntity", condition);
             if (recordCount > 0) {
-                List<Article> articlelist = HibernateUtil.query("ArticleEntity", condition, "", pageNo, pageSize);
+                List<Article> articlelist = HibernateUtil.query("ArticleEntity", condition, "order by articleid desc", pageNo, pageSize);
                 int t1 = recordCount % pageSize;
                 int t2 = recordCount / pageSize;
                 int pageCount = (t1 == 0 ? t2 : t2 + 1);

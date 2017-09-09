@@ -17,7 +17,7 @@ import java.util.*;
  */
 @WebServlet(name = "College_select")
 public class College_select extends HttpServlet {
-    private final int pageSize=10;
+    private final int pageSize=20;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session=request.getSession();

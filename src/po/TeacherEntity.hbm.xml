@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="po.TeacherEntity" table="teacher" schema="sdauweixin">
+        <id name="id" column="id"/>
+        <property name="teacherCollege" column="teacher_college"/>
+        <property name="teacherLocation" column="teacher_location"/>
+        <property name="teacherAddress" column="teacher_address"/>
+        <property name="teacherTel" column="teacher_tel"/>
+        <property name="other1" column="other1"/>
+        <property name="other2" column="other2"/>
+        <property name="other3" column="other3"/>
+    </class>
+</hibernate-mapping>

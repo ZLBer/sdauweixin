@@ -36,50 +36,71 @@ table{
 			background:#E0ECFF;
 			}；
 </style>
+<script>
+    function submitForm(){
+        $('#ff').form('submit');
+    }
+
+</script>
 <head>
     <title>Title</title>
 </head>
 <body>
 <div style="padding-right:200px">
-<form action="student_requestSanfangxieyi?studentid=${user.studentid}" method="post">
-    <div>* 所有选项均为必填项</div>
+<form action="student_requestSanfangxieyi?studentid=${user.studentid}" method="post" id="ff">
 	<table align="center" frame="void">
         <tr>
-            <td>单位名称</td>   <td><input type="text" name="comname" class="easyui-textbox" data-options="required:true"></td>
+            <td style="padding-left: 40px"><font color="red"> *</font>单位名称</td>   <td style="padding-right: 40px"><input type="text" name="comname" class="easyui-textbox" style="width: 200px;height: 25px;" data-options="required:true"></td>
         </tr>
         <tr>
-            <td>组织机构代码</td> <td><input type="text" name="comnumber" class="easyui-textbox" data-options="required:true"></td>
+            <td style="padding-left: 40px"><font color="red"> *</font>组织机构代码</td> <td><input type="text" name="comnumber" class="easyui-textbox" style="width: 200px;height: 25px;" data-options="required:true"></td>
         </tr>
         <tr>
-            <td>通讯地址</td> <td><input type="text" name="comadress" class="easyui-textbox" data-options="required:true"></td>
+            <td style="padding-left: 40px"><font color="red"> *</font>通讯地址</td> <td><input type="text" name="comadress" class="easyui-textbox" style="width: 200px;height: 25px;" data-options="required:true"></td>
         </tr>
         <tr>
-            <td>邮政编码</td> <td><input type="text" name="comzipcode" class="easyui-textbox" data-options="required:true"></td>
+            <td style="padding-left: 40px"><font color="red"> *</font>邮政编码</td> <td><input type="text" name="comzipcode" class="easyui-textbox" style="width: 200px;height: 25px;" data-options="required:true"></td>
         </tr>
         <tr>
-            <td>联系人</td> <td><input type="text" name="comcontact" class="easyui-textbox" data-options="required:true"></td>
+            <td style="padding-left: 40px"><font color="red"> *</font>联系人</td> <td><input type="text" name="comcontact" class="easyui-textbox" style="width: 200px;height: 25px;" data-options="required:true"></td>
         </tr>
         <tr>
-            <td>联系电话</td> <td><input type="text" name="comtel" class="easyui-textbox" data-options="required:true"></td>
+            <td style="padding-left: 40px"><font color="red"> *</font>联系电话</td> <td><input type="text" name="comtel" class="easyui-textbox" style="width: 200px;height: 25px;" data-options="required:true"></td>
         </tr>
         <tr>
-            <td>邮箱</td> <td><input type="text" name="commail" class="easyui-textbox" data-options="required:true"></td>
+            <td style="padding-left: 40px"><font color="red"> *</font>邮箱</td> <td><input type="text" name="commail" class="easyui-textbox" style="width: 200px;height: 25px;" data-options="required:true"></td>
         </tr>
-        <tr>
-            <td>单位性质： <input type="radio" name="comnature"  value="党政机关">党政机关
+       <!-- <tr>
+            <td style="padding-left: 40px"><font color="red"> *</font>单位性质</td>
+            <td style="padding-right: 40px"><input type="radio" name="comnature"  value="党政机关">党政机关
 						  <input type="radio" name="comnature" value="科研事业单位">科研事业单位
-						  <input type="radio" name="comnature" value="学校">学校
-            </td>
-            <td>
+						  <input type="radio" name="comnature" value="学校">学校<br>
                         <input type="radio" name="comnature" value="商贸公司">商贸公司
                         <input type="radio" name="comnature" value="厂矿企业">厂矿企业
                         <input type="radio" name="comnature" value="部队">部队
-                        <input type="radio" name="comnature" value="其他">其他
+                        <input type="radio" name="" value="其他">其他
         </td>
+        </tr>-->
+        <tr>
+            <td style="padding-left: 40px"><font color="red"> *</font>单位性质</td>
+            <td>
+                <select name="comnature" class="easyui-combobox" style="width: 200px;height: 25px;" data-options="required:true">
+                    <option value="党政机关">党政机关</option>
+                    <option value="科研事业单位">科研事业单位</option>
+                    <option value="学校">学校</option>
+                    <option value="商贸公司">商贸公司</option>
+                    <option value="厂矿企业">厂矿企业</option>
+                    <option value="部队">部队</option>
+                    <option value="其他">其他</option>
+            </td>
+
+            </td>
         </tr>
-		       <tr>
-   <td>单位行业</td>
-        <td><select name="industry" class="easyui-combobox" data-options="required:true" data-options="required:true">
+
+        <tr>
+         <td style="padding-left: 40px"><font color="red"> *</font>单位行业</td>
+
+        <td><select name="industry" class="easyui-combobox" style="width: 200px;height: 25px;" data-options="required:true">
             <option value="农、林、牧、副、渔业">农、林、牧、副、渔业</option>
             <option value="采矿业">采矿业</option>
             <option value="采矿业">采矿业</option>
@@ -104,9 +125,9 @@ table{
         </select></td>
     </tr>
         <tr>
-            <td>工作职业类别</td>
+            <td style="padding-left: 40px"><font color="red"> *</font>工作职业类别</td>
         <td>
-            <select name="category" class="easyui-combobox" data-options="required:true" data-options="required:true">
+            <select name="category" class="easyui-combobox" style="width: 200px;height: 25px;" data-options="required:true">
                 <option value="公务员">公务员</option>
                 <option value="科学研究人员">科学研究人员</option>
                 <option value="工程技术人员">工程技术人员</option>
@@ -129,11 +150,18 @@ table{
         </td>
     </tr>
         <tr>
-            <td>档案转寄详细地址（包括收件单位、部门和邮编）</td> <td><input type="text" name="danganaddress" class="easyui-textbox" data-options="required:true"></td>
+            <td style="padding-left: 40px"><font color="red"> *</font>档案转寄详细地址<br><font color="red" size="2" >（包括收件单位、部门和邮编）</font></td>
+            <td><input type="text" name="danganaddress" class="easyui-textbox" style="width: 200px;height: 25px;" data-options="required:true"></td>
         </tr>
-        <td><input type="submit" value="提交" ></td>
+       <!-- <tr>
+        <td style="text-align: right" ><input class="easyui-linkbutton"  onclick="submitForm()">提交</td>
+            <td><font color="red" size="2"> </font></td>
+        </tr>-->
+
     </table>
     ${message}
+
+    <center> <a  class="easyui-linkbutton"  onclick="submitForm()" style="width: 80px;">提交</a><font color="red" size="2">* 所有选项均为必填项</font></center>
 </form>
 <div style="padding-right:200px">
 </body>

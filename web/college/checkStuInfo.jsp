@@ -140,7 +140,7 @@
                rownumbers="true"  width="100%">
             <thead>
             <tr>
-                <th data-options="field:'11'"><a id="select_all_a" href="javascript:selectAll()">全选</a></th>
+                <th data-options="field:'0'"><a id="select_all_a" href="javascript:selectAll()">全选</a><input type="checkbox" id="select_all" onselect="selectAll()"></th>
                 <th data-options="field:'1'">学号</th>
                 <th data-options="field:'2'">姓名</th>
                 <th data-options="field:'3'">性别</th>
@@ -154,9 +154,6 @@
                 <th data-options="field:'11'">电话</th>
                 <th data-options="field:'12'">生源所在地</th>
                 <th data-options="field:'13'">常住地址市区县</th>
-
-
-
                 <th data-options="field:'14'">操作</th>
 
 
@@ -178,9 +175,9 @@
                     <td>${stu.political}</td>
                     <td>${stu.studentstate}</td>
                     <td>${stu.studentnation}</td>
-                     <td>${stu.studenttel}</td>
-                      <td>${stu.location}</td>
-                      <td>${stu.resident}</td>
+                    <td>${stu.studenttel}</td>
+                    <td>${stu.location}</td>
+                    <td>${stu.resident}</td>
                     <td>
                         <a href="${pageContext.request.contextPath}/college/modifyStudentInfo.jsp?studentid=${stu.studentid}">修改</a>
                         <a href="javascript:areYouSure(${stu.studentid})">重置</a>&nbsp;

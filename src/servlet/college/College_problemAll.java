@@ -21,7 +21,7 @@ import java.util.Map;
  */
 @WebServlet(name = "College_problemAll")
 public class College_problemAll extends HttpServlet {
-    private final int pageSize =10;
+    private final int pageSize =20;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         response.setCharacterEncoding("utf-8");

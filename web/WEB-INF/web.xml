@@ -485,7 +485,16 @@
         <servlet-name>College_list</servlet-name>
         <servlet-class>servlet.college.College_list</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>College_SendMessage</servlet-name>
+        <servlet-class>servlet.college.College_SendMessage</servlet-class>
+    </servlet>
 
+
+    <servlet-mapping>
+        <servlet-name>College_SendMessage</servlet-name>
+        <url-pattern>/college/college_SendMessage</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>College_SelectDownloadSanfangxieyi</servlet-name>

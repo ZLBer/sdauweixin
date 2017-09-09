@@ -39,7 +39,7 @@
 		<div data-options="region:'north'" style="height:50px; background:#9FC">
 			<font size="+2" color="#000066" face="楷体">山东农业大学就业导航中心
 			</font>
-			<div align="right"> 当前用户：${user.studentid}
+			<div align="right"> 当前用户：${user.studentid},${stu.studentname}。
 				<a href="${pageContext.request.contextPath }/logout" target="_top" >退出登录</a>
 			</div>
 		</div>
@@ -52,19 +52,19 @@
 		<div data-options="region:'west',split:false,iconCls:'icon-application_home',collapsed:false,collapsible:false" title="主菜单" style="width:200px;">
 			<div class="easyui-accordion" data-options="fit:true,border:false">
 				<div title="个人信息管理" style="padding:10px;">
-					<p><a class="easyui-linkbutton" onclick="addTab('完善个人信息','${pageContext.request.contextPath}/student/gotoInfoServlet')" target="right">完善个人信息</a></p>
-					<p><a class="easyui-linkbutton" onclick="addTab('查看个人信息','${pageContext.request.contextPath}/student/queryStuInfoServlet')"  target="right">查看个人信息</a></p>
+					<%--<p><a class="easyui-linkbutton" onclick="addTab('完善个人信息','${pageContext.request.contextPath}/student/gotoInfoServlet')" target="right">完善个人信息</a></p><br>--%>
+					<p><a class="easyui-linkbutton" onclick="addTab('查看个人信息','${pageContext.request.contextPath}/student/queryStuInfoServlet')"  target="right">查看个人信息</a></p><br>
 
 				</div>
 				<div title="下载就业推荐表" style="padding:10px">
 					<p><a  class="easyui-linkbutton" onclick="addTab('下载就业推荐表','${pageContext.request.contextPath}/student/student_infoDownload.jsp')"  target="right">下载就业推荐表</a></p>
 				</div>
-				<div title="三方协议" data-options="selected:true" style="padding:10px;">
-					<p><a class="easyui-linkbutton" onclick="addTab('申请三方协议编号','${pageContext.request.contextPath}/student/student_checkSanfangxieyi?studentid=${user.studentid}')"   target="right" > 申请三方协议编号</a></p>
-				</div>
+				<%--<div title="三方协议" data-options="selected:true" style="padding:10px;">--%>
+					<%--<p><a class="easyui-linkbutton" onclick="addTab('申请三方协议编号','${pageContext.request.contextPath}/student/student_checkSanfangxieyi?studentid=${user.studentid}')"   target="right" > 申请三方协议编号</a></p>--%>
+				<%--</div>--%>
 				<div title="个人问题管理" style="padding:10px">
-					<p><a class="easyui-linkbutton" onclick="addTab('提交个人问题','${pageContext.request.contextPath}/student/getTeacherNamesServlet')" target="right">我要提问</a></p>
-					<p><a class="easyui-linkbutton" onclick="addTab('查看问题处理','${pageContext.request.contextPath}/student/checkProblem?pageNo=1')" target="right">问题反馈</a></p>
+					<p><a class="easyui-linkbutton" onclick="addTab('提交个人问题','${pageContext.request.contextPath}/student/getTeacherNamesServlet')" target="right">我要提问</a></p><br>
+					<p><a class="easyui-linkbutton" onclick="addTab('查看问题处理','${pageContext.request.contextPath}/student/checkProblem?pageNo=1')" target="right">问题反馈</a></p><br>
 
 				</div>
 				<div title="修改密码" style="padding:10px">

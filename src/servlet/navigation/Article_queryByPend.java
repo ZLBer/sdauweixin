@@ -33,7 +33,7 @@ public class Article_queryByPend extends HttpServlet {
         final String STATE = "审核";
 
         int aid= Integer.parseInt(request.getParameter("aid"));
-        String condition="where article.articleid="+aid;
+        String condition="where article.articleid="+aid+" order by articleid desc";
         List<ArticleEntity> userList=new ArrayList<ArticleEntity>();
         userList= HibernateUtil.query("ArticleEntity article", condition);
         request.setAttribute("articleList",userList);

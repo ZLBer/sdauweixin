@@ -41,7 +41,7 @@ public class ArticleByPage extends HttpServlet {
         int pageNo=Integer.parseInt(request.getParameter("pageNo"));
             int recordCount= HibernateUtil.recordCount("ArticleEntity", condition);
             if(recordCount>0){
-                List<ArticleEntity> articlelist= HibernateUtil.query("ArticleEntity", condition, "", pageNo, pageSize);
+                List<ArticleEntity> articlelist= HibernateUtil.query("ArticleEntity", condition, "order by articleid desc", pageNo, pageSize);
                 int t1=recordCount%pageSize;
                 int t2=recordCount/pageSize;
                 int pageCount=(t1==0?t2:t2+1);

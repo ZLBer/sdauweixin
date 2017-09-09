@@ -47,7 +47,7 @@ public class PoiXwpf {
             trainingmode=student.getTrainingmode();
             studenttel=student.getStudenttel();
             studentemail=student.getStudentemail();
-            studentbirthday = student.getStudentbirthday();
+            studentbirthday = student.getStudentbirthday().substring(0,4)+"年"+student.getStudentbirthday().substring(4,6)+"月";
             political=student.getPolitical();
             education=student.getEducation();
             location=student.getLocation();

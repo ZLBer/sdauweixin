@@ -23,7 +23,7 @@ public class Article_queryByView extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         int aid= Integer.parseInt(request.getParameter("aid"));
-        String condition="where article.articleid="+aid;
+        String condition="where article.articleid="+aid+" order by articleid desc";
         java.util.List<ArticleEntity> userList=new ArrayList<ArticleEntity>();
         userList= HibernateUtil.query("ArticleEntity article", condition);
         request.setAttribute("articleList",userList);

@@ -54,10 +54,10 @@ public class Navigation_special extends HttpServlet {
         String fieldValue=request.getParameter("fieldValue");
         String condition="";
 
-        condition="where state='未审核' and columnid = 2";
+        condition="where state='未审核' and columnid = 2 order by articleid desc";
 
 
-        int pageSize=5;
+        int pageSize=20;
         int pageNo=Integer.parseInt(request.getParameter("pageNo")==null?"1":request.getParameter("pageNo"));
         try {
             int recordCount=HibernateUtil.recordCount("ArticleEntity", condition);

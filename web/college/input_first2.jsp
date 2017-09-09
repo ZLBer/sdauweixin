@@ -10,6 +10,9 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
     <title>填写信息</title>
 </head>
@@ -17,7 +20,7 @@
 <center>
     <form method="post" action="college_infirst" >
         <input type="hidden" name="columnid" value="1">
-        <table>
+      <!--  <table>
             <tr>
             <tr><td>企业名称</td><td><input type="text" name="enterprisename"/></td></tr>
             <tr><td>企业联系人</td><td><input type="text" name="author"/></td></tr>
@@ -28,7 +31,30 @@
             <td><input type="submit" value="下一步"  /></td>
             <td>   <input type="reset" value="重置"/> </td>
             </tr>
-        </table>
+        </table>-->
+        <textarea class="ckeditor"   name="articletext"  >（这里填写招聘信息）</textarea>
+        <br>
+        <div class="input-group" style="padding-left: 100px">
+            <span class="input-group-addon">企业名称：</span>
+            <input type="text"  name="enterprisename" class="form-control" placeholder="在此输入企业名称" required style="width:800px;">
+        </div>
+        <br>
+        <div class="input-group" style="padding-left: 100px">
+            <span class="input-group-addon">企业联系人：</span>
+            <input type="text" name="author" class="form-control" placeholder="在此输入企业联系人" required style="width: 787px">
+        </div>
+        <br>
+        <div class="input-group" style="padding-left: 100px">
+            <span class="input-group-addon">联系人电话：</span>
+            <input type="text" name="authortel" class="form-control" placeholder="在此输入联系人电话" required style="width: 787px">
+        </div>
+        <br>
+        <div class="input-group" style="padding-left: 100px">
+            <span class="input-group-addon">从何处获得该信息：</span>
+            <input type="text" name="authortel" class="form-control" placeholder="在此输入获取信息的方式" required style="width: 745px">
+        </div>
+        <br>
+        <center><button type="submit" class="btn btn-default">下一步</button><button type="reset" class="btn btn-default">重置</button></center>
 
     </form>
 </center>

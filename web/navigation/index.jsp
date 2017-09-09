@@ -59,6 +59,10 @@
 					<p><a class="easyui-linkbutton" onclick="addTab('查看专场信息','${pageContext.request.contextPath}/navigation/navigationSpecialView?pageNo=1')" target="right">查看专场信息</a></p>
 					<p><a class="easyui-linkbutton" onclick="addTab('审核专场信息','${pageContext.request.contextPath}/navigation/navigation_special?pageNo=1')" target="right">审核专场信息</a></p>
 				</div>
+				<div title="发布就业信息和企业专场" style="padding:10px">
+					<p><a  class="easyui-linkbutton" onclick="addTab('发布就业信息','${pageContext.request.contextPath}/college/input_first2.jsp')"  target="right">发布就业信息</a></p>
+					<p><a  class="easyui-linkbutton" onclick="addTab('发布企业专场','${pageContext.request.contextPath}/college/input_first.jsp')"  target="right">发布企业专场</a></p>
+				</div>
                 <div title="修改密码" style="padding:10px">
 					<p><a class="easyui-linkbutton" onclick="addTab('修改密码',' ${pageContext.request.contextPath}/navigation/motifypwd.jsp')" target="right">修改密码</a></p>
 				</div>

@@ -33,7 +33,7 @@
     <form role="form" method="post" action="enterprise_inthird" enctype="multipart/form-data">
 
         <div class="form-group">
-            <label for="inputfile">上传企业证明</label>
+            <label for="inputfile">上传企业营业执照</label>
             <br>
             <br>
             <input type="file" id="inputfile" name="file1">

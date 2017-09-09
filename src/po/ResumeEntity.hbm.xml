@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="po.ResumeEntity" table="resume" schema="sdauweixin">
+        <id name="id" column="id"/>
+        <property name="studentId" column="student_id"/>
+        <property name="teacherId" column="teacher_id"/>
+        <property name="time" column="time"/>
+        <property name="state" column="state"/>
+        <property name="reason" column="reason"/>
+        <property name="other1" column="other1"/>
+        <property name="other2" column="other2"/>
+        <property name="other3" column="other3"/>
+    </class>
+</hibernate-mapping>

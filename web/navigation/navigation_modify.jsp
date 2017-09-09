@@ -28,7 +28,7 @@
         margin:0 auto;
         border-radius:15px;
         overflow:hidden;
-        background:#E0ECFF;
+        background:#D3D3D3;
     }
     td{
         margin:0px;
@@ -48,11 +48,11 @@
 
         <c:forEach items="${articleList}" var="article">
             ${article.enterprisename}
-            <textarea class="ckeditor" cols="80"  name="articletext"  rows="5">${article.articletext}</textarea>
-            <div style="float:right;">
-                <a href="navigation_demand?aid=${article.articleid}">查看需求</a>
-            </div>
-            <table>
+            <textarea class="ckeditor" cols="80"  name="articletext"  rows="5">${article.articletext}</textarea><br>
+            <div style="float:none" align="center">
+                <a href="navigation_demand?aid=${article.articleid}"><font size="+1">查看需求</font></a>
+           </div>
+            <table width="1000px">
                 <tr>
                     <td>当前时间:</td>
                     <td>${article.articletime}</td>
@@ -69,7 +69,7 @@
                 </tr>
 
             </table>
-            <br><a href="${pageContext.request.contextPath}${article.mediaid}">下载营业执照</a>
+            <br><a href="${pageContext.request.contextPath}${article.mediaid}"><font size="+1">下载营业执照</font></a>
             <br>
             <input type="hidden" name="articleid" value="${article.articleid}">
             <input type="hidden" name="enterprisename" value="${article.enterprisename}">
@@ -87,7 +87,6 @@
 
     </form>
 </div>
-</div>
-</div>
+
 </body>
 </html>

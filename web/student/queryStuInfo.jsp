@@ -129,7 +129,7 @@
             </tr>
             <tr>
                 <td >院系：</td>
-                <td>${stu.studentclass}</td>
+                <td>${stu.studentcollege}</td>
 
                 <td >常住地址市区县：</td>
                 <td>${stu.resident}</td>
