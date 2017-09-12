@@ -21,7 +21,7 @@
         <div class="col-md-12">
             <div class="page-header">
                 <h1>提交招聘信息
-                    <small><a href="input_first2.jsp">点击这里，申请校园专场</a></small>
+                    <%--<small><a href="input_first2.jsp">点击这里，申请校园专场</a></small>--%>
                 </h1>
 
             </div>

@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+	<meta charset="utf-8">
 <head>
     <title></title>
     <script typet="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
@@ -28,10 +29,29 @@
                 }
             },dataType);
         }
-    </script>
+        
+   </script>
+    <style>
+    	.div
+    	{
+    		background-color: #E0ECFF;
+    		text-align:center;
+    		margin: 0 auto;
+    		width: 170px;
+    		height: 80px;
+    		border-radius: 10px;
+    	}
+    	.form
+    	{
+    		padding-top: 10px;
+    	}
+     </style>
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/student/reservationServlet" method="post">
+	<center><font size="+2" face="楷体">简历预约</font></center>
+	<p></p>
+	<div class="div">
+<form action="${pageContext.request.contextPath}/student/reservationServlet" method="post" class="form">
     <select name="location" id="location">
         <option>南校区</option>
         <option>北校区</option>
@@ -39,8 +59,10 @@
     </select>
     <select name="teacher" id="teacher">
         <option value="">请选择校区</option>
-    </select>
+    </select><br />
+    <p></p>
     <input type="submit" value="预约">
 </form>
+</div>
 </body>
 </html>

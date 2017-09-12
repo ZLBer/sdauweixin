@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
     <proxool>
         <alias>guestbook</alias>
-        <driver-url>jdbc:mysql://115.159.63.20:3306/sdauweixin?useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull</driver-url>
+        <driver-url>jdbc:mysql://127.0.0.1:3306/sdauweixin?useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull</driver-url>
         <driver-class>org.gjt.mm.mysql.Driver</driver-class>
         <driver-properties>
-            <property name="user" value="sdau" />
-            <property name="password" value="sdauweixin" />
+            <property name="user" value="root" />
+            <property name="password" value="root" />
             <property name="autoReconnect" value="true" />
 
         </driver-properties>

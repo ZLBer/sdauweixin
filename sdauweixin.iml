@@ -21,6 +21,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
+          <unit-entry name="a.xml" value="c5610967-712d-40ca-ab9b-30e0fe5917a5" />
           <unit-entry name="hibernate.cfg.xml" value="c5610967-712d-40ca-ab9b-30e0fe5917a5" />
           <unit-entry name="out:artifacts:sdauweixin_war_exploded:WEB-INF:classes:hibernate.cfg.xml" />
           <unit-entry name="out:production:sdauweixin:hibernate.cfg.xml" />

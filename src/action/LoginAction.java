@@ -79,6 +79,7 @@ public class LoginAction {
 			}
 			if(type.equals("student"))
 			{
+
 				StudentloginEntity user=null;
 				String condition="where studentlogin.studentid='"+this.userid+"'";
 				List<StudentloginEntity> userList=new ArrayList<StudentloginEntity>();
@@ -88,13 +89,13 @@ public class LoginAction {
 					if (user == null) {
 						msg = "id不存在";
 					} else {
+						if(checkStatus(this.userid)==4||checkStatus(this.userid)==60111) {
+							return "studentfail";
+						}
 						if (Encrypt.MD5(userpwd).equals(user.getStudentpassword())) {
 							StudentEntity student=(StudentEntity) HibernateUtil.get(StudentEntity.class,Integer.parseInt(this.userid));
 							ActionContext.getContext().getSession().put("user", user);
 							ActionContext.getContext().getSession().put("stu", student);
-//							if(checkStatus(this.userid)==4) {
-//								return "studentfail";
-//							}
 							System.out.println(student);
 							return "studentsuccess";
 						}
@@ -118,6 +119,7 @@ public class LoginAction {
 					} else {
 						if (Encrypt.MD5(userpwd).equals(user.getCollegepwd())) {
 							ActionContext.getContext().getSession().put("user", user);
+							ActionContext.getContext().getSession().put("teachername", user.getTeachername());
 							return "collegesuccess";
 						} else {
 							msg = "密码不正确";
@@ -139,6 +141,7 @@ public class LoginAction {
 					} else {
 						if (Encrypt.MD5(userpwd).equals(user.getNavigationpwd())) {
 							ActionContext.getContext().getSession().put("user", user);
+							ActionContext.getContext().getSession().put("teachername", user.getNavigationname());
 							return "navigationsuccess";
 						} else {
 							msg = "密码不正确";
@@ -171,15 +174,23 @@ public class LoginAction {
 
 		if(null!=jsonobject){
 
-			String s=jsonobject.getString("status");
-			if(!s.equals("")){
+			//获取微信返回码
+			String result=jsonobject.getString("errcode");
+
+			if(result.equals("0")){
 
 				status=Integer.parseInt(jsonobject.getString("status"));
-			}else{
 
-				int errorCode = jsonobject.getInt("errcode");
+			}else if(result.equals("60111")){
+
+				status=Integer.parseInt(result);
 				String errMsg = jsonobject.getString("errmsg");
-				System.out.println("错误码："+errorCode+"————"+"错误信息："+errMsg);
+
+				System.out.println("错误码："+status+"————"+"错误信息：该用户不存在通讯录");
+			}
+			else{
+				String errMsg = jsonobject.getString("errmsg");
+				System.out.println("错误码："+status+"————"+"错误信息："+errMsg);
 			}
 		}
 		else{

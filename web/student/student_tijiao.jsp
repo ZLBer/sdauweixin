@@ -30,7 +30,7 @@ div{
 
     <table frame="void">
         <tr>
-            <td colspan="2"><textarea cols="80"  name="problemtext"  rows="10" class="easyui-textbox" style="height:300px"></textarea></td>
+            <td colspan="2"><textarea cols="80"  name="problemtext"  rows="10" class="easyui-textbox" style="height:300px" data-options="multiline:true"></textarea></td>
         </tr>
         <tr>
             <td>
@@ -41,7 +41,7 @@ div{
                     </c:forEach>
                 </select>
             </td>
-            <td><input type="submit" name="submit" data-options="multiline:true" value="提交" align="center" class="easyui-linkbutton" style="width:70px"></td>
+            <td><input type="submit" name="submit" data-options="multiline:true" value="提交" align="center" class="easyui-linkbutton"  style="width:70px"></td>
         </tr>
     </table>
 </form>

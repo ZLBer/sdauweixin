@@ -363,6 +363,7 @@
 
 
     <!--College-->
+
     <servlet>
         <servlet-name>College_SelectDownloadSanfangxieyi</servlet-name>
         <servlet-class>servlet.college.College_SelectDownloadSanfangxieyi</servlet-class>
@@ -399,6 +400,14 @@
         <servlet-name>DownloadProblemServlet</servlet-name>
         <servlet-class>servlet.college.DownloadProblemServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>College_selectResume</servlet-name>
+        <servlet-class>servlet.college.College_selectResume</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>College_selectResume</servlet-name>
+        <url-pattern>/college/college_selectResume</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DownloadProblemServlet</servlet-name>
         <url-pattern>/college/downloadProblemServlet</url-pattern>
@@ -824,7 +833,14 @@
         <servlet-name>ModifyStudentInfo</servlet-name>
         <servlet-class>servlet.college.ModifyStudentInfo</servlet-class>
     </servlet>
-
+    <servlet>
+        <servlet-name>College_handleResume</servlet-name>
+        <servlet-class>servlet.college.College_handleResume</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>College_handleResume</servlet-name>
+        <url-pattern>/college/college_handleResume</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>ModifyStudentInfo</servlet-name>

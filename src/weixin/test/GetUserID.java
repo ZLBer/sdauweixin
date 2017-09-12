@@ -203,6 +203,15 @@ public class GetUserID extends HttpServlet {
         else if(state.equals("jyzdgz")){            //就业指导中心盖章
             request.getRequestDispatcher("navigation/navigation_stamp?pageNo=1").forward(request, response);
         }
+        else if(state.equals("stuResume")){
+            System.out.println("老师查看学生的预约");
+            request.getRequestDispatcher("college/college_selectResume").forward(request,response);
+        }
+        else if(state.equals("stuReplyResume")){
+            System.out.println("学生预约老师");
+            request.getRequestDispatcher("WEUI/reservationResume.jsp").forward(request,response);
+        }
+
         else{
             System.out.println("微信端通过GetUserID转发出错啦");
         }

@@ -80,6 +80,9 @@
 				<div title="用章预约审核" style="padding:10px">
 					<p><a  class="easyui-linkbutton" onclick="addTab('用章预约审核','${pageContext.request.contextPath}/college/checkStamp?collegeid=${user.collegeid}&pageNo=1')"  target="right">用章预约审核</a></p>
 				</div>
+				<div title="简历预约审核" style="padding:10px">
+					<p><a  class="easyui-linkbutton" onclick="addTab('简历预约审核','${pageContext.request.contextPath}/college/college_selectResume')"  target="right">简历预约审核</a></p>
+				</div>
              </div>
 		</div>
 		<div data-options="region:'center',title:'Main Title',iconCls:'icon-ok'">

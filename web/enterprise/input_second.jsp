@@ -62,7 +62,7 @@
 </head>
 
 <body onload="refresh()" background="${pageContext.request.contextPath}/images/beijing.png">
-
+<h3>如果不选择专业，则无法将招聘信息精准发送给相关专业学生。</h3>
 
 <table>
     <tr><th>专业</th><th>需求人数</th><th>删除</th></tr>

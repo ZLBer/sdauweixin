@@ -1,6 +1,8 @@
 package servlet.college;
 
+import oracle.jrockit.jfr.parser.ChunkParser;
 import po.ArticleEntity;
+import po.CollegeloginEntity;
 import util.HibernateUtil;
 
 import javax.servlet.ServletException;
@@ -37,7 +39,8 @@ public class College_infirst extends HttpServlet {
         articleEntity.setEnterprisename(enterprisename);
         articleEntity.setAuthor(author);
         articleEntity.setAuthortel(authortel);
-        articleEntity.setOther(other);
+        //other字段加学院老师标识
+        articleEntity.setOther( (String)session.getAttribute("teachername")+":"+other);
         articleEntity.setState(state);
 
         //时间戳

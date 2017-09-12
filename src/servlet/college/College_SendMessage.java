@@ -99,7 +99,7 @@ public class College_SendMessage extends HttpServlet {
         textCard.setBtntxt(btntxt);
 
         //Post数据
-        int agentid=ParamesAPI.AgentId_xinxi;
+        int agentid=ParamesAPI.AgentId_jiuyezhidao;
 
         String PostData1=smsg.STextCardMsg(null,toparty, null,agentid, title,description,url,btntxt);
         System.out.println(PostData1);
