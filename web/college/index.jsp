@@ -69,6 +69,7 @@
 				</div>
                 <div title="修改密码" style="padding:10px">
 					<p><a  class="easyui-linkbutton" onclick="addTab('修改密码','${pageContext.request.contextPath}/college/motifypwd.jsp')"  target="right">修改密码</a></p>
+					<p><a  class="easyui-linkbutton" onclick="addTab('重置学生密码','${pageContext.request.contextPath}/college/resetStuPwd.jsp')"  target="right">重置学生密码</a></p>
 				</div>
 				 <div title="导出学院学生信息" style="padding:10px">
 					<p><a class="easyui-linkbutton" onclick="addTab('导出学院学生信息文字版','${pageContext.request.contextPath}/college/downloadStuInfoServlet?code=false')"  target="right">导出学院学生信息文字版(.xls)</a></p>
