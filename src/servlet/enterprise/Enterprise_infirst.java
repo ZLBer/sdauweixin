@@ -42,6 +42,7 @@ public class Enterprise_infirst extends HttpServlet {
         Timestamp nousedate = new Timestamp(date.getTime());
         articleEntity.setArticletime(nousedate);
         articleEntity.setColumnid(1);
+        articleEntity.setOther("企业端提交");
         HibernateUtil.add(articleEntity);
 
         String condition="where article.enterprisename='"+enterprisename+"' order by articleid desc";

@@ -8,6 +8,47 @@
 		.right{
 
 		}
+		#div1
+		{
+			border:1px solid dodgerblue;
+			/*border-color: #FFFFFF;*/
+			border-radius: 15px;
+			height:300px;
+			width: 380px;
+			background-color: #f9f9f9;
+
+		}
+		#div2
+		{
+			border:1px solid dodgerblue;
+			/*border-color: #FFFFFF;*/
+			border-radius: 15px;
+			height:300px;
+			width: 380px;
+			margin-left: 10px;
+			background-color: #f9f9f9;
+		}
+		#div3
+		{
+			border:1px solid dodgerblue;
+			/*border-color: #FFFFFF;*/
+			border-radius: 15px;
+			height:300px;
+			width: 380px;
+			margin-left: 10px;
+			background-color: #f9f9f9;
+
+		}
+		 a:link
+		{
+			color: #666666;
+
+		}
+		 a:hover
+		{
+			color:black;
+		}
+
 	</style>
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -95,37 +136,43 @@
 			</div>
 		</div>
 	</div>
+	<p></p><br>
+	<p></p>
 	<div class="row clearfix">
-		<div class="col-xs-12 col-md-4 col-lg-4 column">
-			<h2>
-				校内就业信息
-			</h2>
-			<c:forEach items="${articleList}" var="article">
-				<a href='article_query?aid=${article.articleid}')>${article.enterprisename}</a>
-				<br>
-			</c:forEach>
+		<div class="col-xs-12 col-md-4 col-lg-4 column" id="div1">
+		<img src="images/main2_2.gif"  width="130px" height="50px"/>
+			<p></p>
+			<ul type="disc">
+
+					<c:forEach items="${articleList}" var="article">
+						<li>	<a href='article_query?aid=${article.articleid}')>${article.enterprisename}</a> </li>
+					</c:forEach>
+
+			</ul>
 			<p>
-				<a class="btn" href="filter.jsp?pageNo=1">查看更多</a>
+				<a class="btn" href="filter.jsp">查看更多</a>
 			</p>
 		</div>
-		<div class="col-xs-12 col-md-4 col-lg-4 column">
-			<h2>
-				就业专场信息
-			</h2>
+
+		<div class="col-xs-12 col-md-4 col-lg-4 column" id="div2" >
+		<img src="images/main2_1.gif"  width="130px" height="50px"/>
+			<p></p>
+			<ul type="disc">
+
 			<c:forEach items="${articleSpecial}" var="articlespecial">
-				<a href='article_query?aid=${articlespecial.articleid}'>${articlespecial.enterprisename}</a>
-				<br>
+				<li>	<a href='article_query?aid=${articlespecial.articleid}')>${articlespecial.enterprisename}</a></li>
 			</c:forEach>
 			<p>
 				<a class="btn" href="#">查看更多</a>
 			</p>
 		</div>
-		<div class="col-xs-12 col-md-4 col-lg-4 column">
-			<h2>
-				用户登录
-			</h2>
+
+		<div class="col-xs-12 col-md-4 col-lg-4 column" id="div3">
+		<img src="images/main2_3.gif"  width="130px" height="50px"/>
+			<p></p>
+
 			<p>
-				<img src="images/03.png"><a href="login.jsp"><font size="+2" color="#666666">校内用户登录</font></a><br></p><p></p><p></p>
+				<img src="images/03.png"><a href="login.jsp" ><font size="+2" color="#666666">校内用户登录</font></a><br></p><p></p><p></p>
 			<img src="images/03.png"><a href="enterprise/input_first.jsp"><font size="+2" color="#666666">企业入口</font></a>
 			<p></p>
 		</div>
