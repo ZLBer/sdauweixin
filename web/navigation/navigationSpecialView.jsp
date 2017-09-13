@@ -53,8 +53,9 @@
                 <th data-options="field:'3'">企业名称</th>
                 <th data-options="field:'4'">联系人</th>
                 <th data-options="field:'5'">联系方式</th>
-                <th data-options="field:'6'">文章发布时间</th>
-                <th data-options="field:'7'">删除栏</th>
+                <th data-options="field:'7'">发布人及信息</th>
+                <th data-options="field:'8'">文章发布时间</th>
+                <th data-options="field:'9'">删除栏</th>
             </tr>
             </thead>
             <tbody>
@@ -65,6 +66,7 @@
                     <td><a href="${pageContext.request.contextPath}/navigation/article_queryByView?aid=${article.articleid}">${article.enterprisename}</a><br></td>
                     <td>${article.author}<br></td>
                     <td>${article.authortel}<br></td>
+                    <td>${article.other}<br></td>
                     <td>${article.articletime}<br></td>
                     <td><a href='${pageContext.request.contextPath}/navigation/article_delete?articleid=${article.articleid}&all=3' onclick="return confirm('确实要删除该 记录吗？')">删除</a></td>
 

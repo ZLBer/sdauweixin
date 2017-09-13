@@ -30,7 +30,8 @@ public class College_infirst extends HttpServlet {
         HttpSession session=request.getSession();
         String   author=request.getParameter("author");
         String   authortel=request.getParameter("authortel");
-        String   other=request.getParameter("other");
+        String   other=request.getParameter("other")+" ";
+        if(other==null) other=" ";
         String  columnid=request.getParameter("columnid");
 
 

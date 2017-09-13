@@ -42,6 +42,7 @@ public class Enterprise_infirst2 extends HttpServlet {
         articleEntity.setEnterprisename(enterprisename);
         articleEntity.setAuthor(author);
         articleEntity.setAuthortel(authortel);
+        articleEntity.setOther("企业端提交");
         articleEntity.setState(state);
 
         //时间戳

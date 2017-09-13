@@ -71,9 +71,10 @@
                 <th data-options="field:'4'">企业名称</th>
                 <th data-options="field:'5'">联系人</th>
                 <th data-options="field:'6'">联系方式</th>
-                <th data-options="field:'7'">编辑栏</th>
-                <th data-options="field:'8'">删除栏</th>
-                <th data-options="field:'9'">时间</th>
+                <th data-options="field:'7'">发布人及信息</th>
+                <th data-options="field:'8'">编辑栏</th>
+                <th data-options="field:'9'">删除栏</th>
+                <th data-options="field:'10'">时间</th>
             </tr>
             </thead>
             <tbody>
@@ -81,18 +82,19 @@
                 <tr>
                     <td><input class="articleSelectId" type="checkbox" name="articleSelectId" value="${article.articleid}"></td>
                     <td>${article.state}</td>
-                    <td><a href="${pageContext.request.contextPath}/navigation/article_queryByPend?aid=${article.articleid}">审核</a></td>
+                    <td><a href="${pageContext.request.contextPath}/navigation/article_queryByPend?aid=${article.articleid}" onclick="return confirm('是否要审核该记录吗？')">审核</a></td>
                     <td>${article.articleid}<br></td>
                     <td>${article.enterprisename}<br></td>
                     <td>${article.author}<br></td>
                     <td>${article.authortel}<br></td>
+                    <td>${article.other}<br></td>
                     <td><a href="${pageContext.request.contextPath}/navigation/article_queryByNavi?aid=${article.articleid}">修改</a></td>
                     <td><a href='${pageContext.request.contextPath}/navigation/article_delete?articleid=${article.articleid}&all=0' onclick="return confirm('确实要删除该 记录吗？')">删除</a></td>
                     <td>${article.articletime}<br></td>
                 </tr>
             </c:forEach>
             </tbody>
-            <a href="javascript:document.filter.action='navigation_review?batch=true';document.filter.submit();">批量审核</a><br>
+           <button><a href="javascript:document.filter.action='navigation_review?batch=true';document.filter.submit();">批量审核</a></button><br>
         </table>
     </form>
     共有记录${recordCount}条， 第${pageNo}/${pageCount}页，
