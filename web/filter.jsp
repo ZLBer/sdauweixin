@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: john
@@ -82,6 +83,13 @@
     </select>
     <input type="submit" value="查询"   style="width:50px;height:30px">
 </form>
+    <%
+        String pageNo = request.getParameter("pageNo");
+        pageContext.setAttribute("pageNo",pageNo);
+    %>
+    <%--<c:import url="getMoreServlet?pageNo=<%=request.getParameter("pageNo")%>"/>--%>
+    <c:url var="getMore" value="getMoreServlet?pageNo=${pageNo}"/>
+    <c:import url="${getMore}"/>
 <div style="bottom:0; left:0; position:fixed; width:100%"><img src="${pageContext.request.contextPath}/images/dibu.png" style="width:100%;height:150px"></div>
 </center>
 </body>

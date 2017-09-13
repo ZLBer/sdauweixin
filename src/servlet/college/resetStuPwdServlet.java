@@ -1,5 +1,8 @@
 package servlet.college;
 
+import po.CollegeEntity;
+import po.CollegeloginEntity;
+import po.StudentEntity;
 import po.StudentloginEntity;
 import util.HibernateUtil;
 
@@ -23,7 +26,11 @@ public class resetStuPwdServlet extends HttpServlet {
         PrintWriter writer = response.getWriter();
         String stuId = request.getParameter("stuId");
         StudentloginEntity studentloginEntity = (StudentloginEntity) HibernateUtil.get(StudentloginEntity.class,Integer.parseInt(stuId));
-        if (studentloginEntity==null){
+        StudentEntity studentEntity = (StudentEntity) HibernateUtil.get(StudentEntity.class,Integer.parseInt(stuId));
+        int collegeId = ((CollegeloginEntity)request.getSession().getAttribute("user")).getCollegeid();
+        CollegeEntity collegeEntity = (CollegeEntity) HibernateUtil.get(CollegeEntity.class,collegeId);
+
+        if (studentloginEntity==null||!studentEntity.getStudentcollege().equals(collegeEntity.getCollegename())){
             writer.print("未找到该学生");
             return;
         }

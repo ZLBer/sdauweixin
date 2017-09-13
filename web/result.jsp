@@ -33,7 +33,7 @@ ${msg}
             </tr>
         </c:forEach>
     </table>
-    <center><a href='filter.jsp'>上一步</a></center>
+    <center><a href='filter.jsp?pageNo=1'>上一步</a></center>
 	<div style="bottom:0; left:0; position:fixed; width:100%"><img src="${pageContext.request.contextPath}/images/dibu.png" style="width:100%;height:150px"></div>
 </body>
 </html>

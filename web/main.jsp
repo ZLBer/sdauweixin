@@ -105,7 +105,7 @@
 				<br>
 			</c:forEach>
 			<p>
-				<a class="btn" href="filter.jsp">查看更多</a>
+				<a class="btn" href="filter.jsp?pageNo=1">查看更多</a>
 			</p>
 		</div>
 		<div class="col-xs-12 col-md-4 col-lg-4 column">
@@ -113,7 +113,7 @@
 				就业专场信息
 			</h2>
 			<c:forEach items="${articleSpecial}" var="articlespecial">
-				<a href='article_query?aid=${articlespecial.articleid}')>${articlespecial.enterprisename}</a>
+				<a href='article_query?aid=${articlespecial.articleid}'>${articlespecial.enterprisename}</a>
 				<br>
 			</c:forEach>
 			<p>
