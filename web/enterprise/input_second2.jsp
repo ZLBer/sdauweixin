@@ -11,53 +11,7 @@
 <head>
     <title>添加专业和人数</title>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
-    <script type="text/javascript" src="../js/ajax.js"></script>
-    <script type="text/javascript">
-        function refresh()
-        {
-
-            var c=document.getElementById("college").value;
-            var major=document.getElementById("major");
-            if(c=="")
-            {
-                major.length=0;
-                major.options.add(new Option("--请选择专业--"));
-            }
-            else{
-                var url="list";
-                var params="coll="+c;
-                sendRequest(url,params,'POST',show);
-            }
-        }
-        function show()
-        {
-            var major=document.getElementById("major");
-            if(httpRequest.readyState==4){
-                if(httpRequest.status==200)
-                {
-                    var majorlist=httpRequest.responseText.split(",");
-                    var majornum=majorlist.length;
-                    major.length=0;
-                    for(i=0;i<majornum;i++)
-                        major.options.add(new Option(majorlist[i]));
-                }
-            }
-        }
-    </script>
-    <style>
-        body{
-            text-align:center;
-        }
-        th,td{
-            border:2px solid gray;
-            text-align:center;
-            padding:3px 10px;
-        }
-        table{
-            border-collapse:collapse;
-            margin:0 auto;
-        }
-    </style>
+    <jsp:include page="second_header.jsp"/>
 </head>
 
 <body onload="refresh()" background="${pageContext.request.contextPath}/images/beijing.png">
