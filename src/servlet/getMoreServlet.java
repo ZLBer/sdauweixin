@@ -18,7 +18,6 @@ import java.util.List;
 @WebServlet(name = "getMoreServlet",urlPatterns = "/getMoreServlet")
 public class getMoreServlet extends HttpServlet {
     public static final String STATE_PASS = "审核";
-    private final int PAGE_SIZE = 10;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request,response);
@@ -33,11 +32,12 @@ public class getMoreServlet extends HttpServlet {
         String condition = "WHERE state='"+STATE_PASS+"' " +
                 "AND columnid = "+columnId;
         int count = HibernateUtil.recordCount(clazz,condition);
+        int PAGE_SIZE = 10;
         List infoList = HibernateUtil.query(
                 clazz,
                 condition,
                 "ORDER BY articletime DESC",
-                Integer.parseInt(pageNo),PAGE_SIZE);
+                Integer.parseInt(pageNo), PAGE_SIZE);
 
         String href;
         if (columnId.equals("1")){
@@ -47,7 +47,7 @@ public class getMoreServlet extends HttpServlet {
         }
         request.setAttribute("infoList",infoList);
         request.setAttribute("currentPage",pageNo);
-        request.setAttribute("pageSize",PAGE_SIZE);
+        request.setAttribute("pageSize", PAGE_SIZE);
         request.setAttribute("count",count);
         request.setAttribute("servlet",href);
         request.getRequestDispatcher("moreInfo.jsp").forward(request,response);
