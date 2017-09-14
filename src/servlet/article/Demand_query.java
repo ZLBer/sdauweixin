@@ -30,16 +30,16 @@ public class Demand_query extends HttpServlet {
         //String majorname=request.getParameter("major");
         int collegeid=Integer.parseInt(request.getParameter("college"));
 
-        java.util.List<MajorEntity> userList=new ArrayList<MajorEntity>();
+        java.util.List<MajorEntity> userList;
         String condition="where major.majorname='"+majorname+"' and major.collegeid="+collegeid;
         userList=HibernateUtil.query("MajorEntity major", condition);
         if(userList.size()>0)
             user=userList.get(0);
         int majorid=user.getMajorid();
         String condition2="where demand.majorid="+majorid;
-        java.util.List<DemandEntity> demandList=new ArrayList<DemandEntity>();
+        java.util.List<DemandEntity> demandList;
         java.util.List<ArticleEntity> articleList=new ArrayList<ArticleEntity>();
-        java.util.List<ArticleEntity> articleList2=new ArrayList<ArticleEntity>();
+        java.util.List<ArticleEntity> articleList2;
         demandList= HibernateUtil.query("DemandEntity demand", condition2);
 
         for(int i=0;i<demandList.size();i++) {

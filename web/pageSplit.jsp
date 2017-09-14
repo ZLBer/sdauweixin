@@ -6,7 +6,10 @@
   Time: 20:27
   To change this template use File | Settings | File Templates.
   本分页组件需要传入的参数有：
-
+        count:记录总数
+        pageSize:页面大小
+        currentPage:当前页
+        servlet:用于填充href
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -14,7 +17,7 @@
     <title></title>
 </head>
 <body>
-    <c:set var="pageCount" value="${(count+pageCount-1)/pageSize}"/>
+    <c:set var="pageCount" value="${(count+pageSize-1)/pageSize}"/>
     <%
         Integer pageCount = ((Double)pageContext.getAttribute("pageCount")).intValue();
         pageContext.setAttribute("pageCount",pageCount);

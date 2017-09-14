@@ -150,7 +150,7 @@
 
 			</ul>
 			<p>
-				<a class="btn" href="filter.jsp">查看更多</a>
+				<a class="btn" href="filter.jsp?pageNo=1&columnId=1">查看更多</a>
 			</p>
 		</div>
 
@@ -163,7 +163,7 @@
 				<li>	<a href='article_query?aid=${articlespecial.articleid}')>${articlespecial.enterprisename}</a></li>
 			</c:forEach>
 			<p>
-				<a class="btn" href="#">查看更多</a>
+				<a class="btn" href="filter.jsp?pageNo=1&columnId=2">查看更多</a>
 			</p>
 		</div>
 

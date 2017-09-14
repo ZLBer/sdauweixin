@@ -5,6 +5,10 @@
   Date: 2017/5/6
   Time: 20:37
   To change this template use File | Settings | File Templates.
+  Description: 本页面用于展示更多招聘信息。
+  需要如下参数：
+  pageNo: 需要显示第几页数据
+  columnId: 栏目Id
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -85,11 +89,14 @@
 </form>
     <%
         String pageNo = request.getParameter("pageNo");
+        if(pageNo==null||pageNo.equals("")) pageNo = "1";
         pageContext.setAttribute("pageNo",pageNo);
+        String columnId = request.getParameter("columnId");
+        if(columnId==null||pageNo.equals("")) columnId = "1";
+        pageContext.setAttribute("columnId",columnId);
     %>
-    <%--<c:import url="getMoreServlet?pageNo=<%=request.getParameter("pageNo")%>"/>--%>
-    <c:url var="getMore" value="getMoreServlet?pageNo=${pageNo}"/>
-    <c:import url="${getMore}"/>
+    <c:import url="getMoreServlet?pageNo=${pageNo}&columnId=${columnId}"/>
+    <a href="main.jsp">返回上一页</a>
 <div style="bottom:0; left:0; position:fixed; width:100%"><img src="${pageContext.request.contextPath}/images/dibu.png" style="width:100%;height:150px"></div>
 </center>
 </body>
