@@ -81,6 +81,8 @@ public class Enterprise_inthird extends HttpServlet {
                         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
                         String dateString = formatter.format(date);
                         fileName = new File(dateString + item.getName()).getName();
+                        String []fileNames=fileName.split("\\.");
+                        fileName=dateString+(int)Math.random()*10+"."+fileNames[fileNames.length-1];
                         System.out.println(fileName);
                         absoultfilePath ="/enterprise/upload/" +fileName ;
                         System.out.println(absoultfilePath);

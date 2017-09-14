@@ -8,6 +8,7 @@ import po.DemandEntity;
 import util.HibernateUtil;
 import weixin.ParamesAPI.util.ParamesAPI;
 import weixin.ParamesAPI.util.WeixinUtil;
+import weixin.contacts.util.MPerson;
 import weixin.msg.Resp.TextCard;
 import weixin.msg.Util.Articles;
 import weixin.msg.Util.SMessage;
@@ -19,13 +20,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Administrator on 2017/9/3.
  */
-@WebServlet(name = "College_SendMessage")
+
 public class College_SendMessage extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,7 +35,9 @@ public class College_SendMessage extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+          request.setCharacterEncoding("utf-8");
+          response.setCharacterEncoding("utf-8");
+        PrintWriter out=response.getWriter();
         //articleid
         //article ...
         int articleid = Integer.parseInt(request.getParameter("articleid"));
@@ -44,6 +48,8 @@ public class College_SendMessage extends HttpServlet {
 
         //转换获取部门id---------------------------
         String toparty="";
+        String mobile=article.getAuthortel();		//企业联系方式
+        String name=article.getEnterprisename();	//企业名
         String condition2="where demand.articleid="+articleid;
         List<DemandEntity> demandList=new ArrayList<DemandEntity>();
         demandList= HibernateUtil.query("DemandEntity demand", condition2);
@@ -76,9 +82,33 @@ public class College_SendMessage extends HttpServlet {
         }
         //获取部门id结束---------------------------------
 
-
+        //--------------------------------------------------------------------增加企业通讯录成员
         // 调取凭证
         String access_token = WeixinUtil.getAccessToken(ParamesAPI.corpId, ParamesAPI.secret).getToken();
+
+        // 创建成员地址
+        String CREATE_URL = "https://qyapi.weixin.qq.com/cgi-bin/user/create?access_token=ACCESS_TOKEN ";
+
+
+        // 拼装数据
+        MPerson mp=new MPerson();
+        String userid=articleid+"";
+        String PostData =mp.Create(userid, name, mobile);
+
+        String RequestURL = mp.CREATE_URL.replace("ACCESS_TOKEN",access_token);
+        System.out.println(PostData);
+        // 提交数据,获取结果
+        int result = WeixinUtil.PostMessage(access_token, "POST", CREATE_URL, PostData);
+        // 打印结果
+
+        if(0==result){
+            System.out.println("通讯录成员增加成功");
+        }
+        else {
+            System.out.println("通讯录成员增加操作失败");
+        }
+
+        //--------------------------------------------------------------------开始发消息
         //创建发送消息对象
         SMessage smsg=new SMessage();
         //拼接url
@@ -107,12 +137,12 @@ public class College_SendMessage extends HttpServlet {
         // 打印结果
         if (0 == result1) {
             System.out.println("发送招聘信息成功");
-            request.getServletContext().getRequestDispatcher("/college/college_message.jsp").forward(request, response);
+          out.println("招聘信息发布成功");
+         //   request.getRequestDispatcher("/college/college_message.jsp").forward(request, response);
         } else {
             System.out.println("发送招聘信息操作失败");
         }
+       // request.getRequestDispatcher("/college/college_message.jsp").forward(request, response);
 
-        request.getServletContext().getRequestDispatcher("/college/college_message.jsp").forward(request, response);
-
-}
+    }
 }

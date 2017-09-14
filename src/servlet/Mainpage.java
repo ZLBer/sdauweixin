@@ -22,7 +22,7 @@ public class Mainpage extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String condition="";
         condition=" where state='审核' and columnid=1";
-        int pageSize=5;
+        int pageSize=10;
         int pageNo=1;
         String order="order by articleid desc";
             int recordCount= HibernateUtil.recordCount("ArticleEntity", condition);

@@ -35,6 +35,7 @@
         <div class="form-group">
             <label for="inputfile">上传企业营业执照</label>
             <br>
+            <label style="color: red">*请上传图片格式</label>
             <br>
             <input type="file" id="inputfile" name="file1">
         </div>

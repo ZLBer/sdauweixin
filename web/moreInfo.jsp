@@ -8,19 +8,20 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+	<meta charset="utf-8"  />
 <head>
     <title>Title</title>
 </head>
 <body>
     <table>
         <tr>
-            <td>标题</td>
-            <td>时间</td>
+            <td width="300px" style="text-align: center;">标题</td>
+            <td style="text-align: center;">时间</td>
         </tr>
         <c:forEach var="item" items="${infoList}">
             <tr>
-                <td><a href="article_query?aid=${item.articleid}">${item.enterprisename}</a></td>
-                <td>${item.articletime}</td>
+                <td style="text-align: center;"><img src="images/list.png"><a href="article_query?aid=${item.articleid}"><font size="-1">${item.enterprisename}</font></a></td>
+                <td width="300px" style="text-align: center;"> <font size="-1">${item.articletime}</font></td>
             </tr>
         </c:forEach>
     </table>

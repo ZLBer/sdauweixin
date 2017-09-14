@@ -8,13 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-    <meta http-equiv="refresh" content="2;url=${pageContext.request.contextPath}/college/college_select?pageNo=1">
     <title>提示</title>
 </head>
 <body>
 
-<h1>发布成功，2秒后跳转主页</h1>
+<h1>招聘信息发布成功</h1>
 
 </body>
 </html>

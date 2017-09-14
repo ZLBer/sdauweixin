@@ -14,61 +14,110 @@
 <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/default/easyui.css">
 <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/demo/demo.css">
 <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/icon.css">
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
 <script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
-<head>
+
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
-    <title>文章查看</title>
-    <style type="text/css">
-        /*  #right{float:right;}
-          #left{float:left;}*/
-        th,td{
-            border:2px solid gray;
-            /* text-align:center;*/
-            padding:3px 10px;
-            font-family:楷体;
-        }
-        table{
-            border-collapse:collapse;
-            margin:0 auto;
-            border-radius:15px;
-            overflow:hidden;
-            background:#E0ECFF;
-        }
-        td{
-            margin:0px;
-            border:0px;
-            /*cellspacing=0;
-            cellpadding=0;*/
-            height:40px;
-        }
-    </style>
+<style>
+    th,td{
+        border:2px solid gray;
+        /* text-align:center;*/
+        padding:3px 10px;
+        font-family:楷体;
+    }
+    table{
+        border-collapse:collapse;
+        margin:0 auto;
+        border-radius:15px;
+        overflow:hidden;
+        background:#D3D3D3;
+    }
+    td{
+        margin:0px;
+        border:0px;
+        /*cellspacing=0;
+        cellpadding=0;*/
+        height:40px;
+    }
+    .left
+    {
+    	float: left;
+    	width: 400px;
+    	height:300px;
+    }
+    .right
+    {
+    	float: right;
+    	margin-left: 100px;
+    	/*padding-left:100px ;*/
+    	padding-right: 500px;
+    	text-align: left;
+    	width: 400px;
+    	height: 300px;
+    	
+    	
+    }
+    .center
+    {
+    	margin: 0 auto;
+    	width:100%;
+    	height: auto;
+    }
+    .input-group-addon
+    {
+    	width: 400px;
+    	height: 50px;
+    	border-radius: 5px;
+    	
+    }
+    .bott
+    {
+    	
+    	margin-bottom: 240px;
+    	border:1px solid black;
+    	padding-bottom: 100px;
+    	width: 200px;
+    }
+    .aa
+    {
+    	margin: 0 auto;
+    }
+</style>
 </head>
 <body>
-<div style="padding:0 100px;">
+<div style="padding:0 100px;" class="aa">
     <c:forEach items="${articleList}" var="article">
-    <center>${article.enterprisename}</center>
+     <font size="+2"> ${article.enterprisename}</font> 
         ${article.articletext}
-    <table >
-        <tr>
-            <td>当前时间:</td>
-            <td>${article.articletime}</td>
-            <td>作者:</td>
-            <td>${article.author}</td>
-            <td rowspan="2"> 企业证明:</td>
-            <td><img src="${pageContext.request.contextPath}${article.mediaid}" width="200px" height="250px"></td>
-        </tr>
-        <tr>
-            <td>作者电话:</td>
-            <td>${article.authortel}</td>
-            <td>状态:</td>
-            <td>${article.state}</td>
-        </tr>
-    </table>
-    <br><a href="${pageContext.request.contextPath}${article.mediaid}">下载营业执照</a>
-    <div id="left">
-        <a href="${pageContext.request.contextPath}/navigation/navigation_view?pageNo=1">返回上一页</a>
-    </div>
+    
+          <div class="center"> 
+            <div class="left">
+	            <span class="input-group-addon" style="border-radius:5px ;">发布时间: ${article.articletime}</span>
+	               <br />
+	            <span class="input-group-addon" style="border-radius:5px ;">作者:${article.author}</span>
+	                <br />
+	           
+	            <span class="input-group-addon" style="border-radius:5px ;">作者电话:${article.authortel}</span>
+	                <br />
+	            <span class="input-group-addon" style="border-radius:5px ;">状态:${article.state}</span>
+	                <br />
+	                <a href="${pageContext.request.contextPath}${article.mediaid}">下载营业执照</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	                
+	                <a href="${pageContext.request.contextPath}/navigation/navigation_view?pageNo=1">返回上一页</a>
+    
+	               </div>
+     		   <div class="right">
+	            <span class="input-group-addon" style="width:230px; height: 50px;border-radius: 5px;">企业证明:</span>
+	            <p></p>
+	            <img src="${pageContext.request.contextPath}${article.mediaid}" width="200px" height="250px"><br />
+ 
+    		
+    
+        
+				</div>
 </div>
 </c:forEach>
 </body>

@@ -32,7 +32,7 @@ public class getMoreServlet extends HttpServlet {
         String condition = "WHERE state='"+STATE_PASS+"' " +
                 "AND columnid = "+columnId;
         int count = HibernateUtil.recordCount(clazz,condition);
-        int PAGE_SIZE = 10;
+        int PAGE_SIZE = 15;
         List infoList = HibernateUtil.query(
                 clazz,
                 condition,

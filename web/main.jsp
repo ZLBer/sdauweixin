@@ -109,14 +109,14 @@
 				</ol>
 				<div class="carousel-inner">
 					<div class="item next left" style="background: url('images/2.jpg');background-repeat: repeat">
-						<img style="z-index: 10;" alt="" src="images/1.jpg" />
+						<img  style="z-index: 10;height: 300px;width: 1000px" alt="" src="images/1.jpg" />
 						<div class="carousel-caption">
 							<%--<h4>--%>
 								<%--First Thumbnail label--%>
 							<%--</h4>--%>
 						</div>
 					</div>
-					<div class="item" style="background: url('images/3.jpg');background-repeat: repeat">
+					<div class="item" style="background: url('images/3.jpg');background-repeat: repeat;height: 300px">
 						<img alt="" src="images/2.jpg" />
 						<div class="carousel-caption">
 							<%--<h4>--%>
@@ -124,7 +124,7 @@
 							<%--</h4>--%>
 						</div>
 					</div>
-					<div class="item active left" style="background: url('images/1.jpg');background-repeat: repeat">
+					<div class="item active left" style="background: url('images/1.jpg');background-repeat: repeat;height: 300px">
 						<img alt="" src="images/3.jpg" />
 						<div class="carousel-caption">
 							<%--<h4>--%>
@@ -162,6 +162,7 @@
 			<c:forEach items="${articleSpecial}" var="articlespecial">
 				<li>	<a href='article_query?aid=${articlespecial.articleid}')>${articlespecial.enterprisename}</a></li>
 			</c:forEach>
+			</ul>
 			<p>
 				<a class="btn" href="filter.jsp?pageNo=1&columnId=2">查看更多</a>
 			</p>
@@ -170,10 +171,11 @@
 		<div class="col-xs-12 col-md-4 col-lg-4 column" id="div3">
 		<img src="images/main2_3.gif"  width="130px" height="50px"/>
 			<p></p>
-
+			<p></p>
+		</br>
 			<p>
 				<img src="images/03.png"><a href="login.jsp" ><font size="+2" color="#666666">校内用户登录</font></a><br></p><p></p><p></p>
-			<img src="images/03.png"><a href="enterprise/input_first.jsp"><font size="+2" color="#666666">企业入口</font></a>
+			<%--<img src="images/03.png"><a href="enterprise/input_first.jsp"><font size="+2" color="#666666">企业入口</font></a>--%>
 			<p></p>
 		</div>
 	</div>

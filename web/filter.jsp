@@ -49,6 +49,11 @@
         }
     </script>
     <style>
+        a:link
+        {
+            color: black;
+            text-decoration: none;
+        }
 	/*div{
 	width: 100%;
 	height: 50px;
@@ -59,7 +64,7 @@
 	</style>
 </head>
 
-<body background="${pageContext.request.contextPath}/images/beijing.png">
+<body background="images/beijing.jpg">
 <center>
 <form action="demand_query" style="padding-top:100px">
     <select name="college" id="college" onchange="refresh()"  style="width:150px">
@@ -97,7 +102,7 @@
     %>
     <c:import url="getMoreServlet?pageNo=${pageNo}&columnId=${columnId}"/>
     <a href="main.jsp">返回上一页</a>
-<div style="bottom:0; left:0; position:fixed; width:100%"><img src="${pageContext.request.contextPath}/images/dibu.png" style="width:100%;height:150px"></div>
+<div style="bottom:0; left:0; position:fixed; width:100%"><img src="images/dibu.jpg" style="width:100%;height:150px"></div>
 </center>
 </body>
 </html>
