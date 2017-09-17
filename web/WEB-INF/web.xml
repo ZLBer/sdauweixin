@@ -40,7 +40,7 @@
         <filter-class>filter.SessionFilter</filter-class>
         <init-param>
             <param-name>logonStrings</param-name><!-- 对登录页面不进行过滤 -->
-            <param-value>/enterprise/input_third2.jsp;/index.jsp;/login.jsp;LoginAction.do;GetUserID.do;/404.jsp;/filter.jsp;/500.jsp;
+            <param-value>/enterprise/input_third2.jsp;/index.jsp;/zhiyin.jsp;/login.jsp;LoginAction.do;GetUserID.do;/404.jsp;/filter.jsp;/500.jsp;
                 /enterprise/enterprise_message.jsp;/enterprise/input_first.jsp;/enterprise/input_first2.jsp;
                 /enterprise/input_second.jsp;/enterprise/input_second2.jsp;/enterprise/input_third.jsp;
                 /input_third2.jsp;Demand_delete.do;Demand_delete2.do;Enterprise_infirst.do;

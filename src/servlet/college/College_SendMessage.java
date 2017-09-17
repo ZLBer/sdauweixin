@@ -37,6 +37,7 @@ public class College_SendMessage extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
           request.setCharacterEncoding("utf-8");
           response.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=UTF-8");
         PrintWriter out=response.getWriter();
         //articleid
         //article ...
@@ -137,10 +138,11 @@ public class College_SendMessage extends HttpServlet {
         // 打印结果
         if (0 == result1) {
             System.out.println("发送招聘信息成功");
-          out.println("招聘信息发布成功");
+          out.println("<h2> 招聘信息发布成功</h2>");
          //   request.getRequestDispatcher("/college/college_message.jsp").forward(request, response);
         } else {
             System.out.println("发送招聘信息操作失败");
+            out.println("<h2> 招聘信息发布失败！<h3>");
         }
        // request.getRequestDispatcher("/college/college_message.jsp").forward(request, response);
 

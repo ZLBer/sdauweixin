@@ -24,9 +24,9 @@ public class Navigation_view extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String fieldName = request.getParameter("fieldName");
         String fieldValue = request.getParameter("fieldValue");
-        String condition = "";
+        String condition = "where columnid=1 and state!='未发布'";
         if (fieldName != null && !"".equals(fieldName)) {
-            condition = " where " + fieldName + " like '%" + fieldValue + "%' ";
+            condition = " where " + fieldName + " like '%" + fieldValue + "%' and state!='未发布' and columnid=1";
         }
         int pageSize = 20;
         int pageNo=Integer.parseInt(request.getParameter("pageNo")==null?"1":request.getParameter("pageNo"));

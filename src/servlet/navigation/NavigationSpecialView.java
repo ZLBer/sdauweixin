@@ -32,7 +32,7 @@ public class NavigationSpecialView extends HttpServlet {
         int pageNo = Integer.parseInt(request.getParameter("pageNo") == null ? "1" : request.getParameter("pageNo"));
             int recordCount = HibernateUtil.recordCount("ArticleEntity", condition);
             if (recordCount > 0) {
-                List<Article> articlelist = HibernateUtil.query("ArticleEntity", condition, "order by articleid desc", pageNo, pageSize);
+                List<Article> articlelist = HibernateUtil.query("ArticleEntity", condition+" and state!='未发布'", "order by articleid desc", pageNo, pageSize);
                 int t1 = recordCount % pageSize;
                 int t2 = recordCount / pageSize;
                 int pageCount = (t1 == 0 ? t2 : t2 + 1);

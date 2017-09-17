@@ -146,15 +146,26 @@
                 <th data-options="field:'3'">性别</th>
                 <th data-options="field:'4'">专业</th>
                 <th data-options="field:'5'">班级</th>
-                <th data-options="field:'6'">外语水平</th>
-                <th data-options="field:'7'">计算机水平</th>
-                <th data-options="field:'8'">政治面貌</th>
-                <th data-options="field:'9'">状态</th>
+                <th data-options="field:'6'">主修外语语种</th>
+                <th data-options="field:'7'">外语水平</th>
+                <th data-options="field:'8'">计算机水平</th>
+                <th data-options="field:'9'">政治面貌</th>
                 <th data-options="field:'10'">民族</th>
                 <th data-options="field:'11'">电话</th>
-                <th data-options="field:'12'">生源所在地</th>
-                <th data-options="field:'13'">常住地址市区县</th>
-                <th data-options="field:'14'">操作</th>
+                <th data-options="field:'12'">入学年份</th>
+                <th data-options="field:'13'">毕业时间</th>
+                <th data-options="field:'14'">生源所在地</th>
+                <th data-options="field:'15'">常住地址市区县</th>
+                <th data-options="field:'16'">常住地址详细（街道门牌号）</th>
+                <th data-options="field:'17'">常住地址乡镇街道办事处</th>
+                <th data-options="field:'18'">常住地址乡镇街道办事处描述</th>
+                <th data-options="field:'19'">现户籍所在地详细（街道门牌号）</th>
+                <th data-options="field:'20'">现户籍地址乡镇街道办事处</th>
+                <th data-options="field:'21'">现户籍地址乡镇街道办事处描述</th>
+                <th data-options="field:'22'">户籍性质</th>
+                <th data-options="field:'23'">家庭常用联系电话</th>
+                <th data-options="field:'24'">状态</th>
+                <th data-options="field:'25'">操作</th>
 
 
 
@@ -170,14 +181,25 @@
                     <td>${stu.studentsex}</td>
                     <td>${stu.studentmajor}</td>
                     <td>${stu.studentclass}</td>
+                    <td>${stu.majorforeign}</td>
                     <td>${stu.foreignlevel}</td>
                     <td>${stu.comlevel}</td>
                     <td>${stu.political}</td>
-                    <td>${stu.studentstate}</td>
                     <td>${stu.studentnation}</td>
                     <td>${stu.studenttel}</td>
+                    <td>${stu.enteryear}</td>
+                    <td>${stu.graduationtime}</td>
                     <td>${stu.location}</td>
                     <td>${stu.resident}</td>
+                    <td>${stu.residentdetailed}</td>
+                    <td>${stu.residentoffice}</td>
+                    <td>${stu.residentaddress}</td>
+                    <td>${stu.registerdetailed}</td>
+                    <td>${stu.registeroffice}</td>
+                    <td>${stu.registeraddress}</td>
+                    <td>${stu.type}</td>
+                    <td>${stu.hometel}</td>
+                    <td>${stu.studentstate}</td>
                     <td>
                         <a href="${pageContext.request.contextPath}/college/modifyStudentInfo.jsp?studentid=${stu.studentid}">修改</a>
                         <a href="javascript:areYouSure(${stu.studentid})">重置</a>&nbsp;

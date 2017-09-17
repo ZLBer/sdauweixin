@@ -175,7 +175,7 @@
 		</br>
 			<p>
 				<img src="images/03.png"><a href="login.jsp" ><font size="+2" color="#666666">校内用户登录</font></a><br></p><p></p><p></p>
-				<img src="images/03.png"><a href="enterprise/input_first.jsp"><font size="+2" color="#666666">企业入口</font></a>
+				<%--<img src="images/03.png"><a href="zhiyin.jsp"><font size="+2" color="#666666">企业入口</font></a>--%>
 			<p></p>
 		</div>
 	</div>

@@ -109,6 +109,7 @@ public class Enterprise_inthird2 extends HttpServlet {
         try {
             ArticleEntity articleEntity = (ArticleEntity) HibernateUtil.get(Class.forName("po.ArticleEntity"), article.getArticleid());
             articleEntity.setMediaid(absoultfilePath);
+            articleEntity.setState("未审核");
             HibernateUtil.update(articleEntity);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

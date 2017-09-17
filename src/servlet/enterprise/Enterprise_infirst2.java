@@ -23,7 +23,7 @@ public class Enterprise_infirst2 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=utf-8");
         request.setCharacterEncoding("UTF-8");
-        String state = "未审核";
+        String state = "未发布";
 
         String   articletext=request.getParameter("articletext");
         String   enterprisename=request.getParameter("enterprisename");
