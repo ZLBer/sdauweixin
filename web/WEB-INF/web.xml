@@ -45,7 +45,7 @@
                 /enterprise/input_second.jsp;/enterprise/input_second2.jsp;/enterprise/input_third.jsp;
                 /input_third2.jsp;Demand_delete.do;Demand_delete2.do;Enterprise_infirst.do;
                 Enterprise_infirst2.do;Enterprise_insecond.do;Enterprise_insecond2.do;Enterprise_inthird.do;
-                Enterprise_inthird2.do;List.do;
+                Enterprise_inthird2.do;List.do;jyzx.jsp;Jyzx.do;
             </param-value>
         </init-param>
         <init-param>

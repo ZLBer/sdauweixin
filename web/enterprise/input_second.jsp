@@ -16,6 +16,10 @@
 </head>
 
 <body onload="refresh()" background="${pageContext.request.contextPath}/images/beijing.png">
+</br>
+</br>
+</br>
+</br>
 <h3>如果不选择专业，则无法将招聘信息精准发送给相关专业学生。</h3>
 
 <table>

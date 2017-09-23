@@ -302,7 +302,7 @@
             </tr>
             <tr>
                 <td >户籍登记日期</td>
-                <td><input type="text" class="input_search_key" data-beatpicker="true" name="stuBirth"></td>
+                <td><input type="text" class="input_search_key" data-beatpicker="true" name="registerTime"></td>
             </tr>
             <tr>
                 <td >个人联系电话</td>

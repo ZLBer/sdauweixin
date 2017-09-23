@@ -14,6 +14,16 @@
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
     <title>提交招聘信息</title>
+    <script>
+        function check() {
+            if (CKEDITOR.instances.TextArea1.getData() == '') {
+                alert('招聘信息简章不能为空！');
+                CKEDITOR.instances.TextArea1.focus();
+                return false;
+            }
+
+        }
+    </script>
 </head>
 <body>
 <div class="container" >
@@ -44,10 +54,10 @@
                     </div>
                     <p style="color:red;">温馨提示：请填写您的手机号，以便接收所关注微信平台的验证码。关注后我们会将审核结果发送到您的微信上。</p>
                     <p>招聘信息简章：</p>
-                    <textarea class="ckeditor"   name="articletext" rows="20" cols="216" >（这里填写招聘信息）
+                    <textarea class="ckeditor"   name="articletext" id="TextArea1" rows="20" cols="216" >（这里填写招聘信息）
             </textarea>
                     <p></p>
-                    <center><button type="submit" class="btn btn-default">下一步</button></center>
+                    <center><button type="submit" class="btn btn-default" onclick="return check()">下一步</button></center>
 
                 </form>
             </div>

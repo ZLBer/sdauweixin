@@ -37,7 +37,7 @@ public class ArticleByPage extends HttpServlet {
         {
             condition = "where columnid=1";
         }
-        int pageSize=5;
+        int pageSize=20;
         int pageNo=Integer.parseInt(request.getParameter("pageNo"));
             int recordCount= HibernateUtil.recordCount("ArticleEntity", condition);
             if(recordCount>0){

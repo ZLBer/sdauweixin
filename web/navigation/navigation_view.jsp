@@ -38,7 +38,7 @@
     <select name="fieldName">
         <option value="" <c:if test="${param.fieldName==''}">selected</c:if>>全部</option>
         <option value="enterprisename" <c:if test="${param.fieldName=='enterprisename'}">selected</c:if>>企业名称</option>
-        <option value="articletext" <c:if test="${param.fieldName=='articletext'}">selected</c:if>>内容</option>
+        <%--<option value="articletext" <c:if test="${param.fieldName=='articletext'}">selected</c:if>>内容</option>--%>
     </select>
     <input type="text" name="fieldValue" value="${param.fieldValue}"/>
     <input type="hidden" name="pageNo" value="1"/>

@@ -15,16 +15,35 @@
 			font-family:楷体;
         }
         table{
+        	padding-bottom: 500px;
             border-collapse:collapse;
             margin:0 auto;
-			border-radius:15px;
+			/*border-radius:15px;*/
 			overflow:hidden;
-			background:#E0ECFF;
+			width: 100px;
+			height: 100px;
+        }
+        .div1{
+        	height: auto;
+        	width: 110px;
+        	margin: 0 auto;
+        }
+        
+        a:link
+        {
+        	text-decoration: none;
+        	color: black;
+        }
+        a:hover
+        {
+        	color: white;
         }
     </style>
 </head>
-<body background="${pageContext.request.contextPath}/images/beijing.png">
+<body background="images/beijing.jpg">
 ${msg}
+<p></p>
+<div class="div1">
     <table frame="void">
         <tr><th>企业名称</th></tr>
         <c:forEach items="${articleList}" var="article">
@@ -33,7 +52,10 @@ ${msg}
             </tr>
         </c:forEach>
     </table>
+ </div>
+ <p></p>
     <center><a href='filter.jsp?pageNo=1'>上一步</a></center>
-	<div style="bottom:0; left:0; position:fixed; width:100%"><img src="${pageContext.request.contextPath}/images/dibu.png" style="width:100%;height:150px"></div>
+   
+	<div style="bottom:0; left:0; position:fixed; width:100%"><img src="images/dibu.jpg" style="width:100%;height:150px"></div>
 </body>
 </html>

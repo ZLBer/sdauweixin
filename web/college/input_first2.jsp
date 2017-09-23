@@ -32,7 +32,7 @@
             <td>   <input type="reset" value="重置"/> </td>
             </tr>
         </table>-->
-        <textarea class="ckeditor"   name="articletext"  >（这里填写招聘信息）</textarea>
+        <textarea class="ckeditor"   name="articletext"  rows="20" cols="216">（这里填写招聘信息）</textarea>
         <br>
         <div class="input-group" style="padding-left: 100px">
             <span class="input-group-addon">企业名称：</span>

@@ -101,10 +101,10 @@
             <div class="left">
 	            <span class="input-group-addon" style="border-radius:5px ;">发布时间: ${article.articletime}</span>
 	               <br />
-	            <span class="input-group-addon" style="border-radius:5px ;">作者:${article.author}</span>
+	            <span class="input-group-addon" style="border-radius:5px ;">信息发布者:${article.author}</span>
 	                <br />
 	           
-	            <span class="input-group-addon" style="border-radius:5px ;">作者电话:${article.authortel}</span>
+	            <span class="input-group-addon" style="border-radius:5px ;">发布者电话:${article.authortel}</span>
 	                <br />
 	            <span class="input-group-addon" style="border-radius:5px ;">状态:${article.state}</span>
 	                <br />

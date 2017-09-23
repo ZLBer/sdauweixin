@@ -24,7 +24,7 @@
                     <br/>
                     <p>提交时间：${article.articletime} </p><br/>
                 </div>
-                <p>联系人： ${article.author}        联系电话：${article.authortel} </br></p>
+                <p>企业联系人： ${article.author}        联系电话：${article.authortel} </br></p>
                 <br/>
                     ${article.articletext}<br/>
             </div>

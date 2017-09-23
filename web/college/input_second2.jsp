@@ -12,7 +12,17 @@
     <title>添加专业和人数</title>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
     <script type="text/javascript" src="../js/ajax.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
     <script type="text/javascript">
+        function tableIsNotEmpty(tableId) {
+            var content = $("#"+tableId+" tr td").html();
+            if(content===null||content===undefined||content.trim()===""){
+                alert("所选专业不能为空！");
+                return false;
+            }else{
+                return true;
+            }
+        }
         function refresh()
         {
 
@@ -74,7 +84,7 @@
         </table>
     </td>
         <td>
-            <table>
+            <table id="collegeSelected">
                 <c:forEach items="${demandList}" var="demand">
                     <tr>
                         <td>${demand.demandnum}</td>
@@ -132,7 +142,7 @@ ${msg}
         </tr>
         <tr>
             <td> <input type="submit" value="添加">
-                <a href="${pageContext.request.contextPath}/college/college_SendMessage?articleid=${article.articleid}">下一步</a></td>
+                <a href="${pageContext.request.contextPath}/college/college_SendMessage?articleid=${article.articleid}" onclick="return tableIsNotEmpty('collegeSelected')">下一步</a></td>
         </tr>
     </table>
 </form>
