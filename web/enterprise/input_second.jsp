@@ -13,6 +13,18 @@
     <title>添加专业和人数</title>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
     <jsp:include page="second_header.jsp"/>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        function checkCount() {
+            var count=$("input[name='demandnum']").val();
+            if(count==0||count=="") {
+                alert("需求专业人数不能为空！");
+                return false;
+            }
+            else  return true;
+
+        }
+    </script>
 </head>
 
 <body onload="refresh()" background="${pageContext.request.contextPath}/images/beijing.png">
@@ -96,7 +108,7 @@ ${msg}
             <td>填写该专业需求人数<input type="text" name="demandnum" value="0"></td>
         </tr>
         <tr>
-            <td> <input type="submit" value="添加">
+            <td> <input type="submit" onclick="return checkCount()" value="添加">
                 <a href="input_third.jsp" onclick="return tableIsNotEmpty('collegeSelected')">下一步</a></td>
         </tr>
     </table>

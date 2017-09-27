@@ -13,6 +13,7 @@
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../enterprise/js/input_second.js"></script>
+    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
     <title>填写信息</title>
 </head>
 <body>
@@ -31,7 +32,7 @@
             <td>   <input type="reset" value="重置"/> </td>
             </tr>
         </table>-->
-        <textarea class="ckeditor"   name="articletext" rows="20" cols="216" >（这里填写招聘信息）</textarea>
+        <textarea class="ckeditor"   name="articletext" rows="20" cols="216" >（这里填写招聘信息）发布专场信息请注明时间、地点、承办学院等。/textarea>
         <br>
         <div class="input-group" style="padding-left: 100px">
             <span class="input-group-addon">企业名称：</span>

@@ -15,6 +15,8 @@ import java.io.IOException;
  */
 public class Student_modipwd extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
         StudentloginEntity student=(StudentloginEntity)request.getSession().getAttribute("user");
         String pwd1=request.getParameter("pwd1");
         student.setStudentpassword(Encrypt.MD5(pwd1));

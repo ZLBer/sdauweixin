@@ -24,7 +24,7 @@
     %>
     <c:if test="${pageCount>0}">
         <c:forEach var="i" begin="1" end="${pageCount}">
-            <a href="${pageContext.request.contextPath}${servlet}${i}">&nbsp;[${i}]&nbsp;</a>
+            <a href="${pageContext.request.contextPath}/${servlet}${i}">&nbsp;[${i}]&nbsp;</a>
         </c:forEach>
         &nbsp;&nbsp;&nbsp;当前第 ${currentPage} 页，共 ${pageCount} 页
     </c:if>
