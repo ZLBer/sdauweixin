@@ -89,9 +89,9 @@ public class LoginAction {
 					if (user == null) {
 						msg = "id不存在";
 					} else {
-						if(checkStatus(this.userid)==4||checkStatus(this.userid)==60111) {
-							return "studentfail";
-						}
+//						if(checkStatus(this.userid)==4||checkStatus(this.userid)==60111) {
+//							return "studentfail";
+//						}
 						if (Encrypt.MD5(userpwd).equals(user.getStudentpassword())) {
 							StudentEntity student=(StudentEntity) HibernateUtil.get(StudentEntity.class,Integer.parseInt(this.userid));
 							ActionContext.getContext().getSession().put("user", user);

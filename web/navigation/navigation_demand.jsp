@@ -24,8 +24,8 @@
 <center>
     <div style="margin:20px 0"></div>
     <div class="easyui-panel" title="查看需求" style="width:100%;padding:30px 60px;">
-        <table>
-            <tr><th>需求专业</th><th>需求人数</th></tr>
+        <table style="text-align:center;">
+            <tr ><th>需求专业</th><th>需求人数</th></tr>
             <tr><td>
                 <table>
                     <c:forEach items="${majorList}" var="major">

@@ -50,7 +50,7 @@
         </div>
         <br>
         <div class="input-group" style="padding-left: 100px">
-            <span class="input-group-addon">从何处获得该信息：</span>
+            <span class="input-group-addon">信息发布学院：</span>
             <input type="text" name="authortel" class="form-control" placeholder="在此输入获取信息的方式" required style="width: 745px">
         </div>
         <br>

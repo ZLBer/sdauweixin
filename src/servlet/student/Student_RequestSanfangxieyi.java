@@ -121,7 +121,7 @@ public class Student_RequestSanfangxieyi extends HttpServlet {
             if(request.getSession().getAttribute("userid")!=null){
                 request.getRequestDispatcher("/WEUI/operate_success.jsp").forward(request, response);
             }else{
-               // request.getRequestDispatcher("student_requestSanfangxieyi.jsp").forward(request, response);
+                request.getRequestDispatcher("student_requestSanfangxieyi.jsp").forward(request, response);
                 out.println("申请成功。");
             }
 
@@ -133,7 +133,7 @@ public class Student_RequestSanfangxieyi extends HttpServlet {
                 request.getRequestDispatcher("/WEUI/sanfang.jsp").forward(request, response);
             }else{
                 request.setAttribute("message", "已提交过申请请耐心等待");
-             //   request.getRequestDispatcher("student_requestSanfangxieyi.jsp").forward(request, response);
+                request.getRequestDispatcher("student_requestSanfangxieyi.jsp").forward(request, response);
                 out.println("已提交过申请请耐心等待。");
                 }
             }

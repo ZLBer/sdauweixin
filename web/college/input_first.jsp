@@ -32,7 +32,7 @@
             <td>   <input type="reset" value="重置"/> </td>
             </tr>
         </table>-->
-        <textarea class="ckeditor"   name="articletext" rows="20" cols="216" >（这里填写招聘信息）发布专场信息请注明时间、地点、承办学院等。/textarea>
+        <textarea class="ckeditor"   name="articletext" rows="20" cols="216" >填写提示：发布专场招聘信息之前，请先注明时间、地点、承办学院等。</textarea>
         <br>
         <div class="input-group" style="padding-left: 100px">
             <span class="input-group-addon">企业名称：</span>
@@ -50,7 +50,7 @@
         </div>
         <br>
         <div class="input-group" style="padding-left: 100px">
-            <span class="input-group-addon">从何处获得该信息：</span>
+            <span class="input-group-addon">信息发布学院：</span>
             <input type="text" name="authortel" class="form-control" placeholder="在此输入获取信息的方式" required style="width: 745px">
         </div>
         <br>

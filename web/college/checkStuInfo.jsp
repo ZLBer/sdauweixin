@@ -10,12 +10,12 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="css/IconExtension.css">
-<link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/default/easyui.css">
-<link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/demo/demo.css">
-<link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="/css/IconExtension.css">
+<link rel="stylesheet" type="text/css" href="/css/easyui.css">
+<link rel="stylesheet" type="text/css" href="/css/demo.css">
+<link rel="stylesheet" type="text/css" href="/css/icon.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
-<script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/js/jquery.easyui.min.js"></script>
 <head>
     <style type="text/css">
         *{

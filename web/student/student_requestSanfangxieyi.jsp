@@ -46,6 +46,7 @@ table{
     <title>Title</title>
 </head>
 <body>
+
 <div style="padding-right:200px">
 <form action="student_requestSanfangxieyi?studentid=${user.studentid}" method="post" id="ff">
 	<table align="center" frame="void">
@@ -94,7 +95,7 @@ table{
                     <option value="其他">其他</option>
             </td>
 
-            </td>
+
         </tr>
 
         <tr>
@@ -159,10 +160,12 @@ table{
         </tr>-->
 
     </table>
-    ${message}
 
-    <center> <a  class="easyui-linkbutton"  onclick="submitForm()" style="width: 80px;">提交</a><font color="red" size="2">* 所有选项均为必填项</font></center>
+    <div align="center">  ${message} </div>
+    <center>  <input type="submit" value="提交"></center><center><font color="red" size="2">* 所有选项均为必填项</font></center>
 </form>
-<div style="padding-right:200px">
+
+ </div>
+
 </body>
 </html>
