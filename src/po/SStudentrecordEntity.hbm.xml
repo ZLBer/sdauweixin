@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="po.SStudentrecordEntity" table="s_studentrecord" schema="sdauweixin">
+        <id name="sId" column="s_id"/>
+        <property name="sGraduationyear" column="s_graduationyear"/>
+        <property name="sName" column="s_name"/>
+        <property name="sIdentitycard" column="s_identitycard"/>
+        <property name="sSex" column="s_sex"/>
+        <property name="sNation" column="s_nation"/>
+        <property name="sPoliticaloutlook" column="s_politicaloutlook"/>
+        <property name="sEducation" column="s_education"/>
+        <property name="sMajor" column="s_major"/>
+        <property name="sCulturemode" column="s_culturemode"/>
+        <property name="sBirthplace" column="s_birthplace"/>
+        <property name="sDepartment" column="s_department"/>
+        <property name="sClass" column="s_class"/>
+        <property name="sStudylength" column="s_studylength"/>
+        <property name="sForeignlanguages" column="s_foreignlanguages"/>
+        <property name="sGraduating" column="s_graduating"/>
+        <property name="sSendout" column="s_sendout"/>
+        <property name="sDispatchstate" column="s_dispatchstate"/>
+        <property name="sHomephone" column="s_homephone"/>
+        <property name="sMyphone" column="s_myphone"/>
+        <property name="sReceivingunit" column="s_receivingunit"/>
+        <property name="sSign" column="s_sign"/>
+        <property name="sForaddress" column="s_foraddress"/>
+        <property name="sTrandepartment" column="s_trandepartment"/>
+        <property name="sUnittranloaction" column="s_unittranloaction"/>
+        <property name="sReporttype" column="s_reporttype"/>
+        <property name="sUnitreceivtype" column="s_unitreceivtype"/>
+        <property name="sGraaddress" column="s_graaddress"/>
+        <property name="sUnitcategorycode" column="s_unitcategorycode"/>
+        <property name="sUnitnature" column="s_unitnature"/>
+        <property name="sUnitorgcode" column="s_unitorgcode"/>
+        <property name="sUnittype" column="s_unittype"/>
+        <property name="sUnitcomName" column="s_unitcomName"/>
+        <property name="sUnitinformation" column="s_unitinformation"/>
+        <property name="sFlecontphone" column="s_flecontphone"/>
+        <property name="sUnitslocation" column="s_unitslocation"/>
+        <property name="sFlesalary" column="s_flesalary"/>
+        <property name="sIsemployment" column="s_isemployment"/>
+        <property name="sIschanged" column="s_ischanged"/>
+        <property name="sChangedhistory" column="s_changedhistory"/>
+    </class>
+</hibernate-mapping>

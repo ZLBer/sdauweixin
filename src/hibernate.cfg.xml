@@ -35,5 +35,6 @@
         <mapping resource="po/StampEntity.hbm.xml"/>
         <mapping resource="po/ResumeEntity.hbm.xml"/>
         <mapping resource="po/TeacherEntity.hbm.xml"/>
+        <mapping resource="po/SStudentrecordEntity.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
