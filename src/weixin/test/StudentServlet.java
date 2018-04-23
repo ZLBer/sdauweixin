@@ -1,6 +1,6 @@
-package servlet.wechat;
+package weixin.test;
 
-import util.BaseServlet;
+import weixin.test.BaseServlet;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
