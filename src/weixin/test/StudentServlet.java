@@ -7,6 +7,7 @@ import weixin.test.BaseServlet;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * @author 平行时空
@@ -17,8 +18,9 @@ import javax.servlet.http.HttpServletResponse;
 public class StudentServlet extends BaseServlet {
         //StudentServlet?method=test 调用方式
 
-        public String findByid(HttpServletRequest request, HttpServletResponse response)throws Exception{
-            String s_id=request.getParameter("s_id");
+        public String findByid(HttpServletRequest request, HttpServletResponse response, HttpSession session)throws Exception{
+          //  String s_id=request.getParameter("s_id");
+            String s_id= (String) session.getAttribute("userid");
            SStudentrecordEntity data= (SStudentrecordEntity) HibernateUtil.get(SStudentrecordEntity.class,s_id);
            request.setAttribute("data",data);
             return "forward:/WEUI/studentchange.jsp";
@@ -33,19 +35,49 @@ public class StudentServlet extends BaseServlet {
         }
 
 
-    public String updatedata(HttpServletRequest request, HttpServletResponse response)throws Exception{
-
-            String sId=request.getParameter("sId");
+    public String updatedata(HttpServletRequest request, HttpServletResponse response,HttpSession session)throws Exception{
+            //String sId=request.getParameter("sId");
+            String sId= (String) session.getAttribute("userid");
             String sIdentitycard=request.getParameter("sIdentitycard");
             String sName=request.getParameter("sName");
             String sMajor=request.getParameter("sMajor");
             String sSex=request.getParameter("sSex");
             SStudentrecordEntity data= (SStudentrecordEntity) HibernateUtil.get(SStudentrecordEntity.class,sId);
+
             if(data.getsIschanged()!=1){
-                data.setsSex(sSex);
-                data.setsName(sName);
-                data.setsMajor(sMajor);
-                data.setsIdentitycard(sIdentitycard);
+                String changedhistory="";
+                if(data.getsChangedhistory()!=null&&!data.getsChangedhistory().trim().equalsIgnoreCase("")){
+                    changedhistory=data.getsChangedhistory();
+                }
+
+
+
+                if(!sSex.equals(data.getsSex())){
+                    data.setsSex(sSex);
+                    changedhistory+=addChangeRes(data.getsSex(),sSex,"性别");
+                }
+
+                if(!sName.equals(data.getsName())){
+                    data.setsName(sName);
+                    changedhistory+=addChangeRes(data.getsName(),sName,"姓名");
+                }
+
+
+                if(!sMajor.equals(data.getsMajor())){
+                    data.setsMajor(sMajor);
+                    changedhistory+=addChangeRes(data.getsMajor(),sMajor,"专业");
+                }
+
+                if(!sIdentitycard.equals(data.getsIdentitycard())){
+                    data.setsIdentitycard(sIdentitycard);
+                    changedhistory+=addChangeRes(data.getsIdentitycard(),sIdentitycard,"身份证");
+                }
+
+                if(!changedhistory.equalsIgnoreCase(data.getsChangedhistory())){
+                    data.setsChangedhistory(changedhistory);
+                }
+
+
                 data.setsIschanged(1);
 
                 HibernateUtil.update(data);
@@ -64,8 +96,10 @@ public class StudentServlet extends BaseServlet {
      * @return
      * @throws Exception
      */
-    public String isOk(HttpServletRequest request, HttpServletResponse response)throws Exception{
-        String s_id=request.getParameter("s_id");
+    public String isOk(HttpServletRequest request, HttpServletResponse response,HttpSession session)throws Exception{
+
+        //String s_id=request.getParameter("s_id");
+        String s_id= (String) session.getAttribute("userid");
         Integer sIschanged= Integer.valueOf(request.getParameter("sIschanged"));
         if(s_id==null||s_id.trim().equalsIgnoreCase("")||sIschanged==null){
             request.setAttribute("msg","参数传输错误");
@@ -83,5 +117,16 @@ public class StudentServlet extends BaseServlet {
         }
         request.setAttribute("msg","确认成功");
         return "forward:/WEUI/operate_fail.jsp";
+    }
+
+    private String addChangeRes(String old,String newT,String title){
+        if(title==null||title.trim().equals("")){
+            title="未知";
+        }else if(newT==null&&newT.trim().equalsIgnoreCase("")){
+            newT="未知";
+        }else if(old==null&&old.trim().equalsIgnoreCase("")){
+           old="未知";
+        }
+        return title+": "+ old+"-->"+newT+"*";
     }
 }
