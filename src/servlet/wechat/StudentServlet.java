@@ -18,4 +18,11 @@ public class StudentServlet extends BaseServlet {
             response.getWriter().print("test");
             return null;
         }
+    public String test2(HttpServletRequest request, HttpServletResponse response)throws Exception{
+        response.getWriter().print("test2");
+        return null;
+    }
+
 }
+
+
