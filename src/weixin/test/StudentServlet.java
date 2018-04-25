@@ -18,9 +18,9 @@ import javax.servlet.http.HttpSession;
 public class StudentServlet extends BaseServlet {
         //StudentServlet?method=test 调用方式
 
-        public String findByid(HttpServletRequest request, HttpServletResponse response, HttpSession session)throws Exception{
-          //  String s_id=request.getParameter("s_id");
-            String s_id= (String) session.getAttribute("userid");
+        public String findByid(HttpServletRequest request, HttpServletResponse response)throws Exception{
+            String s_id=request.getParameter("s_id");
+           // String s_id= (String) session.getAttribute("userid");
            SStudentrecordEntity data= (SStudentrecordEntity) HibernateUtil.get(SStudentrecordEntity.class,s_id);
            request.setAttribute("data",data);
             return "forward:/WEUI/studentchange.jsp";
@@ -35,7 +35,8 @@ public class StudentServlet extends BaseServlet {
         }
 
 
-    public String updatedata(HttpServletRequest request, HttpServletResponse response,HttpSession session)throws Exception{
+    public String updatedata(HttpServletRequest request, HttpServletResponse response)throws Exception{
+            HttpSession session=request.getSession();
             //String sId=request.getParameter("sId");
             String sId= (String) session.getAttribute("userid");
             String sIdentitycard=request.getParameter("sIdentitycard");
@@ -96,8 +97,8 @@ public class StudentServlet extends BaseServlet {
      * @return
      * @throws Exception
      */
-    public String isOk(HttpServletRequest request, HttpServletResponse response,HttpSession session)throws Exception{
-
+    public String isOk(HttpServletRequest request, HttpServletResponse response)throws Exception{
+        HttpSession session=request.getSession();
         //String s_id=request.getParameter("s_id");
         String s_id= (String) session.getAttribute("userid");
         Integer sIschanged= Integer.valueOf(request.getParameter("sIschanged"));
