@@ -19,8 +19,9 @@ public class StudentServlet extends BaseServlet {
         //StudentServlet?method=test 调用方式
 
         public String findByid(HttpServletRequest request, HttpServletResponse response)throws Exception{
-            String s_id=request.getParameter("s_id");
-           // String s_id= (String) session.getAttribute("userid");
+            //String s_id=request.getParameter("s_id");
+            HttpSession session=request.getSession();
+            String s_id= (String) session.getAttribute("userid");
            SStudentrecordEntity data= (SStudentrecordEntity) HibernateUtil.get(SStudentrecordEntity.class,s_id);
            request.setAttribute("data",data);
             return "forward:/WEUI/studentchange.jsp";
@@ -53,23 +54,23 @@ public class StudentServlet extends BaseServlet {
 
 
 
-                if(!sSex.equals(data.getsSex())){
+                if(sSex!=null&&!sSex.equals(data.getsSex())){
                     data.setsSex(sSex);
                     changedhistory+=addChangeRes(data.getsSex(),sSex,"性别");
                 }
 
-                if(!sName.equals(data.getsName())){
+                if(sName!=null&&!sName.equals(data.getsName())){
                     data.setsName(sName);
                     changedhistory+=addChangeRes(data.getsName(),sName,"姓名");
                 }
 
 
-                if(!sMajor.equals(data.getsMajor())){
+                if(sMajor!=null&&!sMajor.equals(data.getsMajor())){
                     data.setsMajor(sMajor);
                     changedhistory+=addChangeRes(data.getsMajor(),sMajor,"专业");
                 }
 
-                if(!sIdentitycard.equals(data.getsIdentitycard())){
+                if(sIdentitycard!=null&&!sIdentitycard.equals(data.getsIdentitycard())){
                     data.setsIdentitycard(sIdentitycard);
                     changedhistory+=addChangeRes(data.getsIdentitycard(),sIdentitycard,"身份证");
                 }
@@ -99,7 +100,7 @@ public class StudentServlet extends BaseServlet {
      */
     public String isOk(HttpServletRequest request, HttpServletResponse response)throws Exception{
         HttpSession session=request.getSession();
-        //String s_id=request.getParameter("s_id");
+       // String s_id=request.getParameter("s_id");
         String s_id= (String) session.getAttribute("userid");
         Integer sIschanged= Integer.valueOf(request.getParameter("sIschanged"));
         if(s_id==null||s_id.trim().equalsIgnoreCase("")||sIschanged==null){
