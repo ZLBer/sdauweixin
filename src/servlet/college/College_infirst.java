@@ -1,8 +1,6 @@
 package servlet.college;
 
-import oracle.jrockit.jfr.parser.ChunkParser;
 import po.ArticleEntity;
-import po.CollegeloginEntity;
 import util.HibernateUtil;
 
 import javax.servlet.ServletException;
@@ -15,7 +13,6 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by C on 2017/5/11.
