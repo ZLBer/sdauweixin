@@ -15,6 +15,8 @@
     <meta http-equiv="expires" content="0">
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="This is my page">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
     <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.0/css/jquery-weui.min.css">
     <link rel="stylesheet" href="<c:url value="/css/demo.css"/> ">
