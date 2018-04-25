@@ -3,8 +3,6 @@ package servlet;
 import org.apache.poi.hwpf.HWPFDocument;
 import org.apache.poi.hwpf.usermodel.Range;
 import po.StudentEntity;
-import po.XieyiEntity;
-import sun.security.ssl.HandshakeInStream;
 import util.HibernateUtil;
 
 import java.io.*;
