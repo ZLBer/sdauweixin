@@ -215,6 +215,10 @@ public class GetUserID extends HttpServlet {
             System.out.println("确认信息");
             request.getRequestDispatcher("StudentServlet?method=findByid").forward(request,response);
         }
+        else if(state.equals("checkxinxi")){
+            System.out.println("查询信息");
+            request.getRequestDispatcher("showServlet?method=test").forward(request,response);
+        }
         else{
             System.out.println("微信端通过GetUserID转发出错啦");
         }
