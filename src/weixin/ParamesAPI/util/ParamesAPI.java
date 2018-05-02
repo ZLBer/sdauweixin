@@ -11,6 +11,7 @@ public class ParamesAPI {
 	public static String corpId = "wxa2a676446e900b62";
 	// 应用secret
 	public static String secret ="24UimL8sekcyZ9KYQ0gh4pr6TVyuZ97jqtoqnkWI_KFMScmxb5-pZpkM9g6VQlCS";  		//微信端
+
 	public static String secret_zhaoshengban ="G5Gp9fa5RXcZu_Fvd5DHlxgtCr71EQ_C4xFOfH8Wk64yk-rUwx0eMmhKoKFAr44-"; //招生办
 	public static String secret_qiye="RWQnXb3cHJt47JazvbOaqa9rWM0gKMVMgq84B3Akdp88dT1oeZ1w9jWClnPcXcBO";    //企业
 
