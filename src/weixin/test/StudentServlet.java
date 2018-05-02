@@ -18,31 +18,82 @@ import javax.servlet.http.HttpSession;
 public class StudentServlet extends BaseServlet {
         //StudentServlet?method=test 调用方式
 
-        public String findByid(HttpServletRequest request, HttpServletResponse response, HttpSession session)throws Exception{
-          //  String s_id=request.getParameter("s_id");
+        public String findByid(HttpServletRequest request, HttpServletResponse response)throws Exception{
+
+           // String s_id=request.getParameter("s_id");
+            HttpSession session=request.getSession();
             String s_id= (String) session.getAttribute("userid");
+            if(!checked(s_id)){
+                request.setAttribute("msg","您未登录");
+                return "forward:/WEUI/operate_fail.jsp";
+            }
+           // String s_id= (String) session.getAttribute("userid");
            SStudentrecordEntity data= (SStudentrecordEntity) HibernateUtil.get(SStudentrecordEntity.class,s_id);
+            if(data==null){
+                request.setAttribute("msg","未知错误：您的信息不存在");
+                return "forward:/WEUI/operate_fail.jsp";
+            }
+
            request.setAttribute("data",data);
             return "forward:/WEUI/studentchange.jsp";
         }
 
 
         public String changedata(HttpServletRequest request, HttpServletResponse response)throws Exception{
-            String s_id=request.getParameter("s_id");
+
+            //String s_id=request.getParameter("s_id");
+            HttpSession session=request.getSession();
+            String s_id= (String) session.getAttribute("userid");
+            if(!checked(s_id)){
+                request.setAttribute("msg","您未登录");
+                return "forward:/WEUI/operate_fail.jsp";
+            }
             SStudentrecordEntity data= (SStudentrecordEntity) HibernateUtil.get(SStudentrecordEntity.class,s_id);
+            if(data.getsIschanged()==1){
+                request.setAttribute("msg","您已确认或者修改过信息无法再次修改");
+                return "forward:/WEUI/operate_fail.jsp";
+            }
             request.setAttribute("data",data);
             return "forward:/WEUI/studentchangeone.jsp";
         }
 
 
-    public String updatedata(HttpServletRequest request, HttpServletResponse response,HttpSession session)throws Exception{
-            //String sId=request.getParameter("sId");
-            String sId= (String) session.getAttribute("userid");
+    public String updatedata(HttpServletRequest request, HttpServletResponse response)throws Exception{
+           HttpSession session=request.getSession();
+             // String sId=request.getParameter("sId");
+           String sId= (String) session.getAttribute("userid");
+
+
+
             String sIdentitycard=request.getParameter("sIdentitycard");
             String sName=request.getParameter("sName");
             String sMajor=request.getParameter("sMajor");
             String sSex=request.getParameter("sSex");
             SStudentrecordEntity data= (SStudentrecordEntity) HibernateUtil.get(SStudentrecordEntity.class,sId);
+
+
+
+        if(!checked(sId)){
+            request.setAttribute("msg","您未登录");
+            return "forward:/WEUI/operate_fail.jsp";
+        } else if(!checked(sName)) {
+            request.setAttribute("msg","您的姓名不能为空");
+            return "forward:/WEUI/operate_fail.jsp";
+        }else if(!checked(sMajor)){
+            request.setAttribute("msg","您的专业不能为空");
+            return "forward:/WEUI/operate_fail.jsp";
+        }else if (!checked(sMajor)){
+            request.setAttribute("msg","您的性别不能为空");
+            return "forward:/WEUI/operate_fail.jsp";
+        }
+
+        if(data==null){
+            request.setAttribute("msg","未知错误：您的信息不存在");
+                 return "forward:/WEUI/operate_fail.jsp";
+        }
+
+        //信息校验
+
 
             if(data.getsIschanged()!=1){
                 String changedhistory="";
@@ -52,23 +103,23 @@ public class StudentServlet extends BaseServlet {
 
 
 
-                if(!sSex.equals(data.getsSex())){
+                if(sSex!=null&&!sSex.equals(data.getsSex())){
                     data.setsSex(sSex);
                     changedhistory+=addChangeRes(data.getsSex(),sSex,"性别");
                 }
 
-                if(!sName.equals(data.getsName())){
+                if(sName!=null&&!sName.equals(data.getsName())){
                     data.setsName(sName);
                     changedhistory+=addChangeRes(data.getsName(),sName,"姓名");
                 }
 
 
-                if(!sMajor.equals(data.getsMajor())){
+                if(sMajor!=null&&!sMajor.equals(data.getsMajor())){
                     data.setsMajor(sMajor);
                     changedhistory+=addChangeRes(data.getsMajor(),sMajor,"专业");
                 }
 
-                if(!sIdentitycard.equals(data.getsIdentitycard())){
+                if(sIdentitycard!=null&&!sIdentitycard.equals(data.getsIdentitycard())){
                     data.setsIdentitycard(sIdentitycard);
                     changedhistory+=addChangeRes(data.getsIdentitycard(),sIdentitycard,"身份证");
                 }
@@ -83,11 +134,12 @@ public class StudentServlet extends BaseServlet {
                 HibernateUtil.update(data);
                 request.setAttribute("msg","修改成功");
 
+
             }else {
                 request.setAttribute("msg","您已确认或者修改过信息无法再次修改");
+                return "forward:/WEUI/operate_fail.jsp";
             }
-
-            return "forward:/WEUI/operate_fail.jsp";
+          return "forward:WEUI/operate_success.jsp";
     }
     /**
      * 确认信息
@@ -96,27 +148,37 @@ public class StudentServlet extends BaseServlet {
      * @return
      * @throws Exception
      */
-    public String isOk(HttpServletRequest request, HttpServletResponse response,HttpSession session)throws Exception{
-
+    public String isOk(HttpServletRequest request, HttpServletResponse response)throws Exception{
+        HttpSession session=request.getSession();
         //String s_id=request.getParameter("s_id");
         String s_id= (String) session.getAttribute("userid");
+
+
         Integer sIschanged= Integer.valueOf(request.getParameter("sIschanged"));
+
         if(s_id==null||s_id.trim().equalsIgnoreCase("")||sIschanged==null){
             request.setAttribute("msg","参数传输错误");
             return "forward:/WEUI/operate_fail.jsp";
         }
+
         //查询数据库
         SStudentrecordEntity data= (SStudentrecordEntity) HibernateUtil.get(SStudentrecordEntity.class,s_id);
+
+        if(data==null){
+            request.setAttribute("msg","未知错误：您的信息不存在");
+            return "forward:/WEUI/operate_fail.jsp";
+        }
         if(data.getsIschanged()==1){
             request.setAttribute("msg","您已确认并提交过您的信息无法再次更改或提交");
             return "forward:/WEUI/operate_fail.jsp";
         }else if(data.getsIschanged()==0){
             if(sIschanged==1){
-                HibernateUtil.update("s_studentrecord","s_ischanged=1");
+                data.setsIschanged(1);
+                HibernateUtil.update(data);
             }
         }
         request.setAttribute("msg","确认成功");
-        return "forward:/WEUI/operate_fail.jsp";
+        return "forward:/WEUI/operate_success.jsp";
     }
 
     private String addChangeRes(String old,String newT,String title){
@@ -128,5 +190,12 @@ public class StudentServlet extends BaseServlet {
            old="未知";
         }
         return title+": "+ old+"-->"+newT+"*";
+    }
+
+    public boolean checked(String s_id){
+        if(s_id==null||s_id.trim().equals("")){
+            return false;
+        }
+        return true;
     }
 }
