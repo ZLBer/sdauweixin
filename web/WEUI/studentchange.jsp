@@ -62,6 +62,47 @@
                     </div>
                 </div>
             </div>
+
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">学院:</label></div>
+                <div class="weui-cell__bd">
+                    <div class="weui-flex">
+                        <div class="weui-flex__item">${data.sDepartment}</div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">接收单位:</label></div>
+                <div class="weui-cell__bd">
+                    <div class="weui-flex">
+                        <div class="weui-flex__item">${data.sReceivingunit}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">档案转寄地址:</label></div>
+                <div class="weui-cell__bd">
+                    <div class="weui-flex">
+                        <div class="weui-flex__item">${data.sForaddress}</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">就业类型:</label></div>
+                <div class="weui-cell__bd">
+                    <div class="weui-flex">
+                        <div class="weui-flex__item">${data.sReporttype}</div>
+                    </div>
+                </div>
+            </div>
+
             </div>
             <c:if test="${data.sIschanged !=1}">
                 <div class="weui-cell">

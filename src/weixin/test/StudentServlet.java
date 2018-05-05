@@ -14,13 +14,15 @@ import javax.servlet.http.HttpSession;
  * @created 2018-04-20 12:30
  **/
 
+
+
 @WebServlet(urlPatterns = "/StudentServlet",name="StudentServlet",asyncSupported = true)
 public class StudentServlet extends BaseServlet {
         //StudentServlet?method=test 调用方式
 
         public String findByid(HttpServletRequest request, HttpServletResponse response)throws Exception{
 
-           // String s_id=request.getParameter("s_id");
+            //String s_id=request.getParameter("s_id");
             HttpSession session=request.getSession();
             String s_id= (String) session.getAttribute("userid");
             if(!checked(s_id)){
@@ -43,7 +45,7 @@ public class StudentServlet extends BaseServlet {
 
             //String s_id=request.getParameter("s_id");
             HttpSession session=request.getSession();
-            String s_id= (String) session.getAttribute("userid");
+           String s_id= (String) session.getAttribute("userid");
             if(!checked(s_id)){
                 request.setAttribute("msg","您未登录");
                 return "forward:/WEUI/operate_fail.jsp";
@@ -60,18 +62,21 @@ public class StudentServlet extends BaseServlet {
 
     public String updatedata(HttpServletRequest request, HttpServletResponse response)throws Exception{
            HttpSession session=request.getSession();
-             // String sId=request.getParameter("sId");
+           //String sId=request.getParameter("s_id");
            String sId= (String) session.getAttribute("userid");
-
-
-
-            String sIdentitycard=request.getParameter("sIdentitycard");
-            String sName=request.getParameter("sName");
-            String sMajor=request.getParameter("sMajor");
-            String sSex=request.getParameter("sSex");
-            SStudentrecordEntity data= (SStudentrecordEntity) HibernateUtil.get(SStudentrecordEntity.class,sId);
-
-
+           String sName=request.getParameter("sName");
+           String sSex=request.getParameter("sSex");
+           String sMajor=request.getParameter("sMajor");
+           //生源地
+           String sBirthplace=request.getParameter("sBirthplace");
+           //学院
+           String sDepartment=request.getParameter("sDepartment");
+           //接收单位
+           String sReceivingunit=request.getParameter("sReceivingunit");
+           //档案转寄地址
+           String sForaddress=request.getParameter("sForaddress");
+           //就业类型
+           String sReporttype=request.getParameter("sReporttype");
 
         if(!checked(sId)){
             request.setAttribute("msg","您未登录");
@@ -82,10 +87,27 @@ public class StudentServlet extends BaseServlet {
         }else if(!checked(sMajor)){
             request.setAttribute("msg","您的专业不能为空");
             return "forward:/WEUI/operate_fail.jsp";
-        }else if (!checked(sMajor)){
+        }else if (!checked(sSex)){
             request.setAttribute("msg","您的性别不能为空");
             return "forward:/WEUI/operate_fail.jsp";
+        }else if (!checked(sBirthplace)){
+            request.setAttribute("msg","您的生源地信息不能为空");
+            return "forward:/WEUI/operate_fail.jsp";
+        }else if(!checked(sDepartment)){
+            request.setAttribute("msg","您的学院信息不能为空");
+            return "forward:/WEUI/operate_fail.jsp";
+        }else if(!checked(sReceivingunit)){
+            request.setAttribute("msg","您的接收单位不能为空");
+            return "forward:/WEUI/operate_fail.jsp";
+        }else if(!checked(sForaddress)){
+            request.setAttribute("msg","您的档案转寄地址不能为空");
+            return "forward:/WEUI/operate_fail.jsp";
+        }else if(!checked(sReporttype)){
+            request.setAttribute("msg","您的就业类型不能为空");
+            return "forward:/WEUI/operate_fail.jsp";
         }
+
+        SStudentrecordEntity data= (SStudentrecordEntity) HibernateUtil.get(SStudentrecordEntity.class,sId);
 
         if(data==null){
             request.setAttribute("msg","未知错误：您的信息不存在");
@@ -94,41 +116,56 @@ public class StudentServlet extends BaseServlet {
 
         //信息校验
 
-
             if(data.getsIschanged()!=1){
                 String changedhistory="";
                 if(data.getsChangedhistory()!=null&&!data.getsChangedhistory().trim().equalsIgnoreCase("")){
                     changedhistory=data.getsChangedhistory();
                 }
 
-
-
                 if(sSex!=null&&!sSex.equals(data.getsSex())){
-                    data.setsSex(sSex);
                     changedhistory+=addChangeRes(data.getsSex(),sSex,"性别");
+                    data.setsSex(sSex);
                 }
 
                 if(sName!=null&&!sName.equals(data.getsName())){
-                    data.setsName(sName);
                     changedhistory+=addChangeRes(data.getsName(),sName,"姓名");
+                    data.setsName(sName);
                 }
 
 
                 if(sMajor!=null&&!sMajor.equals(data.getsMajor())){
-                    data.setsMajor(sMajor);
                     changedhistory+=addChangeRes(data.getsMajor(),sMajor,"专业");
+                    data.setsMajor(sMajor);
                 }
 
-                if(sIdentitycard!=null&&!sIdentitycard.equals(data.getsIdentitycard())){
-                    data.setsIdentitycard(sIdentitycard);
-                    changedhistory+=addChangeRes(data.getsIdentitycard(),sIdentitycard,"身份证");
+                if(sDepartment!=null&&!sDepartment.equals(data.getsDepartment())){
+                    changedhistory+=addChangeRes(data.getsDepartment(),sDepartment,"学院");
+                    data.setsDepartment(sDepartment);
+                }
+
+                if(sBirthplace!=null&&!sBirthplace.equals(data.getsBirthplace())){
+                    changedhistory+=addChangeRes(data.getsBirthplace(),sBirthplace,"生源地");
+                    data.setsBirthplace(sBirthplace);
+                }
+
+                if(sReceivingunit!=null&&!sReceivingunit.equals(data.getsReceivingunit())){
+                    changedhistory+=addChangeRes(data.getsReceivingunit(),sReceivingunit,"接收单位");
+                    data.setsReceivingunit(sReceivingunit);
+                }
+
+                if(sForaddress!=null&&!sForaddress.equals(data.getsForaddress())){
+                    changedhistory+=addChangeRes(data.getsForaddress(),sForaddress,"档案转存地址");
+                    data.setsForaddress(sForaddress);
+                }
+
+                if(sReporttype!=null&&!sReporttype.equals(data.getsReporttype())){
+                    changedhistory+=addChangeRes(data.getsReporttype(),sReporttype,"就业类型");
+                    data.setsReporttype(sReporttype);
                 }
 
                 if(!changedhistory.equalsIgnoreCase(data.getsChangedhistory())){
                     data.setsChangedhistory(changedhistory);
                 }
-
-
                 data.setsIschanged(1);
 
                 HibernateUtil.update(data);
@@ -150,7 +187,7 @@ public class StudentServlet extends BaseServlet {
      */
     public String isOk(HttpServletRequest request, HttpServletResponse response)throws Exception{
         HttpSession session=request.getSession();
-        //String s_id=request.getParameter("s_id");
+       //String s_id=request.getParameter("s_id");
         String s_id= (String) session.getAttribute("userid");
 
 
@@ -182,11 +219,12 @@ public class StudentServlet extends BaseServlet {
     }
 
     private String addChangeRes(String old,String newT,String title){
+        System.out.println(old + ":::"+newT);
         if(title==null||title.trim().equals("")){
             title="未知";
-        }else if(newT==null&&newT.trim().equalsIgnoreCase("")){
+        }else if(newT==null||newT.trim().equalsIgnoreCase("")){
             newT="未知";
-        }else if(old==null&&old.trim().equalsIgnoreCase("")){
+        }else if(old==null||old.trim().equalsIgnoreCase("")){
            old="未知";
         }
         return title+": "+ old+"-->"+newT+"*";
