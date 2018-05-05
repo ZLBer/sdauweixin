@@ -4,11 +4,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>山东农业大学就业导航系统</title>
-    <link rel="stylesheet" type="text/css" href="/sdauweixin/css/IconExtension.css">
+	<link rel="stylesheet" type="text/css" href="/sdauweixin/css/IconExtension.css">
 	<link rel="stylesheet" type="text/css" href="/sdauweixin/css/easyui.css">
 	<link rel="stylesheet" type="text/css" href="/sdauweixin/css/demo.css">
 	<link rel="stylesheet" type="text/css" href="/sdauweixin/css/icon.css">
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+	<script type="text/javascript" src="/sdauweixin/js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="/sdauweixin/js/jquery.easyui.min.js"></script>
 	<script>
         function addTab(title, url){

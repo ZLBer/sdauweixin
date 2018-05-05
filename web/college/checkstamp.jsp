@@ -15,12 +15,12 @@
             text-align:center;
         }
     </style>
-    <link rel="stylesheet" type="text/css" href="/css/IconExtension.css">
-    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/default/easyui.css">
-    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/demo/demo.css">
-    <link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/icon.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
-    <script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/sdauweixin/css/IconExtension.css">
+    <link rel="stylesheet" type="text/css" href="/sdauweixin/css/easyui.css">
+    <link rel="stylesheet" type="text/css" href="/sdauweixin/css/demo.css">
+    <link rel="stylesheet" type="text/css" href="/sdauweixin/css/icon.css">
+    <script type="text/javascript" src="/sdauweixin/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/sdauweixin/js/jquery.easyui.min.js"></script>
     <script>
         function jump1(pageno){
             var queryForm=document.getElementById("query");
