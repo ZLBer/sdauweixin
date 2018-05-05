@@ -38,61 +38,120 @@
             </div>
         </div>
     </div>
+
     <div class="weui-cell">
         <div class="weui-cell__hd"><label class="weui-label">学号:</label></div>
         <div class="weui-cell__bd">
-            <input class="weui-input" type="text" pattern="[0-9]*" placeholder="请输入您的学号" value="${data.sId}" name="sId">
+            <div class="weui-flex">
+                <div class="weui-flex__item">${data.sId}</div>
+                <input type="hidden" value="${data.sId}" name="s_id">
+            </div>
         </div>
     </div>
-    </div>
+
     <div class="weui-cell">
         <div class="weui-cell__hd"><label class="weui-label">性别:</label></div>
-        <div class="weui-cell__bd">
-            <c:choose>
-                <c:when test="${data.sSex eq 男}">
-                    <span class="weui-sex">
-						<a href="javascript:;" class="weui-icon-circle selected " data-type="1"></a>
-						<span class="stu_sex">男</span>
-                        <input type="hidden" name="sSex" value="男">
-					</span>
-                    <span class="weui-sex">
-						<a href="javascript:;" class="weui-icon-circle" data-type="2"></a>
-						<span class="stu_sex">女</span>
-                    <input type="hidden" name="sSex" value="女">
-					</span>
+
+        <c:choose>
+              <c:when test="${data.sSex eq '男'}">
+
+            <div class=" weui-cells_checkbox" style="display:flex;justify-content:center; align-items:center;">
+                <label class="weui-cell weui-check__label" for="s111" style=" float:left;">
+                    <div class="weui-cell__hd">
+                        <input type="radio" class="weui-check" name="sSex" id="s111" checked="checked" value="男">
+                        <i class="weui-icon-checked"></i>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <p>男</p>
+                    </div>
+                </label>
+
+                <label class="weui-cell weui-check__label" for="s13"style=" float:left;">
+                    <div class="weui-cell__hd">
+                        <input type="radio" name="sSex" class="weui-check" id="s13" value="女">
+                        <i class="weui-icon-checked"></i>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <p>女</p>
+                    </div>
+                </label>
+            </div>
+
                 </c:when>
                 <c:otherwise>
-                <span class="weui-sex">
-						<a href="javascript:;" class="weui-icon-circle  " data-type="1"></a>
-						<span class="stu_sex">男</span>
-                        <input type="hidden" name="sSex" value="男">
-					</span>
-                    <span class="weui-sex">
-						<a href="javascript:;" class="weui-icon-circle selected" data-type="2"></a>
-						<span class="stu_sex">女</span>
-                    <input type="hidden" name="sSex" value="女">
-					</span>
+
+                    <div class="weui-cells_checkbox" style="display:flex;justify-content:center; align-items:center;">
+                        <label class="weui-cell weui-check__label" for="s1111" style=" float:left;">
+                            <div class="weui-cell__hd">
+                                <input type="radio" class="weui-check" name="sSex" id="s1111"  value="男">
+                                <i class="weui-icon-checked"></i>
+                            </div>
+                            <div class="weui-cell__bd">
+                                <p>男</p>
+                            </div>
+                        </label>
+
+                        <label class="weui-cell weui-check__label" for="s122"style=" float:left;">
+                            <div class="weui-cell__hd">
+                                <input type="radio" name="sSex" class="weui-check" id="s122" value="女" checked="checked">
+                                <i class="weui-icon-checked"></i>
+                            </div>
+                            <div class="weui-cell__bd">
+                                <p>女</p>
+                            </div>
+                        </label>
+                    </div>
                 </c:otherwise>
 
             </c:choose>
 
-        </div>
-    </div>
-    </div>
+   </div>
+
+
     <div class="weui-cell">
-        <div class="weui-cell__hd"><label class="weui-label">民族:</label></div>
+        <div class="weui-cell__hd"><label class="weui-label">学院:</label></div>
         <div class="weui-cell__bd">
-            <input class="weui-input" name="sNation" type="text" placeholder="请输入您的民族" value="${data.sNation}">
+            <input class="weui-input" name="sDepartment" type="text" placeholder="请输入您的学院" value="${data.sDepartment}">
         </div>
     </div>
-    </div>
+
+
     <div class="weui-cell">
         <div class="weui-cell__hd"><label class="weui-label">专业:</label></div>
         <div class="weui-cell__bd">
             <input class="weui-input" type="text" placeholder="请输入您的专业" name="sMajor" value="${data.sMajor}">
         </div>
     </div>
+
+
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">就业类型:</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="text" placeholder="请输入您的就业类型" name="sReporttype" value="${data.sReporttype}">
+        </div>
     </div>
+
+
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">接收单位:</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="text" placeholder="请输入您的接收单位" name="sReceivingunit" value="${data.sReceivingunit}">
+        </div>
+    </div>
+
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">生源地:</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="text" placeholder="请输入您的生源地" name="sBirthplace" value="${data.sBirthplace}">
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">档案转寄地址:</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="text" placeholder="请输入您的档案转寄地址" name="sForaddress" value="${data.sForaddress}">
+        </div>
+    </div>
+
     <div class="weui-cell">
         <div class="weui-cell_hd" style="width: 100%;">
             <a href="javascript:void(0);"  onclick="submitform();" class="weui-btn weui-btn_primary">提交</a>
