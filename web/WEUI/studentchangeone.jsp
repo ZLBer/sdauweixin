@@ -114,7 +114,7 @@
             <input class="weui-input" name="sDepartment" type="text" placeholder="请输入您的学院" value="${data.sDepartment}">
         </div>
     </div>
-
+    
 
     <div class="weui-cell">
         <div class="weui-cell__hd"><label class="weui-label">专业:</label></div>

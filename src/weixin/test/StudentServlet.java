@@ -78,22 +78,27 @@ public class StudentServlet extends BaseServlet {
            //就业类型
            String sReporttype=request.getParameter("sReporttype");
 
+            sBirthplace=checkchange(sBirthplace);
+            sReceivingunit=checkchange(sReceivingunit);
+            sForaddress=checkchange(sForaddress);
+            sReporttype=checkchange(sReporttype);
+
         if(!checked(sId)){
             request.setAttribute("msg","您未登录");
             return "forward:/WEUI/operate_fail.jsp";
-        } else if(!checked(sName)) {
+        } else if(!checked(sName)||sName.trim().equals("")) {
             request.setAttribute("msg","您的姓名不能为空");
             return "forward:/WEUI/operate_fail.jsp";
-        }else if(!checked(sMajor)){
+        }else if(!checked(sMajor)||sMajor.trim().equals("")){
             request.setAttribute("msg","您的专业不能为空");
             return "forward:/WEUI/operate_fail.jsp";
-        }else if (!checked(sSex)){
+        }else if (!checked(sSex)||sSex.trim().equals("")){
             request.setAttribute("msg","您的性别不能为空");
             return "forward:/WEUI/operate_fail.jsp";
         }else if (!checked(sBirthplace)){
             request.setAttribute("msg","您的生源地信息不能为空");
             return "forward:/WEUI/operate_fail.jsp";
-        }else if(!checked(sDepartment)){
+        }else if(!checked(sDepartment)||sDepartment.trim().equals("")){
             request.setAttribute("msg","您的学院信息不能为空");
             return "forward:/WEUI/operate_fail.jsp";
         }else if(!checked(sReceivingunit)){
@@ -231,9 +236,18 @@ public class StudentServlet extends BaseServlet {
     }
 
     public boolean checked(String s_id){
-        if(s_id==null||s_id.trim().equals("")){
+        if(s_id==null){
             return false;
         }
         return true;
+    }
+
+    public String checkchange(String old){
+        String news="";
+        if(old.trim().equals("")){
+            news="无";
+            return news;
+        }
+        return old;
     }
 }
