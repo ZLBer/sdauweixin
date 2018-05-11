@@ -72,7 +72,14 @@
                 </div>
             </div>
 
-
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">生源地:</label></div>
+                <div class="weui-cell__bd">
+                    <div class="weui-flex">
+                        <div class="weui-flex__item">${data.sBirthplace}</div>
+                    </div>
+                </div>
+            </div>
 
 
             <div class="weui-cell">
