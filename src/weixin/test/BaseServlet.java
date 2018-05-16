@@ -26,6 +26,7 @@ public class BaseServlet extends HttpServlet {
 
         try {
             method=this.getClass().getMethod(methodName,HttpServletRequest.class, HttpServletResponse.class);
+            System.out.println(method.getName());
         } catch (NoSuchMethodException e) {
             throw  new RuntimeException("您要调用的方法："+methodName+"不存在",e);
         }

@@ -211,7 +211,10 @@ public class GetUserID extends HttpServlet {
             System.out.println("学生预约老师");
             request.getRequestDispatcher("WEUI/reservationResume.jsp").forward(request,response);
         }
-
+        else if(state.equals("turexinxi")){      //跳转到确认信息界面
+            System.out.println("确认信息");
+            request.getRequestDispatcher("StudentServlet?method=findByid").forward(request,response);
+        }
         else{
             System.out.println("微信端通过GetUserID转发出错啦");
         }
