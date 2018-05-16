@@ -24,8 +24,8 @@
 </head>
 <body>
 <header class="demos-header">
-    <h1 class="demos-title" style="font-size: 20px;" align="center">山东农业大学就业导航中心</h1>
-    <p class="demos-sub-title" align="center">新生注册系统</p>
+    <h1 class="demos-title" style="font-size: 20px;" align="center">2018届毕业生就业去向信息核对</h1>
+    <%--<p class="demos-sub-title" align="center">新生注册系统</p>--%>
 </header>
 <form action="<c:url value='StudentServlet?method=updatedata'/> " method="post" id="sform">
 
@@ -154,7 +154,7 @@
 
     <div class="weui-cell">
         <div class="weui-cell_hd" style="width: 100%;">
-            <a href="javascript:void(0);"  onclick="submitform();" class="weui-btn weui-btn_primary">提交</a>
+            <a href="javascript:void(0);"  onclick="submitform();" class="weui-btn weui-btn_primary">修改完毕，提交</a>
         </div>
     </div>
 
