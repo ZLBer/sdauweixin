@@ -24,9 +24,11 @@
 <body>
 
             <header class="demos-header">
-                <h1 class="demos-title" style="font-size: 20px;" align="center">山东农业大学就业导航中心</h1>
-                <p class="demos-sub-title" align="center">信息确认系统</p>
+                <h1 class="demos-title" style="font-size: 20px;" align="center">2018届毕业生就业去向信息核对</h1>
+                <%--<p class="demos-sub-title" align="center">信息确认系统</p>--%>
             </header>
+
+            <p style="color: red;">&nbsp;&nbsp;&nbsp;以下信息非常重要请一定认真核对。如果无误，请点击“确认无误”，确认无误后信息锁定无法修改；如果有误，请点击“有错误，需修改”，进入修改页面将错误信息修改为正确信息，点击“修改完毕，提交”，提交后信息锁定无法修改。</p>
 
             <div class="weui-cells weui-cells_form">
                 <div class="weui-cell">
@@ -114,7 +116,7 @@
             <c:if test="${data.sIschanged !=1}">
                 <div class="weui-cell">
                     <div class="weui-cell_hd" style="width: 100%;">
-                        <a href="<c:url value='StudentServlet?method=changedata&s_id=${data.sId}'/>" class="weui-btn weui-btn_primary">编辑</a>
+                        <a href="<c:url value='StudentServlet?method=changedata&s_id=${data.sId}'/>" class="weui-btn weui-btn_primary">有错误，需修改</a>
                     </div>
                 </div>
             </c:if>
@@ -130,7 +132,7 @@
                 <c:otherwise>
                     <div class="weui-cell">
                         <div class="weui-cell_hd" style="width: 100%;">
-                            <a href="<c:url value='StudentServlet?method=isOk&s_id=${data.sId}&sIschanged=1'/>" class="weui-btn weui-btn_primary">确认</a>
+                            <a href="<c:url value='StudentServlet?method=isOk&s_id=${data.sId}&sIschanged=1'/>" class="weui-btn weui-btn_primary">确认无误</a>
                         </div>
                     </div>
                 </c:otherwise>
