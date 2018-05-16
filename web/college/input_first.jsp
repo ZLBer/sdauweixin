@@ -32,8 +32,12 @@
             <td>   <input type="reset" value="重置"/> </td>
             </tr>
         </table>-->
-        <textarea class="ckeditor"   name="articletext" rows="20" cols="216" >填写提示：发布专场招聘信息之前，请先注明时间、地点、承办学院等。</textarea>
-        <br>
+        <%--加入ckeditor版本--%>
+        <%--<textarea class="ckeditor"   name="articletext" id="TextArea1" rows="20" cols="216" >（这里填写招聘信息）--%>
+        <%--</textarea>--%>
+        <%--由于未知bug，未加ckeditor版本--%>
+        <textarea  name="articletext" id="TextArea1" rows="20" cols="216" >（这里填写招聘信息）
+            </textarea> <br>
         <div class="input-group" style="padding-left: 100px">
             <span class="input-group-addon">企业名称：</span>
             <input type="text"  name="enterprisename" class="form-control" placeholder="在此输入企业名称" required style="width:800px;">

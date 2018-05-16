@@ -4,6 +4,7 @@ import po.ArticleEntity;
 import util.HibernateUtil;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,6 +19,7 @@ import java.util.List;
 /**
  * Created by john on 2017/5/3.
  */
+@WebServlet("/enterprise/gll")
 public class Enterprise_infirst extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=utf-8");
@@ -28,6 +30,7 @@ public class Enterprise_infirst extends HttpServlet {
         HttpSession session=request.getSession();
         String   author=request.getParameter("author");
         String   authortel=request.getParameter("authortel");
+        System.out.println(enterprisename);
 
         ArticleEntity articleEntity=new  ArticleEntity();
         articleEntity.setArticletext(articletext);
@@ -49,7 +52,7 @@ public class Enterprise_infirst extends HttpServlet {
         java.util.List<ArticleEntity> userList=new ArrayList<ArticleEntity>();
         userList= HibernateUtil.query("ArticleEntity article", condition);
         session.setAttribute("article",userList.get(0));
-        request.getServletContext().getRequestDispatcher("/enterprise/input_second.jsp").forward(request, response);
+      request.getServletContext().getRequestDispatcher("/enterprise/input_second.jsp").forward(request, response);
 
     }
 

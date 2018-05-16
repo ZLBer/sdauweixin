@@ -54,7 +54,11 @@
                     </div>
                     <p style="color:red;">温馨提示：请填写您的手机号，以便接收所关注微信平台的验证码。关注后我们会将审核结果发送到您的微信上。</p>
                     <p>招聘信息简章：</p>
-                    <textarea class="ckeditor"   name="articletext" id="TextArea1" rows="20" cols="216" >（这里填写招聘信息）
+                    <%--加入ckeditor版本--%>
+                    <%--<textarea class="ckeditor"   name="articletext" id="TextArea1" rows="20" cols="216" >（这里填写招聘信息）--%>
+            <%--</textarea>--%>
+                    <%--由于未知bug，未加ckeditor版本--%>
+                    <textarea  name="articletext" id="TextArea1" rows="20" cols="216" >（这里填写招聘信息）
             </textarea>
                     <p></p>
                     <center><button type="submit" class="btn btn-default" onclick="return check()">下一步</button></center>
