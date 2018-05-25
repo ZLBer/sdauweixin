@@ -22,7 +22,7 @@ public class StudentServlet extends BaseServlet {
 
         public String findByid(HttpServletRequest request, HttpServletResponse response)throws Exception{
 
-            //String s_id=request.getParameter("s_id");
+           // String s_id=request.getParameter("s_id");
             HttpSession session=request.getSession();
             String s_id= (String) session.getAttribute("userid");
             if(!checked(s_id)){
@@ -51,7 +51,7 @@ public class StudentServlet extends BaseServlet {
                 return "forward:/WEUI/operate_fail.jsp";
             }
             SStudentrecordEntity data= (SStudentrecordEntity) HibernateUtil.get(SStudentrecordEntity.class,s_id);
-            if(data.getsIschanged()==1){
+            if(data.getsIschanged()>0){
                 request.setAttribute("msg","您已确认或者修改过信息无法再次修改");
                 return "forward:/WEUI/operate_fail.jsp";
             }
@@ -62,7 +62,7 @@ public class StudentServlet extends BaseServlet {
 
     public String updatedata(HttpServletRequest request, HttpServletResponse response)throws Exception{
            HttpSession session=request.getSession();
-           //String sId=request.getParameter("s_id");
+          // String sId=request.getParameter("s_id");
            String sId= (String) session.getAttribute("userid");
            String sName=request.getParameter("sName");
            String sSex=request.getParameter("sSex");
@@ -171,7 +171,7 @@ public class StudentServlet extends BaseServlet {
                 if(!changedhistory.equalsIgnoreCase(data.getsChangedhistory())){
                     data.setsChangedhistory(changedhistory);
                 }
-                data.setsIschanged(1);
+                data.setsIschanged(2);
 
                 HibernateUtil.update(data);
                 request.setAttribute("msg","修改成功");
@@ -192,8 +192,8 @@ public class StudentServlet extends BaseServlet {
      */
     public String isOk(HttpServletRequest request, HttpServletResponse response)throws Exception{
         HttpSession session=request.getSession();
-       //String s_id=request.getParameter("s_id");
-        String s_id= (String) session.getAttribute("userid");
+    // String s_id=request.getParameter("s_id");
+       String s_id= (String) session.getAttribute("userid");
 
 
         Integer sIschanged= Integer.valueOf(request.getParameter("sIschanged"));
