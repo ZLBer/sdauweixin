@@ -22,8 +22,9 @@ public class StudentServlet extends BaseServlet {
 
         public String findByid(HttpServletRequest request, HttpServletResponse response)throws Exception{
 
-           // String s_id=request.getParameter("s_id");
+
             HttpSession session=request.getSession();
+            // String s_id=request.getParameter("s_id");
             String s_id= (String) session.getAttribute("userid");
             if(!checked(s_id)){
                 request.setAttribute("msg","您未登录");
