@@ -87,7 +87,8 @@ public class Enterprise_inthird extends HttpServlet {
                         absoultfilePath ="/enterprise/upload/" +fileName ;
                         System.out.println(absoultfilePath);
 
-                        String filePath = uploadPath + File.separator + fileName;
+                       // String filePath = uploadPath + File.separator + fileName;
+                        String filePath = "D:/pictures/" + fileName;
                         //获取图片存放位置
                         if (mediaid == "")
                             mediaid = filePath;

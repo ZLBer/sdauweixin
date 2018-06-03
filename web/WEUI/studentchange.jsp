@@ -9,7 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>就业信息确认</title>
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="expires" content="0">
@@ -30,14 +30,13 @@
 
             <p style="color: red;">&nbsp;&nbsp;&nbsp;以下信息非常重要请一定认真核对。如果无误，请点击“确认无误”，确认无误后信息锁定无法修改；如果有误，请点击“有错误，需修改”，进入修改页面将错误信息修改为正确信息，点击“修改完毕，提交”，提交后信息锁定无法修改。</p>
 
-            <div class="weui-cells weui-cells_form">
+
                 <div class="weui-cell">
                     <div class="weui-cell__hd"><label class="weui-label">姓名:</label></div>
                     <div class="weui-flex">
                         <div class="weui-flex__item">${data.sName}</div>
                     </div>
                 </div>
-            </div>
             <div class="weui-cell">
                 <div class="weui-cell__hd"><label class="weui-label">学号:</label></div>
                 <div class="weui-cell__bd">
@@ -46,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            </div>
+
             <div class="weui-cell">
                 <div class="weui-cell__hd"><label class="weui-label">性别:</label></div>
                 <div class="weui-cell__bd">
@@ -55,15 +54,7 @@
                     </div>
                 </div>
             </div>
-            </div>
-            <div class="weui-cell">
-                <div class="weui-cell__hd"><label class="weui-label">专业:</label></div>
-                <div class="weui-cell__bd">
-                    <div class="weui-flex">
-                        <div class="weui-flex__item">${data.sMajor}</div>
-                    </div>
-                </div>
-            </div>
+
 
             <div class="weui-cell">
                 <div class="weui-cell__hd"><label class="weui-label">学院:</label></div>
@@ -73,6 +64,16 @@
                     </div>
                 </div>
             </div>
+
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">专业:</label></div>
+                <div class="weui-cell__bd">
+                    <div class="weui-flex">
+                        <div class="weui-flex__item">${data.sMajor}</div>
+                    </div>
+                </div>
+
+
 
             <div class="weui-cell">
                 <div class="weui-cell__hd"><label class="weui-label">生源地:</label></div>
