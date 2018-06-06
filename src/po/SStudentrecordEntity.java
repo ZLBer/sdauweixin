@@ -476,4 +476,50 @@ public class SStudentrecordEntity {
         result = 31 * result + (sChangedhistory != null ? sChangedhistory.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "SStudentrecordEntity{" +
+                "sId='" + sId + '\'' +
+                ", sGraduationyear='" + sGraduationyear + '\'' +
+                ", sName='" + sName + '\'' +
+                ", sIdentitycard='" + sIdentitycard + '\'' +
+                ", sSex='" + sSex + '\'' +
+                ", sNation='" + sNation + '\'' +
+                ", sPoliticaloutlook='" + sPoliticaloutlook + '\'' +
+                ", sEducation='" + sEducation + '\'' +
+                ", sMajor='" + sMajor + '\'' +
+                ", sCulturemode='" + sCulturemode + '\'' +
+                ", sBirthplace='" + sBirthplace + '\'' +
+                ", sDepartment='" + sDepartment + '\'' +
+                ", sClass='" + sClass + '\'' +
+                ", sStudylength=" + sStudylength +
+                ", sForeignlanguages='" + sForeignlanguages + '\'' +
+                ", sGraduating='" + sGraduating + '\'' +
+                ", sSendout='" + sSendout + '\'' +
+                ", sDispatchstate='" + sDispatchstate + '\'' +
+                ", sHomephone='" + sHomephone + '\'' +
+                ", sMyphone='" + sMyphone + '\'' +
+                ", sReceivingunit='" + sReceivingunit + '\'' +
+                ", sSign='" + sSign + '\'' +
+                ", sForaddress='" + sForaddress + '\'' +
+                ", sTrandepartment='" + sTrandepartment + '\'' +
+                ", sUnittranloaction='" + sUnittranloaction + '\'' +
+                ", sReporttype='" + sReporttype + '\'' +
+                ", sUnitreceivtype='" + sUnitreceivtype + '\'' +
+                ", sGraaddress='" + sGraaddress + '\'' +
+                ", sUnitcategorycode='" + sUnitcategorycode + '\'' +
+                ", sUnitnature='" + sUnitnature + '\'' +
+                ", sUnitorgcode='" + sUnitorgcode + '\'' +
+                ", sUnittype='" + sUnittype + '\'' +
+                ", sUnitcomName='" + sUnitcomName + '\'' +
+                ", sUnitinformation='" + sUnitinformation + '\'' +
+                ", sFlecontphone='" + sFlecontphone + '\'' +
+                ", sUnitslocation='" + sUnitslocation + '\'' +
+                ", sFlesalary='" + sFlesalary + '\'' +
+                ", sIsemployment=" + sIsemployment +
+                ", sIschanged=" + sIschanged +
+                ", sChangedhistory='" + sChangedhistory + '\'' +
+                '}';
+    }
 }
