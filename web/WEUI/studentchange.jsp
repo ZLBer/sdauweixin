@@ -72,6 +72,7 @@
                         <div class="weui-flex__item">${data.sMajor}</div>
                     </div>
                 </div>
+            </div>
 
 
 
@@ -114,7 +115,7 @@
             </div>
 
             </div>
-            <c:if test="${data.sIschanged !=1}">
+            <c:if test="${data.sIschanged ==0}">
                 <div class="weui-cell">
                     <div class="weui-cell_hd" style="width: 100%;">
                         <a href="<c:url value='StudentServlet?method=changedata&s_id=${data.sId}'/>" class="weui-btn weui-btn_primary">有错误，需修改</a>
@@ -123,7 +124,7 @@
             </c:if>
 
             <c:choose>
-                <c:when test="${data.sIschanged ==1}">
+                <c:when test="${data.sIschanged >0}">
                     <div class="weui-cell">
                         <div class="weui-cell_hd" style="width: 100%;">
                             <a href="javascript:void(0);" class="weui-btn weui-btn_primary weui-btn_disabled">您已确认</a>

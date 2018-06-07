@@ -12,7 +12,6 @@
     </data-source>
     <data-source name="hibernate.cfg.xml/Hibernate" uuid="ec7ac188-35d8-4bcf-bfce-75fef63d219d">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
-      <first-sync>true</first-sync>
     </data-source>
   </component>
 </project>
