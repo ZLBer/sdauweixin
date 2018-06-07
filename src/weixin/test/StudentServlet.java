@@ -24,7 +24,6 @@ public class StudentServlet extends BaseServlet {
 
 
             HttpSession session=request.getSession();
-            // String s_id=request.getParameter("s_id");
             String s_id= (String) session.getAttribute("userid");
             if(!checked(s_id)){
                 request.setAttribute("msg","您未登录");

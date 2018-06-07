@@ -65,6 +65,8 @@
 				</div>
                 <div title="修改密码" style="padding:10px">
 					<p><a class="easyui-linkbutton" onclick="addTab('修改密码',' ${pageContext.request.contextPath}/navigation/motifypwd.jsp')" target="right">修改密码</a></p>
+					<p><a class="easyui-linkbutton" onclick="addTab('上传档案信息',' ${pageContext.request.contextPath}/navigation/studentupload.jsp')" target="right">上传档案信息</a></p>
+
 				</div>
 				<div title="三方协议" style="padding:10px">
 					<p><a class="easyui-linkbutton" onclick="addTab('查看三方协议发放数量',' ${pageContext.request.contextPath}/navigation/navigation_checkSanfangxieyi')" target="right">查看三方协议发放数量</a></p>
